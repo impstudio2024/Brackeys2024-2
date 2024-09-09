@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://cmxxdt26vy16l"]
+[gd_scene load_steps=2 format=3 uid="uid://cmxxdt26vy16l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgt4"]
 
 [node name="Pickup" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_mxgt4")
