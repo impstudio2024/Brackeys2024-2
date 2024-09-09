@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://p2tulbeaf1e6"]
+[gd_scene load_steps=9 format=4 uid="uid://p2tulbeaf1e6"]
 
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="1_7tv78"]
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="2_hroyw"]
 [ext_resource type="PackedScene" uid="uid://cw711chy7feh0" path="res://Scenes/testmap/testcharacter.tscn" id="3_ghrp1"]
 [ext_resource type="Script" path="res://Scenes/testmap/testcharacter.gd" id="4_vq4mm"]
+[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="5_roqk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifss"]
 resource_name = "Ground"
@@ -697,3 +698,12 @@ offset_top = 250.0
 offset_right = 305.0
 offset_bottom = 273.0
 text = "TEST MAP"
+
+[node name="Pickup" parent="." instance=ExtResource("5_roqk3")]
+position = Vector2(297, 281)
+
+[node name="Pickup2" parent="." instance=ExtResource("5_roqk3")]
+position = Vector2(266, 308)
+
+[node name="Pickup3" parent="." instance=ExtResource("5_roqk3")]
+position = Vector2(205, 358)
