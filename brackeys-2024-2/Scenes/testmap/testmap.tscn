@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://p2tulbeaf1e6"]
+[gd_scene load_steps=8 format=4 uid="uid://p2tulbeaf1e6"]
 
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="1_7tv78"]
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="2_hroyw"]
+[ext_resource type="PackedScene" uid="uid://cw711chy7feh0" path="res://Scenes/testmap/testcharacter.tscn" id="3_ghrp1"]
+[ext_resource type="Script" path="res://Scenes/testmap/testcharacter.gd" id="4_vq4mm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifss"]
 resource_name = "Ground"
@@ -684,3 +686,14 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
+
+[node name="Character" parent="." instance=ExtResource("3_ghrp1")]
+position = Vector2(218, 283)
+script = ExtResource("4_vq4mm")
+
+[node name="disclaimer" type="Label" parent="."]
+offset_left = 229.0
+offset_top = 250.0
+offset_right = 305.0
+offset_bottom = 273.0
+text = "TEST MAP"
