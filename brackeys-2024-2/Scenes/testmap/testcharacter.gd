@@ -12,14 +12,16 @@ func _physics_process(delta):
 	var vertical_direction = Input.get_axis("move_up", "move_down")
 	
 	#Apply movement
-	if horizontal_direction:
-		position.x += 1
-	else:
-		position.x -= 1
+	if Input.is_action_just_pressed("move_up"):
+		position.y -= 10
 		
-	if vertical_direction:
-		position.y += 1
-	else:
-		position.y -= 1
+	if Input.is_action_just_pressed("move_down"):
+		position.y += 10
+		
+	if Input.is_action_just_pressed("move_right"):
+		position.x += 10
+		
+	if Input.is_action_just_pressed("move_left"):
+		position.x -= 10
 
 	move_and_slide()
