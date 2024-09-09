@@ -109,3 +109,5 @@ shape = SubResource("RectangleShape2D_mxgt4")
 sprite_frames = SubResource("SpriteFrames_mjhrw")
 animation = &"spin"
 autoplay = "spin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
