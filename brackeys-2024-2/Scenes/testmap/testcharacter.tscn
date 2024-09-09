@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw711chy7feh0"]
+
+[ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_yneie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
+size = Vector2(16, 16)
+
+[node name="Character" type="CharacterBody2D"]
+
+[node name="WhiteSquare" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0.984314, 1)
+texture = ExtResource("1_yneie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_acf0o")

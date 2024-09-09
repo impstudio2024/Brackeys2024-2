@@ -97,6 +97,7 @@ animations = [{
 }]
 
 [node name="Pickup" type="Area2D"]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.8, 0.8)
