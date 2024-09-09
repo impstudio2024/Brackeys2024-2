@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://p2tulbeaf1e6"]
+[gd_scene load_steps=10 format=4 uid="uid://p2tulbeaf1e6"]
 
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="1_7tv78"]
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="2_hroyw"]
 [ext_resource type="PackedScene" uid="uid://cw711chy7feh0" path="res://Scenes/testmap/testcharacter.tscn" id="3_ghrp1"]
-[ext_resource type="Script" path="res://Scenes/testmap/testcharacter.gd" id="4_vq4mm"]
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="5_roqk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifss"]
@@ -680,6 +679,13 @@ terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_cifss")
 sources/1 = SubResource("TileSetAtlasSource_ty7wx")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l0uyi"]
+scenes/1/scene = ExtResource("3_ghrp1")
+scenes/2/scene = ExtResource("5_roqk3")
+
+[sub_resource type="TileSet" id="TileSet_tbi0s"]
+sources/0 = SubResource("TileSetScenesCollectionSource_l0uyi")
+
 [node name="Map" type="Node2D"]
 
 [node name="Map" type="TileMapLayer" parent="."]
@@ -687,10 +693,8 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-
-[node name="Character" parent="." instance=ExtResource("3_ghrp1")]
-position = Vector2(218, 283)
-script = ExtResource("4_vq4mm")
+tile_map_data = PackedByteArray("AAARAB8AAAAAAAAAAgAOACEAAAAAAAAAAgATACEAAAAAAAAAAgAKACEAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_tbi0s")
 
 [node name="disclaimer" type="Label" parent="."]
 offset_left = 229.0
@@ -699,11 +703,6 @@ offset_right = 305.0
 offset_bottom = 273.0
 text = "TEST MAP"
 
-[node name="Pickup" parent="." instance=ExtResource("5_roqk3")]
-position = Vector2(297, 281)
-
-[node name="Pickup2" parent="." instance=ExtResource("5_roqk3")]
-position = Vector2(266, 308)
-
-[node name="Pickup3" parent="." instance=ExtResource("5_roqk3")]
-position = Vector2(205, 358)
+[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@26569" to="Entities/@Area2D@26569" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@26570" to="Entities/@Area2D@26570" method="_on_body_entered"]

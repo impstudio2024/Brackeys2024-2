@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw711chy7feh0"]
+[gd_scene load_steps=4 format=3 uid="uid://cw711chy7feh0"]
 
+[ext_resource type="Script" path="res://Scenes/testmap/testcharacter.gd" id="1_57ele"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_yneie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
@@ -7,6 +8,7 @@ size = Vector2(16, 16)
 
 [node name="TestCharacter" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_57ele")
 
 [node name="WhiteSquare" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0.984314, 1)

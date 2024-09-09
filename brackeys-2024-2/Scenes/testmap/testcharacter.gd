@@ -13,15 +13,15 @@ func _physics_process(delta):
 	
 	#Apply movement
 	if Input.is_action_just_pressed("move_up"):
-		position.y -= 10
+		position.y -= 16
 		
 	if Input.is_action_just_pressed("move_down"):
-		position.y += 10
+		position.y += 16
 		
 	if Input.is_action_just_pressed("move_right"):
-		position.x += 10
+		position.x += 16
 		
 	if Input.is_action_just_pressed("move_left"):
-		position.x -= 10
+		position.x -= 16
 
 	move_and_slide()

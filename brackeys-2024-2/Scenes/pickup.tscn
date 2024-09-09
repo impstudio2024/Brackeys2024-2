@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/testmap/pickup.gd" id="1_v1g63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgt4"]
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcj3h"]
 atlas = ExtResource("1_8ttlc")
