@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmxxdt26vy16l"]
+[gd_scene load_steps=17 format=3 uid="uid://cmxxdt26vy16l"]
 
 [ext_resource type="Texture2D" uid="uid://duxd128ursf7r" path="res://Assets/Sprites/pickupdev/coin.png" id="1_8ttlc"]
+[ext_resource type="Script" path="res://Scenes/testmap/pickup.gd" id="1_v1g63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgt4"]
 
@@ -98,6 +99,7 @@ animations = [{
 
 [node name="Pickup" type="Area2D"]
 collision_mask = 2
+script = ExtResource("1_v1g63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.8, 0.8)
