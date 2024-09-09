@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
 size = Vector2(16, 16)
 
-[node name="Character" type="CharacterBody2D"]
+[node name="TestCharacter" type="CharacterBody2D"]
 collision_layer = 2
 
 [node name="WhiteSquare" type="Sprite2D" parent="."]
