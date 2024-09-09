@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=4 uid="uid://b7l5i3b7fn4sl"]
+
+[ext_resource type="Script" path="res://Scenes/weapon.gd" id="1_4x7xh"]
+[ext_resource type="PackedScene" uid="uid://c4n7ddf5bw7bu" path="res://Scenes/collision_shape_grid.tscn" id="2_bp2m7"]
+[ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="3_d1sdc"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t35kb"]
+scenes/1/scene = ExtResource("2_bp2m7")
+
+[sub_resource type="TileSet" id="TileSet_44b5u"]
+sources/0 = SubResource("TileSetScenesCollectionSource_t35kb")
+
+[node name="Weapon" type="Area2D"]
+script = ExtResource("1_4x7xh")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAQABAP//AAAAAAAAAQABAAEAAAAAAAAAAQACAAAAAAAAAAAAAQADAP//AAAAAAAAAQADAAAAAAAAAAAAAQADAAEAAAAAAAAAAQAFAP//AAAAAAAAAQAGAP//AAAAAAAAAQAHAP//AAAAAAAAAQAGAAAAAAAAAAAAAQAGAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQA=")
+tile_set = SubResource("TileSet_44b5u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="WhiteSquare" type="Sprite2D" parent="."]
+texture = ExtResource("3_d1sdc")
