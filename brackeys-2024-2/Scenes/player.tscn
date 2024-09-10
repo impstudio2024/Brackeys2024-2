@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgm800calowgn"]
+
+[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_5bvnf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
+
+[node name="Character" instance=ExtResource("1_5bvnf")]
+script = ExtResource("2_6kguh")
+
+[node name="WhiteSquare" parent="." index="0"]
+modulate = Color(1, 0, 0.984314, 1)
