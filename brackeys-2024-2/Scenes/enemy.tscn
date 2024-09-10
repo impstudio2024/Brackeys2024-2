@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8h1hd2a6px58"]
+
+[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_wftm8"]
+[ext_resource type="PackedScene" uid="uid://cwrtcf15qdddv" path="res://Scenes/state_machine/state_machine.tscn" id="2_02c6o"]
+
+[node name="Enemy" instance=ExtResource("1_wftm8")]
+
+[node name="StateMachine" parent="." index="2" instance=ExtResource("2_02c6o")]
