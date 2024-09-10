@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://b7l5i3b7fn4sl"]
+[gd_scene load_steps=6 format=4 uid="uid://bahoue4nlvn4h"]
 
-[ext_resource type="Script" path="res://Scenes/weapon.gd" id="1_4x7xh"]
-[ext_resource type="PackedScene" uid="uid://c4n7ddf5bw7bu" path="res://Scenes/collision_shape_grid.tscn" id="2_bp2m7"]
+[ext_resource type="Script" path="res://scripts/weapon_stats.gd" id="1_hah2k"]
+[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="2_bp2m7"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="3_d1sdc"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t35kb"]
@@ -10,8 +10,8 @@ scenes/1/scene = ExtResource("2_bp2m7")
 [sub_resource type="TileSet" id="TileSet_44b5u"]
 sources/0 = SubResource("TileSetScenesCollectionSource_t35kb")
 
-[node name="Weapon" type="Area2D"]
-script = ExtResource("1_4x7xh")
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_hah2k")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, -8)
