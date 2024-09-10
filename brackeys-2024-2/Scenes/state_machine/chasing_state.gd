@@ -4,6 +4,7 @@ var enemy: CharacterBody2D
 var player: CharacterBody2D
 
 var size = 128
+var new_position: Array = []
 
 class Point:
 	var point: Vector2
@@ -56,7 +57,7 @@ func a_star() -> Array:
 		for i in range(current_point.close_point.size()):
 			var close_point: Point = Point.new(current_point.close_point[i].x, current_point.close_point[i].y)
 			if find_point(close_array, close_point) != -1 || enemy.test_move(Transform2D(Vector2(1,0), Vector2(0,1), current_point.point), current_point.check_points[i]):
-				if close_point.point + current_point.check_points[i] == target_point.point:
+				if current_point.point + current_point.check_points[i] == target_point.point:
 					return []
 				continue
 			var cost_next: int = current_point.g + 1
@@ -73,10 +74,11 @@ func a_star() -> Array:
 func Move():
 	start_point = Point.new(enemy.position.x, enemy.position.y)
 	target_point = Point.new(player.position.x, player.position.y)
-	var new_position: Array = a_star()
-	if (new_position.size() > 0):
+	if new_position.size() == 0 || (new_position.size() > 0 && new_position[new_position.size() - 1].point != player.position): 
+		new_position = a_star()
 		new_position.reverse()
-		enemy.position = new_position[0].point
+	if (new_position.size() > 0):
+		enemy.position = new_position.pop_front().point
 
 func Enter():
 	start_point = Point.new(enemy.position.x, enemy.position.y)
