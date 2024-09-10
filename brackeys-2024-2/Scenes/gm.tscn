@@ -7,3 +7,4 @@
 script = ExtResource("1_8w4yg")
 
 [node name="StateMachine" parent="." instance=ExtResource("1_vigh7")]
+script = null
