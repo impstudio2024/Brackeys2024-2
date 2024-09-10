@@ -1,4 +1,4 @@
-extends GmState
+extends State
 
 var turn_number: int = 0
 signal we_gettin_angry
@@ -9,4 +9,3 @@ func handle_input(_event: InputEvent) -> void:
 		turn_number += 1
 		print(turn_number)
 		if turn_number == 20:
-			emit_signal('we_gettin_angry')

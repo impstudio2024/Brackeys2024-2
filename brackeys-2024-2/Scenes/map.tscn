@@ -714,7 +714,7 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwAWAB8AAgAAAAAAAwAWACAAAgAAAAAAAwAWACEAAgAAAAAAAwAWACIAAgAAAAAAAwAWACMAAgAAAAAAAwAWACQAAgAAAAAAAwAWACUAAgAAAAAAAwAWACYAAgAAAAAAAwAWACcAAgAAAAAAAwA=")
 tile_set = SubResource("TileSet_vjqq2")
 
 [node name="Walls" type="TileMapLayer" parent="."]
