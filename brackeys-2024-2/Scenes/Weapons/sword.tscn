@@ -15,8 +15,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Weapon" instance=ExtResource("1_xy8yn")]
+[node name="Sword" instance=ExtResource("1_xy8yn")]
 script = ExtResource("1_861ww")
+type = 1
 damage = 0
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
