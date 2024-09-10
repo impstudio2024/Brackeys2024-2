@@ -1,102 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmxxdt26vy16l"]
+[gd_scene load_steps=3 format=3 uid="uid://cmxxdt26vy16l"]
 
-[ext_resource type="Texture2D" uid="uid://duxd128ursf7r" path="res://Assets/Sprites/pickupdev/coin.png" id="1_8ttlc"]
 [ext_resource type="Script" path="res://Scenes/testmap/pickup.gd" id="1_v1g63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgt4"]
 size = Vector2(16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcj3h"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtav0"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3pods"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbrkc"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_us7dk"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw4d3"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqyf7"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_43tdd"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktylj"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(128, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1txm"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(144, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6wyhu"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(160, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltoqf"]
-atlas = ExtResource("1_8ttlc")
-region = Rect2(176, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mjhrw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wcj3h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xtav0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3pods")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbrkc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_us7dk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xw4d3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eqyf7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_43tdd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktylj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p1txm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6wyhu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltoqf")
-}],
-"loop": true,
-"name": &"spin",
-"speed": 10.0
-}]
 
 [node name="Pickup" type="Area2D"]
 collision_mask = 2
@@ -105,11 +12,6 @@ script = ExtResource("1_v1g63")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_mxgt4")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mjhrw")
-animation = &"spin"
-autoplay = "spin"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
