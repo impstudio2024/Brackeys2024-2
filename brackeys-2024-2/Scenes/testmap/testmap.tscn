@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://p2tulbeaf1e6"]
+[gd_scene load_steps=12 format=4 uid="uid://p2tulbeaf1e6"]
 
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="1_7tv78"]
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="2_hroyw"]
 [ext_resource type="PackedScene" uid="uid://cw711chy7feh0" path="res://Scenes/testmap/testcharacter.tscn" id="3_ghrp1"]
-[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="5_roqk3"]
+[ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/sword.tscn" id="5_02grn"]
+[ext_resource type="PackedScene" uid="uid://b5dxt0fo0xvnp" path="res://Scenes/test_coin.tscn" id="5_c5sie"]
+[ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/axe.tscn" id="6_46bn2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifss"]
 resource_name = "Ground"
@@ -681,7 +683,9 @@ sources/1 = SubResource("TileSetAtlasSource_ty7wx")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l0uyi"]
 scenes/1/scene = ExtResource("3_ghrp1")
-scenes/2/scene = ExtResource("5_roqk3")
+scenes/5/scene = ExtResource("5_c5sie")
+scenes/6/scene = ExtResource("5_02grn")
+scenes/7/scene = ExtResource("6_46bn2")
 
 [sub_resource type="TileSet" id="TileSet_tbi0s"]
 sources/0 = SubResource("TileSetScenesCollectionSource_l0uyi")
@@ -693,7 +697,8 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAARAB8AAAAAAAAAAgAOACEAAAAAAAAAAgATACEAAAAAAAAAAgAKACEAAAAAAAAAAQA=")
+position = Vector2(10, -218)
+tile_map_data = PackedByteArray("AAAKACEAAAAAAAAAAQANACAAAAAAAAAABQARACAAAAAAAAAABQAPACEAAAAAAAAABQALAB8AAAAAAAAABgAKAB8AAAAAAAAABwA=")
 tile_set = SubResource("TileSet_tbi0s")
 
 [node name="disclaimer" type="Label" parent="."]
@@ -704,5 +709,7 @@ offset_bottom = 273.0
 text = "TEST MAP"
 
 [connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@26569" to="Entities/@Area2D@26569" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@26570" to="Entities/@Area2D@26570" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@175273" to="Entities/@Area2D@175273" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@175274" to="Entities/@Area2D@175274" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Weapon" to="Entities/Weapon" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@175275" to="Entities/@Area2D@175275" method="_on_body_entered"]
