@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 class_name Character
 
+
 var map_position: Vector2i
+signal character_moved # Create a signal for the character having moved
 
 func _ready() -> void:
 	add_to_group('character')
@@ -17,6 +19,12 @@ func move(relative_movement: Vector2i) -> Character:
 
 	# move the character
 	position = Global.entities.map_to_local(map_position + relative_movement)
+	Global.emit_signal("character_moved")
 	# when moving the map position will also need to be updated
 	map_position = Global.entities.local_to_map(position)
 	return null
+
+
+
+func _on_character_moved() -> void:
+	print("Character moved!") # Print a message when character moves for debugging
