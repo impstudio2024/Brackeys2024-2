@@ -57,3 +57,6 @@ func _setup_project_settings() -> void:
 			"type": setting.type,
 			"hint_string": setting.get("hint_string", null),
 		})
+
+
+
