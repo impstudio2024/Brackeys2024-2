@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cot7ydcvqvfdi"]
+[gd_scene load_steps=6 format=3 uid="uid://cot7ydcvqvfdi"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_nyw35"]
-[ext_resource type="Script" path="res://Scenes/weapon.gd" id="2_ymhoh"]
-[ext_resource type="Texture2D" uid="uid://dn0x56t72vj04" path="res://Assets/Sprites/bow_placeholder.png" id="3_vx78t"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_ymhoh"]
+[ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_wgkah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwrh"]
+atlas = ExtResource("3_wgkah")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wboks"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_vx78t")
+"texture": SubResource("AtlasTexture_rdwrh")
 }],
 "loop": true,
 "name": &"default",
@@ -18,8 +22,9 @@ animations = [{
 [node name="Bow" instance=ExtResource("1_nyw35")]
 script = ExtResource("2_ymhoh")
 type = 3
+uses = 1
 damage = 0
+durability = 0
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_wboks")

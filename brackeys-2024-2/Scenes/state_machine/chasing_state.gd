@@ -3,24 +3,9 @@ extends State
 var enemy: CharacterBody2D
 var player: CharacterBody2D
 
-var size = 128
+var size :int = 16
 var new_position: Array = []
 
-class Point:
-	var point: Vector2
-	var close_point: Array
-	var check_points: Array
-	var g: int = 0
-	var h: int = 0
-	var connection: Point = null
-	
-	func _init(x, y):
-		point = Vector2(x, y)
-		close_point = [point + Vector2.UP * 128, point + Vector2.DOWN * 128, point + Vector2.RIGHT * 128, point + Vector2.LEFT * 128]
-		check_points = [Vector2.UP * 128, Vector2.DOWN * 128, Vector2.RIGHT * 128, Vector2.LEFT * 128]
-	
-	func f():
-		return (g * h)
 
 var start_point = Vector2.ZERO
 var target_point = Vector2.ZERO
@@ -55,7 +40,7 @@ func a_star() -> Array:
 			return path
 			
 		for i in range(current_point.close_point.size()):
-			var close_point: Point = Point.new(current_point.close_point[i].x, current_point.close_point[i].y)
+			var close_point: Point = Point.new(current_point.close_point[i].x, current_point.close_point[i].y,size)
 			if find_point(close_array, close_point) != -1 || enemy.test_move(Transform2D(Vector2(1,0), Vector2(0,1), current_point.point), current_point.check_points[i]):
 				if current_point.point + current_point.check_points[i] == target_point.point:
 					return []
@@ -71,19 +56,19 @@ func a_star() -> Array:
 	return []
 
 
-func Move():
-	start_point = Point.new(enemy.position.x, enemy.position.y)
-	target_point = Point.new(player.position.x, player.position.y)
+func move():
+	start_point = Point.new(enemy.position.x, enemy.position.y,size)
+	target_point = Point.new(player.position.x, player.position.y,size)
 	if new_position.size() == 0 || (new_position.size() > 0 && new_position[new_position.size() - 1].point != player.position): 
 		new_position = a_star()
 		new_position.reverse()
 	if (new_position.size() > 0):
 		enemy.position = new_position.pop_front().point
 
-func Enter():
-	start_point = Point.new(enemy.position.x, enemy.position.y)
-	target_point = Point.new(player.position.x, player.position.y)
-	player.connect("end_turn", Move)
+func enter(previous_state_path: String, data := {}) -> void:
+	start_point = Point.new(enemy.position.x, enemy.position.y,size)
+	target_point = Point.new(player.position.x, player.position.y,size)
+	player.connect("end_turn", move)
 
-func Exit():
-	player.disconnect("end_turn", Move)
+func exit() -> void:
+	player.disconnect("end_turn", move)

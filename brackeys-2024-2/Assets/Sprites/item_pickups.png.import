@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvav7li185doy"
-path="res://.godot/imported/axe_placeholder.png-b1e73ce41ff47c630f2d7f36377d9cd1.ctex"
+uid="uid://65wqc3a53vyw"
+path="res://.godot/imported/item_pickups.png-f5394261590da9dfb1e9ef5ef7884392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/axe_placeholder.png"
-dest_files=["res://.godot/imported/axe_placeholder.png-b1e73ce41ff47c630f2d7f36377d9cd1.ctex"]
+source_file="res://Assets/Sprites/item_pickups.png"
+dest_files=["res://.godot/imported/item_pickups.png-f5394261590da9dfb1e9ef5ef7884392.ctex"]
 
 [params]
 

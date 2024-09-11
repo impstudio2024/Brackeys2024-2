@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn0x56t72vj04"
-path="res://.godot/imported/bow_placeholder.png-19931955ed450ce00c7532a09313ffc0.ctex"
+uid="uid://bacye8jjsb0nw"
+path="res://.godot/imported/sword_placeholder.png-dde4d6cca407adb49b6aff1c899053b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/bow_placeholder.png"
-dest_files=["res://.godot/imported/bow_placeholder.png-19931955ed450ce00c7532a09313ffc0.ctex"]
+source_file="res://Assets/Sprites/pickupdev/sword_placeholder.png"
+dest_files=["res://.godot/imported/sword_placeholder.png-dde4d6cca407adb49b6aff1c899053b5.ctex"]
 
 [params]
 
