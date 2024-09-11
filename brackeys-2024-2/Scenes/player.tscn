@@ -58,5 +58,5 @@ animation = &"debug_weapon_display"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." index="3"]
 script = ExtResource("4_o5f32")
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_w445y")
