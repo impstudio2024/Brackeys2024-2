@@ -1,13 +1,14 @@
 extends Character
+class_name Player
 
 var turn_active: bool = true
 
 func _process(_delta: float) -> void:
 	# placeholder
 	if Input.is_action_just_pressed("space"):
+
 		turn_active = true
-
-
+		
 	if not turn_active: return
 
 	var movement: Vector2i
@@ -24,7 +25,10 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 
 	if movement != Vector2i.ZERO:
-		turn_active = false
-		print(move(movement))
 		Global.character_moved.emit() # Signal Global after character moves so the signal can be connected to enemies
+		turn_active = false
+		print(await move(movement))
 		print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
+func turnActive():
+
+	turn_active = true

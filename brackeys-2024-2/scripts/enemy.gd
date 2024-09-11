@@ -1,4 +1,5 @@
 extends Character
+class_name Enemy
 
 func _ready() -> void:
 	Global.connect("character_moved",onPlayerMove) # Connect character_moved signal so that enemies will move after the player has moved
@@ -6,4 +7,4 @@ func _ready() -> void:
 
 # Move the enemy character up 1 unit when the player has moved
 func onPlayerMove():
-	move(Vector2i.UP)
+	$StateMachine.state.move()
