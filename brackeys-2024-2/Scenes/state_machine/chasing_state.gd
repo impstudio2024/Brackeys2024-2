@@ -3,7 +3,7 @@ extends State
 var enemy: CharacterBody2D
 var player: CharacterBody2D
 
-var size :int
+var size :int = 16
 var new_position: Array = []
 
 

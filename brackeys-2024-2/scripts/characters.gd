@@ -21,8 +21,12 @@ func move(relative_movement: Vector2i) -> Character:
 
 
 	# move the character
-	position = Global.entities.map_to_local(map_position + relative_movement)
-
+	var tween = get_tree().create_tween().bind_node(self)
+	tween.tween_property(self,"position",Global.entities.map_to_local(map_position + relative_movement),.1)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.play()
+	await tween.finished
 	# when moving the map position will also need to be updated
 	map_position = Global.entities.local_to_map(position)
 	return null
