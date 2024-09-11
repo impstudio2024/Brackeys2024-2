@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvav7li185doy"
-path="res://.godot/imported/axe_placeholder.png-b1e73ce41ff47c630f2d7f36377d9cd1.ctex"
+uid="uid://bacye8jjsb0nw"
+path="res://.godot/imported/sword_placeholder.png-dde4d6cca407adb49b6aff1c899053b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/axe_placeholder.png"
-dest_files=["res://.godot/imported/axe_placeholder.png-b1e73ce41ff47c630f2d7f36377d9cd1.ctex"]
+source_file="res://Assets/Sprites/pickupdev/sword_placeholder.png"
+dest_files=["res://.godot/imported/sword_placeholder.png-dde4d6cca407adb49b6aff1c899053b5.ctex"]
 
 [params]
 
