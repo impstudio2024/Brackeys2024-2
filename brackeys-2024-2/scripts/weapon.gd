@@ -14,7 +14,7 @@ func _ready():
 
 func _on_body_entered(body: Node2D) -> void:
 	
-	if body.is_in_group("character"):
+	if body.is_in_group("player"):
 		if collision_shape_2d.disabled == false:
 			print(Weapons.keys()[type] + " picked up!")
 			uses -= 1
