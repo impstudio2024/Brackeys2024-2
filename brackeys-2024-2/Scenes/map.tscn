@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://chr01rq6ki8i0"]
+[gd_scene load_steps=20 format=4 uid="uid://chr01rq6ki8i0"]
 
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="1_ag5si"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_klgcc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgm800calowgn" path="res://Scenes/player.tscn" id="4_7663r"]
 [ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="4_v5n1t"]
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="4_wqvl6"]
+[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="5_35l4h"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/axe.tscn" id="5_kcpa4"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="6_f5c17"]
 [ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/sword.tscn" id="7_dsxbo"]
@@ -695,6 +696,7 @@ sources/0 = SubResource("TileSetAtlasSource_cifss")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hhl07"]
 resource_name = "Enemies"
+scenes/1/scene = ExtResource("5_35l4h")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m4jpx"]
 resource_name = "Pickups"
@@ -722,7 +724,7 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwAWAB8AAgAAAAAAAwAWACAAAgAAAAAAAwAWACEAAgAAAAAAAwAWACIAAgAAAAAAAwAWACMAAgAAAAAAAwAWACQAAgAAAAAAAwAWACUAAgAAAAAAAwAWACYAAgAAAAAAAwAWACcAAgAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwAVABwAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_vjqq2")
 
 [node name="Walls" type="TileMapLayer" parent="."]

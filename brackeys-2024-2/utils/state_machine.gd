@@ -8,16 +8,13 @@ class_name StateMachine extends Node
 	return initial_state if initial_state != null else get_child(0)
 ).call()
 signal changeState(stateName)
-signal moar_enemies
 func _ready() -> void:
+	call_deferred("init")
+func init():
+	owner = get_parent()
 	for state_node: State in find_children("*", "State"):
 		state_node.finished.connect(_transition_to_next_state)
 		state_node.state_machine_owner = owner
-	var idle = $Idle
-	init()
-func init():
-	# Give every state a reference to the state machine.
-
 
 	# State machines usually access data from the root node of the scene they're part of: the owner.
 	# We wait for the owner to be ready to guarantee all the data and nodes the states may need are available.
@@ -44,9 +41,3 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	state.physics_update(delta)
-
-func _on_idle_we_gettin_angry():
-	print("Received petition to transition to angry")
-	self._transition_to_next_state('Angry')
-	print("Sending signal upwards to generate sum enemies. You asked for this...")
-	emit_signal('moar_enemies')
