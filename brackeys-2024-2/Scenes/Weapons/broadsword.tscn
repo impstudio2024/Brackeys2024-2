@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://oyas1loulgv4"]
+[gd_scene load_steps=6 format=3 uid="uid://oyas1loulgv4"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_ijsx2"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_8l211"]
-[ext_resource type="Texture2D" uid="uid://bacye8jjsb0nw" path="res://Assets/Sprites/sword_placeholder.png" id="3_c643r"]
+[ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_hwk2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjbt4"]
+atlas = ExtResource("3_hwk2i")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wboks"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_c643r")
+"texture": SubResource("AtlasTexture_yjbt4")
 }],
 "loop": true,
 "name": &"default",
@@ -23,5 +27,4 @@ damage = 0
 durability = 0
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_wboks")
