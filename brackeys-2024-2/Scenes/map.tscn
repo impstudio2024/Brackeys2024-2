@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bgm800calowgn" path="res://Scenes/player.tscn" id="4_7663r"]
 [ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="4_v5n1t"]
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="4_wqvl6"]
-[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="5_35l4h"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="5_35l4h"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="5_kcpa4"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="6_f5c17"]
 [ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/broadsword.tscn" id="7_dsxbo"]
-[ext_resource type="PackedScene" uid="uid://b5dxt0fo0xvnp" path="res://Scenes/test_coin.tscn" id="8_tsuc2"]
+[ext_resource type="PackedScene" path="res://Scenes/test_coin.tscn" id="8_tsuc2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifss"]
 resource_name = "Ground"

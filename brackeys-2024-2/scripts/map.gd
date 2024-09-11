@@ -5,3 +5,4 @@ extends Node2D
 func _ready() -> void:
 	Global.entities = $Entities
 	Global.map = $Floor
+	Global.walls = $Walls

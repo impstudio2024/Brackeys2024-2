@@ -10,7 +10,7 @@ func _ready() -> void:
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
 	print(name + ", position " + str(map_position))
-	
+
 
 func move(relative_movement: Vector2i) -> Character:
 	print(relative_movement)
@@ -20,9 +20,11 @@ func move(relative_movement: Vector2i) -> Character:
 			return character as Character
 
 
+	if Global.walls.get_cell_tile_data(map_position + relative_movement): return null
+
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self,"position",Global.entities.map_to_local(map_position + relative_movement),.1)
+	tween.tween_property(self, "position", Global.entities.map_to_local(map_position + relative_movement), .1)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
