@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cyyviu0psua4d"]
+
+[ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="1_f8eae"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2tsr"]
+texture = ExtResource("1_f8eae")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+
+[resource]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Floor"
+terrain_set_0/terrain_0/color = Color(0.344508, 0.332668, 0.67234, 1)
+terrain_set_0/terrain_1/name = "Walls"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+sources/3 = SubResource("TileSetAtlasSource_c2tsr")
