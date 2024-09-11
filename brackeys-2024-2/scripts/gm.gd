@@ -4,12 +4,10 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var state_machine = $StateMachine
-	state_machine.connect("moar_enemies", Callable(self, "_on_state_machine_moar_enemies"))
 	call_deferred("connectSignalStates")
 
 func connectSignalStates():
-	$StateMachine/Idle.connect("we_gettin_angry", Callable(self, "_on_idle_we_gettin_angry"))
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
