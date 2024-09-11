@@ -1,26 +1,24 @@
 extends State
 
-var enemy: CharacterBody2D
-var player: CharacterBody2D
-
 var size = 16
+var detection_range = 5
 
-func manh(pos1, pos2):
+func manh(pos1: Vector2, pos2: Vector2):
 	return abs(pos1.x - pos2.x) + abs(pos1.y - pos2.y)
 
-func move():
+func move(player: Player, enemy: Enemy):
 	var arr = [Vector2.UP , Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT, Vector2.ZERO]
 	var chosen_dir = arr[randi_range(0, arr.size() - 1)] 
 	state_machine_owner.move(chosen_dir)
- 	#if manh(enemy.position, player.position) < size * 6:
-	#	finished.emit(self, "ChasingState")
+	if manh(Global.entities.local_to_map(enemy.position), Global.entities.local_to_map(player.position)) < size * detection_range:
+		finished.emit("ChasingState")
 
 
-func enter(previous_state_path: String, data := {}) -> void:
-	player.connect("end_turn", move)
+func enter(_previous_state_path: String, _data := {}) -> void:
+	pass
 	
 func exit():
-	player.disconnect("end_turn", move)
+	pass
 
 func update(_delta: float) -> void:
 	pass

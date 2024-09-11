@@ -1,8 +1,5 @@
 extends State
 
-var enemy: CharacterBody2D
-var player: CharacterBody2D
-
 var size :int = 16
 var new_position: Array = []
 
@@ -24,11 +21,13 @@ func a_star() -> Array:
 	var close_array = []
 	
 	while open_array.size() > 0:
+		if open_array.size() > 500:
+			finished.emit("WanderState")
+			break
 		var current_point: Point = open_array[0]
 		for i in range(open_array.size()):
 			if (current_point.f() > open_array[i].f() || (current_point.f() == open_array[i].f() && current_point.h > open_array[i].h)):
 				current_point = open_array[i]
-		
 		close_array.push_back(current_point)
 		open_array.erase(current_point)
 		if current_point.point.x == target_point.point.x && current_point.point.y == target_point.point.y:
@@ -41,7 +40,7 @@ func a_star() -> Array:
 			
 		for i in range(current_point.close_point.size()):
 			var close_point: Point = Point.new(current_point.close_point[i].x, current_point.close_point[i].y,size)
-			if find_point(close_array, close_point) != -1 || enemy.test_move(Transform2D(Vector2(1,0), Vector2(0,1), current_point.point), current_point.check_points[i]):
+			if find_point(close_array, close_point) != -1 || Global.walls.get_cell_tile_data(Global.walls.local_to_map(close_point.point)):
 				if current_point.point + current_point.check_points[i] == target_point.point:
 					return []
 				continue
@@ -56,7 +55,7 @@ func a_star() -> Array:
 	return []
 
 
-func move():
+func move(player: Player, enemy: Enemy):
 	start_point = Point.new(enemy.position.x, enemy.position.y,size)
 	target_point = Point.new(player.position.x, player.position.y,size)
 	if new_position.size() == 0 || (new_position.size() > 0 && new_position[new_position.size() - 1].point != player.position): 
@@ -65,10 +64,8 @@ func move():
 	if (new_position.size() > 0):
 		enemy.position = new_position.pop_front().point
 
-func enter(previous_state_path: String, data := {}) -> void:
-	start_point = Point.new(enemy.position.x, enemy.position.y,size)
-	target_point = Point.new(player.position.x, player.position.y,size)
-	player.connect("end_turn", move)
+func enter(_previous_state_path: String, _data := {}) -> void:
+	pass
 
 func exit() -> void:
-	player.disconnect("end_turn", move)
+	pass

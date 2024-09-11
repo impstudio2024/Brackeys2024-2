@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://chr01rq6ki8i0"]
+[gd_scene load_steps=11 format=4 uid="uid://chr01rq6ki8i0"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_klgcc"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_7lttm"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="3_dp0ja"]
 [ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="4_dqu8a"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="4_xoxwr"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_m3c7m"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
 tile_data = PackedInt32Array(0, 131072, 3, 1, 196608, 3, 2, 262144, 3)
@@ -112,10 +110,9 @@ texture = ExtResource("4_xoxwr")
 
 [sub_resource type="TileSet" id="TileSet_i71by"]
 sources/0 = SubResource("TileSetAtlasSource_vrtxs")
-pattern_0 = SubResource("TileMapPattern_m3c7m")
-pattern_1 = SubResource("TileMapPattern_4c12e")
-pattern_2 = SubResource("TileMapPattern_xpe02")
-pattern_3 = SubResource("TileMapPattern_3do0y")
+pattern_0 = SubResource("TileMapPattern_4c12e")
+pattern_1 = SubResource("TileMapPattern_xpe02")
+pattern_2 = SubResource("TileMapPattern_3do0y")
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_klgcc")

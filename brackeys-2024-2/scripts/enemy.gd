@@ -6,5 +6,5 @@ func _ready() -> void:
 	return super._ready()
 
 # Move the enemy character up 1 unit when the player has moved
-func onPlayerMove():
-	$StateMachine.state.move()
+func onPlayerMove(player: Player):
+	$StateMachine.state.move(player, self)

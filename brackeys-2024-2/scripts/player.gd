@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 
 	if movement != Vector2i.ZERO:
-		Global.character_moved.emit() # Signal Global after character moves so the signal can be connected to enemies
+		Global.character_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
 		turn_active = false
 		print(await move(movement))
 		print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
