@@ -15,5 +15,3 @@ texture = ExtResource("1_xap80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_acf0o")
-
-[connection signal="character_moved" from="." to="." method="_on_character_moved"]

@@ -11,6 +11,7 @@ func _ready() -> void:
 	map_position = Global.entities.local_to_map(position)
 
 func move(relative_movement: Vector2i) -> Character:
+	print(relative_movement)
 	if Global.entities.get_cell_source_id(map_position + relative_movement):
 		for character in get_tree().get_nodes_in_group('character'):
 			if not character.map_position == map_position + relative_movement: continue
