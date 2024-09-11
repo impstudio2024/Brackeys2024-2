@@ -713,10 +713,3 @@ offset_top = 250.0
 offset_right = 305.0
 offset_bottom = 273.0
 text = "TEST MAP"
-
-[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@73192" to="Entities/@Area2D@73192" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@73193" to="Entities/@Area2D@73193" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Sword" to="Entities/Sword" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Axe" to="Entities/Axe" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]

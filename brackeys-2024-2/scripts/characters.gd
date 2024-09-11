@@ -9,6 +9,8 @@ var map_position: Vector2i
 func _ready() -> void:
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
+	print(name + ", position " + str(map_position))
+	
 
 func move(relative_movement: Vector2i) -> Character:
 	print(relative_movement)
