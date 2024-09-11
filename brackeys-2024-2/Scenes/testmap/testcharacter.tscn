@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/testmap/testcharacter.gd" id="1_57ele"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_yneie"]
-[ext_resource type="Texture2D" uid="uid://bacye8jjsb0nw" path="res://Assets/Sprites/sword_placeholder.png" id="3_ben2h"]
-[ext_resource type="Texture2D" uid="uid://dvav7li185doy" path="res://Assets/Sprites/axe_placeholder.png" id="4_au3xq"]
-[ext_resource type="Texture2D" uid="uid://dn0x56t72vj04" path="res://Assets/Sprites/bow_placeholder.png" id="5_kd1ku"]
+[ext_resource type="Texture2D" uid="uid://bacye8jjsb0nw" path="res://Assets/Sprites/pickupdev/sword_placeholder.png" id="3_ben2h"]
+[ext_resource type="Texture2D" uid="uid://dvav7li185doy" path="res://Assets/Sprites/pickupdev/axe_placeholder.png" id="4_au3xq"]
+[ext_resource type="Texture2D" uid="uid://dn0x56t72vj04" path="res://Assets/Sprites/pickupdev/bow_placeholder.png" id="5_kd1ku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
 size = Vector2(16, 16)
