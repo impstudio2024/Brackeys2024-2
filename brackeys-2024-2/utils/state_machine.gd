@@ -14,7 +14,6 @@ func _ready() -> void:
 		state_node.finished.connect(_transition_to_next_state)
 		state_node.state_machine_owner = owner
 	var idle = $Idle
-	idle.connect("we_gettin_angry", Callable(self, "_on_idle_we_gettin_angry"))
 	init()
 func init():
 	# Give every state a reference to the state machine.
@@ -29,7 +28,7 @@ func _transition_to_next_state(target_state_path: String, data: Dictionary = {})
 	if not has_node(target_state_path):
 		printerr(owner.name + ": Trying to transition to state " + target_state_path + " but it does not exist.")
 		return
-	
+
 	var previous_state_path := state.name
 	state.exit()
 	state = get_node(target_state_path)
