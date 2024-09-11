@@ -725,15 +725,15 @@ tile_map_data = PackedByteArray("AAAQABIAAQAAAAAAAwAPABIAAQAAAAAAAgAOABIAAQAAAAA
 tile_set = SubResource("TileSet_vjqq2")
 
 [node name="disclaimer" type="Label" parent="."]
-offset_left = 229.0
+offset_left = 217.0
 offset_top = 250.0
-offset_right = 305.0
+offset_right = 315.0
 offset_bottom = 273.0
-text = "TEST MAP"
+text = "TEST MAP v2"
 
 [connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@218179" to="Entities/@Area2D@218179" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@218180" to="Entities/@Area2D@218180" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@230515" to="Entities/@Area2D@230515" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@230516" to="Entities/@Area2D@230516" method="_on_body_entered"]
