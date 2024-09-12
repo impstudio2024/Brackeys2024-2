@@ -2,10 +2,24 @@ extends State
 
 var size :int = 16
 var new_position: Array = []
+var enemies = []
 
 
 var start_point = Vector2.ZERO
 var target_point = Vector2.ZERO
+
+func get_enemies():
+	var arr = []
+	for child in Global.entities.get_children():
+		if child.is_in_group("enemies"):
+			arr.push_back(child)
+	return arr
+
+func check_enemies_pos(pos: Vector2):
+	for i in range(enemies.size()):
+		if (enemies[i].position == pos):
+			return true
+	return false
 
 func get_h(point: Vector2) -> int:
 	return abs(point.x - target_point.point.x) + abs(point.y - target_point.point.y)
@@ -21,7 +35,7 @@ func a_star() -> Array:
 	var close_array = []
 	
 	while open_array.size() > 0:
-		if open_array.size() > 500:
+		if open_array.size() > 60:
 			finished.emit("WanderState")
 			break
 		var current_point: Point = open_array[0]
@@ -40,7 +54,8 @@ func a_star() -> Array:
 			
 		for i in range(current_point.close_point.size()):
 			var close_point: Point = Point.new(current_point.close_point[i].x, current_point.close_point[i].y,size)
-			if find_point(close_array, close_point) != -1 || Global.walls.get_cell_tile_data(Global.walls.local_to_map(close_point.point)):
+			if (find_point(close_array, close_point) != -1 || Global.walls.get_cell_tile_data(Global.walls.local_to_map(close_point.point))
+					|| check_enemies_pos(close_point.point)):
 				if current_point.point + current_point.check_points[i] == target_point.point:
 					return []
 				continue
@@ -56,9 +71,11 @@ func a_star() -> Array:
 
 
 func move(player: Player, enemy: Enemy):
+	enemies = get_enemies()
 	start_point = Point.new(enemy.position.x, enemy.position.y,size)
 	target_point = Point.new(player.position.x, player.position.y,size)
-	if new_position.size() == 0 || (new_position.size() > 0 && new_position[new_position.size() - 1].point != player.position): 
+	if (new_position.size() == 0 || (new_position.size() > 0 && new_position[new_position.size() - 1].point != player.position)
+			|| check_enemies_pos(new_position[0].point)): 
 		new_position = a_star()
 		new_position.reverse()
 	if (new_position.size() > 0):
