@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cot7ydcvqvfdi"]
+
+[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_crgv5"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_vglg2"]
+[ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_2rios"]
+[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="4_cnk6l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdwrh"]
+atlas = ExtResource("3_2rios")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wboks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdwrh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2u3qp"]
+scenes/1/scene = ExtResource("4_cnk6l")
+
+[sub_resource type="TileSet" id="TileSet_4qusb"]
+sources/0 = SubResource("TileSetScenesCollectionSource_2u3qp")
+
+[node name="Bow" instance=ExtResource("1_crgv5")]
+script = ExtResource("2_vglg2")
+type = 3
+uses = 5
+damage = 0
+durability = 0
+picked_up = false
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_wboks")
+
+[node name="Hitboxes" type="TileMapLayer" parent="." index="3"]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_4qusb")
