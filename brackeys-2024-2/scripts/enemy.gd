@@ -2,9 +2,10 @@ extends Character
 class_name Enemy
 
 func _ready() -> void:
-	Global.connect("character_moved",onPlayerMove) # Connect character_moved signal so that enemies will move after the player has moved
-	return super._ready()
+	Global.enemy_added.emit(self)
+	super()
+	
 
 # Move the enemy character up 1 unit when the player has moved
-func onPlayerMove(player: Player):
-	$StateMachine.state.move(player, self)
+func on_enemy_turn(player: Player):
+	await $StateMachine.state.move(player, self)
