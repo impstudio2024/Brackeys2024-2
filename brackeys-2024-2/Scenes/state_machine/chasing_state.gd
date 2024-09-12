@@ -54,7 +54,6 @@ func a_star() -> Array:
 					
 	return []
 
-
 func move(player: Player, enemy: Enemy):
 	start_point = Point.new(enemy.position.x, enemy.position.y,size)
 	target_point = Point.new(player.position.x, player.position.y,size)
@@ -62,7 +61,8 @@ func move(player: Player, enemy: Enemy):
 		new_position = a_star()
 		new_position.reverse()
 	if (new_position.size() > 0):
-		enemy.position = new_position.pop_front().point
+		Global.entities.add_enemy_move(enemy, new_position.pop_front().point)
+		#enemy.position = new_position.pop_front().point
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwrtcf15qdddv" path="res://Scenes/state_machine/state_machine.tscn" id="2_02c6o"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="2_unq7r"]
 
-[node name="Enemy" instance=ExtResource("1_wftm8")]
+[node name="Enemy" groups=["enemy"] instance=ExtResource("1_wftm8")]
 script = ExtResource("2_unq7r")
 
 [node name="StateMachine" parent="." index="2" instance=ExtResource("2_02c6o")]
