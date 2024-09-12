@@ -1,7 +1,7 @@
 extends State
 
 var size = 16
-var detection_range = 5
+@export var detection_range = 5
 
 func manh(pos1: Vector2, pos2: Vector2):
 	return abs(pos1.x - pos2.x) + abs(pos1.y - pos2.y)
