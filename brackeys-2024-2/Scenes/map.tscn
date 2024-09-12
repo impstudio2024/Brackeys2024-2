@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://chr01rq6ki8i0"]
+[gd_scene load_steps=13 format=4 uid="uid://chr01rq6ki8i0"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_klgcc"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_7lttm"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="4_dqu8a"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="4_xoxwr"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_hpbn0"]
+[ext_resource type="PackedScene" uid="uid://clgores3y3yat" path="res://Scenes/gm.tscn" id="7_3v2kk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
 tile_data = PackedInt32Array(0, 131072, 3, 1, 196608, 3, 2, 262144, 3)
@@ -141,3 +142,5 @@ zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("6_hpbn0")
+
+[node name="GM" parent="." instance=ExtResource("7_3v2kk")]

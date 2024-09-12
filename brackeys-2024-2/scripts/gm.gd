@@ -1,10 +1,16 @@
 extends Node2D
 
+var enemies: Array[Enemy] = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var state_machine = $StateMachine
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	Global.enemy_added.connect(_on_enemy_added)
+	Global.player_moved.connect(_on_player_moved)
+	
+func _on_enemy_added(enemy: Enemy):
+	enemies.append(enemy)
+	print(enemy)
+	
+func _on_player_moved(player: Player):
+	for enemy in enemies:
+		await enemy.on_enemy_turn(player)
+	Global.enemy_moved.emit()
