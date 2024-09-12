@@ -78,7 +78,7 @@ func move(player: Player, enemy: Enemy):
 			|| check_enemies_pos(new_position[0].point)): 
 		new_position = a_star()
 		new_position.reverse()
-	if (new_position.size() > 0):
+	if (new_position.size() > 0 && new_position[0].point != player.position):
 		enemy.position = new_position.pop_front().point
 
 func enter(_previous_state_path: String, _data := {}) -> void:
