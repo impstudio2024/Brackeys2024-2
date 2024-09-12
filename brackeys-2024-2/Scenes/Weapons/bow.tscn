@@ -29,7 +29,6 @@ sources/0 = SubResource("TileSetScenesCollectionSource_2u3qp")
 [node name="Bow" instance=ExtResource("1_crgv5")]
 script = ExtResource("2_vglg2")
 type = 3
-uses = 5
 damage = 0
 durability = 0
 picked_up = false
