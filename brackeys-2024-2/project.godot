@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addon
 [global_group]
 
 character=""
+enemy=""
 
 [input]
 
