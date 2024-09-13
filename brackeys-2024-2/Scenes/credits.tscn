@@ -17,3 +17,5 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
