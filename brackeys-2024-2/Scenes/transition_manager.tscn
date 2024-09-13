@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5qksrgp85atl"]
 
 [ext_resource type="Shader" path="res://Assets/transition_manager.gdshader" id="1_22lfc"]
-[ext_resource type="Texture2D" uid="uid://dk0lackkff7wh" path="res://Assets/curtain.png" id="2_rucc7"]
+[ext_resource type="Texture2D" uid="uid://cld2tddgxd1jh" path="res://Assets/halftone-dots-background-circular-transition-mask-video.png" id="2_q8ki5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u28bp"]
 shader = ExtResource("1_22lfc")
 shader_parameter/cutoff = 0.0
-shader_parameter/smooth_size = 0.0
-shader_parameter/mask = ExtResource("2_rucc7")
+shader_parameter/smooth_size = 0.199
+shader_parameter/mask = ExtResource("2_q8ki5")
 
 [node name="ColorRect" type="ColorRect"]
 material = SubResource("ShaderMaterial_u28bp")
@@ -16,4 +16,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.537255, 0, 0, 1)

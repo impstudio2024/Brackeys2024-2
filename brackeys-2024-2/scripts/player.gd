@@ -3,13 +3,14 @@ class_name Player
 
 var turn_active: bool = true
 
-@onready var current_weapon : Weapon = $Fists
+@onready var current_weapon : Weapon = $Weapon/Fists
 
 func _ready() -> void:	
 	Global.connect("weapon_picked_up", change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
+
 
 func _process(_delta: float) -> void:
 	if not turn_active: return
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 	if movement != Vector2i.ZERO:
 		turn_active = false
 		await move(movement)
+		$Weapon.get_child(0).move(movement)
 		#print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
 		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
 	
@@ -38,13 +40,13 @@ func change_weapon(weapon: Weapon):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	
 	#Remove current weapon before picking up a new one
-	for node : Node in get_children():
-		if get_node(node.get_path()).is_in_group("weapons"):
+	for node in $Weapon.get_children():
+		if node.is_in_group("weapons"):
 			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground
 		
 	#print(weapon.name + " picked up!")
-	weapon.transform = transform
-	weapon.reparent(self)
+	weapon.position = position
+	weapon.reparent($Weapon)
 	
 	
 	

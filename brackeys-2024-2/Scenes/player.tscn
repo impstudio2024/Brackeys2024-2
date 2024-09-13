@@ -7,6 +7,12 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vd02h"]
 [ext_resource type="PackedScene" uid="uid://ds0bt5ldghwv" path="res://Scenes/Weapons/fists.tscn" id="6_hnltd"]
 
+[sub_resource type="Resource" id="Resource_w445y"]
+script = ExtResource("5_vd02h")
+duration = 1.0
+transition = 0
+ease = 2
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7ajh"]
 atlas = ExtResource("3_pest1")
 region = Rect2(0, 0, 16, 16)
@@ -39,27 +45,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_w445y"]
-script = ExtResource("5_vd02h")
-duration = 1.0
-transition = 0
-ease = 2
-
 [node name="Player" instance=ExtResource("1_5bvnf")]
 collision_layer = 2
 script = ExtResource("2_6kguh")
 
-[node name="WhiteSquare" parent="." index="0"]
-modulate = Color(1, 0, 0.984314, 1)
-
-[node name="DEBUG_WeaponDisplayed" type="AnimatedSprite2D" parent="." index="2"]
-sprite_frames = SubResource("SpriteFrames_p47x2")
-animation = &"debug_weapon_display"
-
-[node name="PhantomCamera2D" type="Node2D" parent="." index="3"]
+[node name="PhantomCamera2D" type="Node2D" parent="." index="0"]
 script = ExtResource("4_o5f32")
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_w445y")
 
-[node name="Fists" parent="." index="4" instance=ExtResource("6_hnltd")]
+[node name="WhiteSquare" parent="." index="1"]
+modulate = Color(1, 0, 0.984314, 1)
+
+[node name="DEBUG_WeaponDisplayed" type="AnimatedSprite2D" parent="." index="3"]
+sprite_frames = SubResource("SpriteFrames_p47x2")
+animation = &"debug_weapon_display"
+
+[node name="Weapon" type="Node2D" parent="." index="4"]
+
+[node name="Fists" parent="Weapon" index="0" instance=ExtResource("6_hnltd")]
 type = 0
