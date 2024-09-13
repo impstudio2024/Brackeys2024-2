@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="4_xxd48"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="5_geb7r"]
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="5_igujo"]
-[ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="6_lbjbg"]
+[ext_resource type="PackedScene" path="res://Scenes/Weapons/spear.tscn" id="6_lbjbg"]
 [ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="6_wakw2"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="7_sbisk"]
-[ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/broadsword.tscn" id="8_afs7p"]
+[ext_resource type="PackedScene" path="res://Scenes/Weapons/broadsword.tscn" id="8_afs7p"]
 [ext_resource type="PackedScene" uid="uid://b5dxt0fo0xvnp" path="res://Scenes/test_coin.tscn" id="9_8yfm0"]
 [ext_resource type="PackedScene" uid="uid://bgm800calowgn" path="res://Scenes/player.tscn" id="10_biadv"]
 
@@ -1478,10 +1478,3 @@ offset_top = 250.0
 offset_right = 315.0
 offset_bottom = 273.0
 text = "TEST MAP v2"
-
-[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@65630" to="Entities/@Area2D@65630" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@65631" to="Entities/@Area2D@65631" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
