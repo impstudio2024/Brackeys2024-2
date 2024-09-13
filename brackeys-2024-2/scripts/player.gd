@@ -6,8 +6,8 @@ var turn_active: bool = true
 @onready var current_weapon : Weapon = $Fists
 
 func _ready() -> void:	
-	Global.enemy_moved.connect(func(): turn_active = true)
 	Global.connect("weapon_picked_up", change_weapon)
+	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
 
@@ -36,7 +36,6 @@ func _process(_delta: float) -> void:
 	
 func change_weapon(weapon: Weapon):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
-	debug_weapon_displayed.set_frame_and_progress(weapon, 0.0)
 	
 	#Remove weapons before 
 	for node : Node in get_children():

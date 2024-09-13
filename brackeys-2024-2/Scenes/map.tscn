@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="4_xoxwr"]
 [ext_resource type="Script" path="res://scripts/entities.gd" id="5_aew4u"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_hpbn0"]
-[ext_resource type="PackedScene" uid="uid://clgores3y3yat" path="res://Scenes/gm.tscn" id="7_3v2kk"]
+[ext_resource type="PackedScene" uid="uid://ije2aqgl8omw" path="res://Scenes/gm.tscn" id="7_3v2kk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
 tile_data = PackedInt32Array(0, 131072, 3, 1, 196608, 3, 2, 262144, 3)
