@@ -19,3 +19,5 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
