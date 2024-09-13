@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgm800calowgn"]
+[gd_scene load_steps=13 format=3 uid="uid://bgm800calowgn"]
 
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_pest1"]
+[ext_resource type="Texture2D" uid="uid://cjq5qks3ia41d" path="res://Assets/Sprites/Knight_Sheet.png" id="3_yn6va"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_o5f32"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vd02h"]
 [ext_resource type="PackedScene" uid="uid://ds0bt5ldghwv" path="res://Scenes/Weapons/fists.tscn" id="6_hnltd"]
@@ -50,7 +51,10 @@ collision_layer = 2
 script = ExtResource("2_6kguh")
 
 [node name="WhiteSquare" parent="." index="0"]
-modulate = Color(1, 0, 0.984314, 1)
+modulate = Color(1, 1, 1, 1)
+position = Vector2(2, -8)
+texture = ExtResource("3_yn6va")
+hframes = 3
 
 [node name="DEBUG_WeaponDisplayed" type="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_p47x2")
@@ -58,7 +62,9 @@ animation = &"debug_weapon_display"
 
 [node name="PhantomCamera2D" type="Node2D" parent="." index="3"]
 script = ExtResource("4_o5f32")
+priority = 3
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_w445y")
 
 [node name="Fists" parent="." index="4" instance=ExtResource("6_hnltd")]
+visible = false
