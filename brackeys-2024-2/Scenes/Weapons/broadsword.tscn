@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://oyas1loulgv4"]
+[gd_scene load_steps=10 format=3 uid="uid://oyas1loulgv4"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_kmekm"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_5m0ci"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_hcl71"]
 [ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="4_3i0yu"]
+[ext_resource type="Script" path="res://scripts/hitbox.gd" id="5_wqv6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjbt4"]
 atlas = ExtResource("3_hcl71")
@@ -40,10 +41,4 @@ sprite_frames = SubResource("SpriteFrames_wboks")
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
 tile_set = SubResource("TileSet_veuy3")
-
-[connection signal="area_entered" from="Hitboxes/Hitbox" to="Hitboxes/Hitbox" method="_on_area_entered"]
-[connection signal="body_entered" from="Hitboxes/Hitbox" to="Hitboxes/Hitbox" method="_on_body_entered"]
-[connection signal="area_entered" from="Hitboxes/@Area2D@56743" to="Hitboxes/@Area2D@56743" method="_on_area_entered"]
-[connection signal="body_entered" from="Hitboxes/@Area2D@56743" to="Hitboxes/@Area2D@56743" method="_on_body_entered"]
-[connection signal="area_entered" from="Hitboxes/@Area2D@56744" to="Hitboxes/@Area2D@56744" method="_on_area_entered"]
-[connection signal="body_entered" from="Hitboxes/@Area2D@56744" to="Hitboxes/@Area2D@56744" method="_on_body_entered"]
+script = ExtResource("5_wqv6n")

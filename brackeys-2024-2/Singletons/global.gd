@@ -16,6 +16,6 @@ func get_all_enemies() -> Array[Enemy]:
 	for ent in all_entities:
 		if ent.is_in_group("enemies") and all_enemies.has(ent) == false:
 			all_enemies.append(ent)
-			print("enemy found")
+			#print("enemy found")
 	
 	return all_enemies

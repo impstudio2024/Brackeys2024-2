@@ -30,8 +30,8 @@ func _process(_delta: float) -> void:
 
 	if movement != Vector2i.ZERO:
 		turn_active = false
-		print(await move(movement))
-		print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
+		await move(movement)
+		#print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
 		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
 	
 func change_weapon(weapon: Weapon):
@@ -42,7 +42,7 @@ func change_weapon(weapon: Weapon):
 		if get_node(node.get_path()).is_in_group("weapons"):
 			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground
 		
-	print(weapon.name + " picked up!")
+	#print(weapon.name + " picked up!")
 	weapon.transform = transform
 	weapon.reparent(self)
 	

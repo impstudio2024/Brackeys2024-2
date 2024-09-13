@@ -62,7 +62,10 @@ func move(player: Player, enemy: Enemy):
 		new_position = a_star()
 		new_position.reverse()
 	if (new_position.size() > 0):
-		enemy.position = new_position.pop_front().point
+		var final_position = new_position.pop_front().point
+		var position_delta = final_position - enemy.position
+		var relative_movement = Vector2i(sign(position_delta.x), sign(position_delta.y))
+		enemy.move(relative_movement)
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass

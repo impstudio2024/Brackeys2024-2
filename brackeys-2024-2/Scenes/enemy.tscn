@@ -6,6 +6,7 @@
 
 [node name="Enemy" instance=ExtResource("1_wftm8")]
 collision_layer = 8
+collision_mask = 8
 script = ExtResource("2_unq7r")
 
 [node name="StateMachine" parent="." index="2" instance=ExtResource("2_02c6o")]

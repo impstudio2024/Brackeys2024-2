@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cot7ydcvqvfdi"]
+[gd_scene load_steps=10 format=3 uid="uid://cot7ydcvqvfdi"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_crgv5"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_vglg2"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_2rios"]
 [ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="4_cnk6l"]
+[ext_resource type="Script" path="res://scripts/hitbox.gd" id="5_8rayi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdwrh"]
 atlas = ExtResource("3_2rios")
@@ -40,3 +41,4 @@ sprite_frames = SubResource("SpriteFrames_wboks")
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
 tile_set = SubResource("TileSet_4qusb")
+script = ExtResource("5_8rayi")

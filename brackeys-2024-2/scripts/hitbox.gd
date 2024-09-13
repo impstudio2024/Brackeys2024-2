@@ -1,22 +1,16 @@
-extends Area2D
+extends TileMapLayer
 
 #@onready var hitboxes = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	call_deferred("connect_children")
 	pass # Replace with function body.
 	
-func check_for_enemies() -> Array[Enemy]:
-	var enemies_found : Array[Enemy]
-	var enemy : Enemy
-	#for hitbox in hitboxes.get_:
-		#if hitbox.has_overlapping_areas():
-			#for area in hitbox.get_overlapping_areas():
-				#print("enemy spotted")
-				#enemies_found.append(area.get_parent())
-			
-	
-	return enemies_found
+func connect_children():
+	for child in get_children():
+		child.area_entered.connect(_on_area_entered)
+		child.body_entered.connect(_on_body_entered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

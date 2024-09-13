@@ -11,6 +11,7 @@ enum Weapons { NONE, BROADSWORD, SPEAR, BOW }
 @onready var hitboxes : TileMapLayer = $Hitboxes
 
 var direction : Vector2i = Vector2i.UP
+var old_direction : Vector2i = direction
 var original_tiles: Array[Vector2i]
 
 # Called when the node enters the scene tree for the first time.
@@ -30,7 +31,9 @@ func _process(delta: float) -> void:
 			direction = Vector2i.DOWN
 		elif Input.is_action_just_pressed("move_right"):
 			direction = Vector2i.RIGHT
+		old_direction = direction
 		update_hitbox_positions(direction)
+		check_for_enemies()
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -53,6 +56,7 @@ func check_for_enemies() -> Array[Enemy]:
 	
 	for hitbox in hitboxes.get_used_cells():
 		for enemy in all_enemies:
+			#print(enemy.map_position)
 			if hitbox == enemy.map_position:
 				print ("enemy in attack range")
 				enemies_found.append(enemy)
@@ -65,7 +69,8 @@ func update_hitbox_positions(direction:Vector2i):
 	for tile in hitboxes.get_used_cells():
 		hitboxes.set_cell(tile,-1)
 	for newTile in newTiles:
-		hitboxes.set_cell(newTile,0,Vector2i(0, 0),1) 
+		hitboxes.set_cell(newTile,0,Vector2i(0, 0),1)
+	hitboxes.connect_children()
 
 func find_new_tiles_position(direction:Vector2i) -> Array[Vector2i]:
 	var newTiles :  Array[Vector2i] = []
