@@ -1,11 +1,13 @@
-[gd_scene load_steps=23 format=4 uid="uid://dbb0h8uthiof0"]
+[gd_scene load_steps=34 format=4 uid="uid://dbb0h8uthiof0"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_gqahr"]
 [ext_resource type="Texture2D" uid="uid://bjgpbdeqrua7i" path="res://Assets/Sprites/ground_board_1.png" id="2_hgyqn"]
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="3_udtjj"]
 [ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="4_xxd48"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="5_geb7r"]
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="5_igujo"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="6_lbjbg"]
+[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="6_wakw2"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="7_sbisk"]
 [ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/broadsword.tscn" id="8_afs7p"]
 [ext_resource type="PackedScene" uid="uid://b5dxt0fo0xvnp" path="res://Scenes/test_coin.tscn" id="9_8yfm0"]
@@ -696,12 +698,72 @@ sources/0 = SubResource("TileSetAtlasSource_cifss")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hhl07"]
 resource_name = "Enemies"
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_cjmwt"]
+scenes/1/scene = ExtResource("6_wakw2")
+
+[sub_resource type="TileSet" id="TileSet_44b5u"]
+sources/0 = SubResource("TileSetScenesCollectionSource_cjmwt")
+
+[sub_resource type="PackedScene" id="PackedScene_3hkl7"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Bow", "script", "Node2D", "Hitboxes", "position", "tile_map_data", "tile_set", "TileMapLayer"),
+"node_count": 2,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 7, 3, -1, 3, 4, 1, 5, 2, 6, 3, 0),
+"variants": [ExtResource("5_geb7r"), Vector2(-8, -8), PackedByteArray("AAACAAAAAAAAAAAAAQABAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQA="), SubResource("TileSet_44b5u")],
+"version": 3
+}
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_unp38"]
+scenes/1/scene = ExtResource("6_wakw2")
+
+[sub_resource type="TileSet" id="TileSet_fljvn"]
+sources/0 = SubResource("TileSetScenesCollectionSource_unp38")
+
+[sub_resource type="PackedScene" id="PackedScene_xnvh8"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Broadsword", "script", "Node2D", "Hitboxes", "position", "tile_map_data", "tile_set", "TileMapLayer"),
+"node_count": 2,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 7, 3, -1, 3, 4, 1, 5, 2, 6, 3, 0),
+"variants": [ExtResource("5_geb7r"), Vector2(-8, -8), PackedByteArray("AAABAAAAAAAAAAAAAQABAAEAAAAAAAAAAQABAP//AAAAAAAAAQA="), SubResource("TileSet_fljvn")],
+"version": 3
+}
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6fg8l"]
+scenes/1/scene = ExtResource("6_wakw2")
+
+[sub_resource type="TileSet" id="TileSet_jlkp1"]
+sources/0 = SubResource("TileSetScenesCollectionSource_6fg8l")
+
+[sub_resource type="PackedScene" id="PackedScene_qi4mi"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Spear", "script", "Node2D", "Hitboxes", "position", "tile_map_data", "tile_set", "TileMapLayer"),
+"node_count": 2,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 7, 3, -1, 3, 4, 1, 5, 2, 6, 3, 0),
+"variants": [ExtResource("5_geb7r"), Vector2(-8, -8), PackedByteArray("AAACAAAAAAAAAAAAAQABAAAAAAAAAAAAAQA="), SubResource("TileSet_jlkp1")],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m4jpx"]
 resource_name = "Pickups"
+scenes/1/scene = SubResource("PackedScene_3hkl7")
 scenes/2/scene = ExtResource("6_lbjbg")
 scenes/3/scene = ExtResource("7_sbisk")
 scenes/4/scene = ExtResource("8_afs7p")
 scenes/5/scene = ExtResource("9_8yfm0")
+scenes/6/scene = SubResource("PackedScene_xnvh8")
+scenes/7/scene = SubResource("PackedScene_qi4mi")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6xl1f"]
 resource_name = "Player"
@@ -1403,7 +1465,7 @@ tile_map_data = PackedByteArray("AAAKAA8AAQAGAAIAAAAJAA8AAQAAAAAAAAAKAA4AAQAAAAE
 tile_set = SubResource("TileSet_vaibt")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAQABIAAQAAAAAAAwAPABIAAQAAAAAAAgAOABIAAQAAAAAABAALABEAAQAAAAAABQALABAAAQAAAAAABQALAA8AAQAAAAAABQALABQAAgAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAALABEAAQAAAAAABQALABAAAQAAAAAABQALAA8AAQAAAAAABQALABQAAgAAAAAAAwASABIAAQAAAAAAAgAPABQAAQAAAAAAAwANABcAAQAAAAAABAA=")
 tile_set = SubResource("TileSet_vjqq2")
 
 [node name="Walls" type="TileMapLayer" parent="."]
@@ -1417,9 +1479,9 @@ offset_right = 315.0
 offset_bottom = 273.0
 text = "TEST MAP v2"
 
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@23651" to="Entities/@Area2D@23651" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@23652" to="Entities/@Area2D@23652" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@65630" to="Entities/@Area2D@65630" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@65631" to="Entities/@Area2D@65631" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
