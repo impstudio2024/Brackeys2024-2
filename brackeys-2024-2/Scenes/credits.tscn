@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://uuw47ulvosj"]
+[gd_scene load_steps=2 format=3 uid="uid://uuw47ulvosj"]
+
+[ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_ut7pi")
