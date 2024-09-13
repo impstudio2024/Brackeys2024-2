@@ -5,7 +5,9 @@
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="2_ori3n"]
 [ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
 
-[node name="Mainmenu" type="Node2D"]
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_bb7bm")
 
 [node name="PlayButton" type="Button" parent="."]
