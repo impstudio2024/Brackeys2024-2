@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 func change_weapon(weapon: Weapon):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	
-	#Remove weapons before 
+	#Remove current weapon before picking up a new one
 	for node : Node in get_children():
 		if get_node(node.get_path()).is_in_group("weapons"):
 			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground

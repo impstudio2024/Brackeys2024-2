@@ -128,7 +128,7 @@ tile_map_data = PackedByteArray("AAAFABYAAAACAAIAAAARAAoAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_i71by")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwAWABkAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwATABwAAQAAAAAAAgATAB8AAQAAAAAAAwAYABsAAQAAAAAABAAYABUAAAAAAAAAAQA=")
 tile_set = ExtResource("3_dp0ja")
 
 [node name="Walls" type="TileMapLayer" parent="."]

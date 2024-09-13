@@ -3,11 +3,12 @@ extends Pickup
 
 enum Weapons { NONE, BROADSWORD, SPEAR, BOW }
 @export var type: Weapons
+
 @export var damage: int
 @export var durability: int
 @export var picked_up : bool
 
-@onready var hitboxes = $Hitboxes
+@onready var hitboxes : TileMapLayer = $Hitboxes
 
 var direction : Vector2i = Vector2i.UP
 var original_tiles: Array[Vector2i]
@@ -29,14 +30,13 @@ func _process(delta: float) -> void:
 			direction = Vector2i.DOWN
 		elif Input.is_action_just_pressed("move_right"):
 			direction = Vector2i.RIGHT
-		find_victims(direction)
+		update_hitbox_positions(direction)
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not picked_up:
 		if collision_shape_2d.disabled == false:
 			#call the method for changing the player's weapon sprite (debug) and give the player hitboxes
-			var new_tiles  = find_new_tiles_position(direction)
 			Global.weapon_picked_up.emit(self) # Signal Global after weapon is picked up, for changing the player sprite and hitbox
 			picked_up = true
 				
@@ -44,17 +44,28 @@ func createOriginalTiles():
 	for tile in hitboxes.get_used_cells():
 		original_tiles.append(tile)
 		hitboxes.erase_cell(tile)
+		
+		
+func check_for_enemies() -> Array[Enemy]:
+	var enemies_found : Array[Enemy]
+	
+	var all_enemies = Global.get_all_enemies()
+	
+	for hitbox in hitboxes.get_used_cells():
+		for enemy in all_enemies:
+			if hitbox == enemy.map_position:
+				print ("enemy in attack range")
+				enemies_found.append(enemy)
+		
+	return enemies_found
 
-func find_victims(direction:Vector2i) -> Array:
-	var victims = []
+
+func update_hitbox_positions(direction:Vector2i):
 	var newTiles = find_new_tiles_position(direction)
 	for tile in hitboxes.get_used_cells():
 		hitboxes.set_cell(tile,-1)
 	for newTile in newTiles:
-		hitboxes.set_cell(newTile,0,Vector2i(0, 0),1)
-	if not victims.is_empty():
-		print("Victim found")
-	return victims
+		hitboxes.set_cell(newTile,0,Vector2i(0, 0),1) 
 
 func find_new_tiles_position(direction:Vector2i) -> Array[Vector2i]:
 	var newTiles :  Array[Vector2i] = []

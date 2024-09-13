@@ -2,6 +2,7 @@ extends Character
 class_name Enemy
 
 func _ready() -> void:
+	add_to_group("enemies")
 	Global.enemy_added.emit(self)
 	super()
 	

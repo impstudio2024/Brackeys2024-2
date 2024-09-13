@@ -28,7 +28,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_e0ckn")
 
 [node name="Broadsword" instance=ExtResource("1_kmekm")]
 script = ExtResource("2_5m0ci")
-type = 1
+type = 0
 damage = 0
 durability = 0
 picked_up = false
@@ -40,3 +40,10 @@ sprite_frames = SubResource("SpriteFrames_wboks")
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
 tile_set = SubResource("TileSet_veuy3")
+
+[connection signal="area_entered" from="Hitboxes/Hitbox" to="Hitboxes/Hitbox" method="_on_area_entered"]
+[connection signal="body_entered" from="Hitboxes/Hitbox" to="Hitboxes/Hitbox" method="_on_body_entered"]
+[connection signal="area_entered" from="Hitboxes/@Area2D@56743" to="Hitboxes/@Area2D@56743" method="_on_area_entered"]
+[connection signal="body_entered" from="Hitboxes/@Area2D@56743" to="Hitboxes/@Area2D@56743" method="_on_body_entered"]
+[connection signal="area_entered" from="Hitboxes/@Area2D@56744" to="Hitboxes/@Area2D@56744" method="_on_area_entered"]
+[connection signal="body_entered" from="Hitboxes/@Area2D@56744" to="Hitboxes/@Area2D@56744" method="_on_body_entered"]
