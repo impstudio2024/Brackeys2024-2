@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://jxhjerg0d1l3"]
+[gd_scene load_steps=7 format=3 uid="uid://jxhjerg0d1l3"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_bb7bm"]
 [ext_resource type="Script" path="res://scripts/play_button.gd" id="2_m2yeo"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="2_ori3n"]
 [ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
 [ext_resource type="Texture2D" uid="uid://bxoy1o4pp7dbv" path="res://Assets/Screens/titlescreen.png" id="5_6rdi7"]
+[ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_te2bi"]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -76,7 +77,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ori3n")
 text = "Flee
 "
+script = ExtResource("6_te2bi")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="VBoxContainer/CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_pressed"]
