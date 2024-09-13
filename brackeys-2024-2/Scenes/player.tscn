@@ -52,7 +52,7 @@ script = ExtResource("2_6kguh")
 
 [node name="WhiteSquare" parent="." index="0"]
 modulate = Color(1, 1, 1, 1)
-position = Vector2(2, -8)
+position = Vector2(2, -12)
 texture = ExtResource("3_yn6va")
 hframes = 3
 
