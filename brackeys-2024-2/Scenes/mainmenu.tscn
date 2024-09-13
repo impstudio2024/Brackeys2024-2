@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jxhjerg0d1l3"]
+[gd_scene load_steps=5 format=3 uid="uid://jxhjerg0d1l3"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_bb7bm"]
 [ext_resource type="Script" path="res://scripts/play_button.gd" id="2_m2yeo"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="2_ori3n"]
+[ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_bb7bm")
@@ -24,6 +25,7 @@ offset_right = 353.0
 offset_bottom = 287.0
 theme_override_fonts/font = ExtResource("2_ori3n")
 text = "Credits"
+script = ExtResource("4_kfpsp")
 metadata/_edit_use_anchors_ = true
 
 [node name="QuitButton" type="Button" parent="."]
@@ -51,3 +53,4 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(200, 224)
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_pressed"]
