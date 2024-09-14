@@ -9,7 +9,6 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ut7pi")
-scroll_speed = 100
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -34,6 +33,11 @@ texture = ExtResource("2_41i4p")
 [node name="ParallaxTextLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(83, 0)
 
+[node name="Titlesprite" type="Sprite2D" parent="ParallaxBackground/ParallaxTextLayer"]
+position = Vector2(877, 568)
+scale = Vector2(9.88265, 9.88265)
+texture = ExtResource("4_usssk")
+
 [node name="Game Design" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,9 +45,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 637.5
-offset_top = 176.0
+offset_top = 1184.0
 offset_right = 1120.5
-offset_bottom = 459.0
+offset_bottom = 1467.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -75,9 +79,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 679.0
-offset_top = 594.0
+offset_top = 1602.0
 offset_right = 1079.0
-offset_bottom = 1022.0
+offset_bottom = 2030.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -114,9 +118,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 632.0
-offset_top = 1234.0
+offset_top = 2242.0
 offset_right = 1126.0
-offset_bottom = 1604.0
+offset_bottom = 2612.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -153,9 +157,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 616.0
-offset_top = 1754.0
+offset_top = 2762.0
 offset_right = 1141.0
-offset_bottom = 2611.0
+offset_bottom = 3619.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -195,9 +199,9 @@ vertical_alignment = 1
 
 [node name="Outro" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
 offset_left = 616.0
-offset_top = 3026.0
+offset_top = 4034.0
 offset_right = 1141.0
-offset_bottom = 3309.0
+offset_bottom = 4317.0
 alignment = 1
 
 [node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Outro"]
@@ -220,8 +224,13 @@ text = "ImpStudio"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SplashTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CrawlTimer" type="Timer" parent="."]
 wait_time = 26.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SplashTimer" to="." method="_on_splash_timer_timeout"]
+[connection signal="timeout" from="CrawlTimer" to="." method="_on_crawl_timer_timeout"]
