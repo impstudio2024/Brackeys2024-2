@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=11 format=3 uid="uid://dnorlhe26qs1g"]
 
-[ext_resource type="PackedScene" uid="uid://dt2e5g7l4ntrx" path="res://Scenes/enemy.tscn" id="1_0tak3"]
+[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_0tak3"]
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="2_btp56"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="3_hbpf4"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="4_si30w"]
