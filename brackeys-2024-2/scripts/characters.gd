@@ -36,7 +36,9 @@ func move(relative_movement: Vector2i) -> Character:
 	# when moving the map position will also need to be updated
 	map_position = Global.entities.local_to_map(position)
 	
-	if Global.holes.get_cell_tile_data(map_position + relative_movement) and not is_in_group('player'): 
+	if Global.holes.get_cell_tile_data(map_position) and not is_in_group('player'):
 		queue_free()
+	elif Global.holes.get_cell_tile_data(map_position) and is_in_group('player'):
+		move(relative_movement)
 	
 	return null
