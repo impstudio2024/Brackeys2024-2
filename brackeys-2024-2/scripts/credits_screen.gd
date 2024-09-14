@@ -2,9 +2,10 @@ extends Control
 
 @onready var parallax_bg_layer: ParallaxLayer = $ParallaxBackground/ParallaxBGLayer
 @onready var parallax_text_layer: ParallaxLayer = $ParallaxBackground/ParallaxTextLayer
-@onready var timer: Timer = $Timer
-
-@export var scroll_speed: int = 50
+@onready var splash_timer: Timer = $SplashTimer
+@onready var crawl_timer: Timer = $CrawlTimer
+@export var bg_scroll_speed: int = 0
+@export var txt_scroll_speed: int = 0
 
 func _ready():
 	timer.start()
