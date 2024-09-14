@@ -13,6 +13,8 @@ var walls: TileMapLayer
 var holes: TileMapLayer
 var specials: TileMapLayer
 
+var spawners: Array[Spawner] = []
+
 enum SpecialTileTypes{
 	EXIT = 0
 }

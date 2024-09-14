@@ -1,7 +1,10 @@
 extends Node2D
-@onready var state_machine = $StateMachine
 
 var enemies: Array[Enemy] = []
+
+@export var angry_after_turns: int = 20
+
+@onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	Global.enemy_added.connect(_on_enemy_added)

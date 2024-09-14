@@ -4,7 +4,6 @@ var size :int = 16
 var new_position: Array = []
 var enemies = []
 
-
 var start_point = Vector2.ZERO
 var target_point = Vector2.ZERO
 
@@ -35,7 +34,8 @@ func a_star() -> Array:
 	var close_array = []
 	
 	while open_array.size() > 0:
-		if open_array.size() > 30:
+
+		if open_array.size() > 30 and not state_machine_owner.permanently_angry:
 			finished.emit("WanderState")
 			break
 		var current_point: Point = open_array[0]
