@@ -9,7 +9,6 @@ func connect_children():
 	createOriginalTiles()
 	for child in get_children():
 		child.name = str(local_to_map(child.position))
-		child.area_entered.connect(_on_area_entered)
 		child.body_entered.connect(_on_body_entered)
 
 func createOriginalTiles():
@@ -23,7 +22,6 @@ func update_hitbox_positions(direction:Vector2i):
 		childNode.position = map_to_local(newTiles[child])
 
 func find_new_tiles_position(direction:Vector2i) -> Dictionary:
-	print("stuff happening")
 	var newTiles :  Dictionary
 	for tilePos in original_tiles:
 		var newTile = Vector2i.ZERO
@@ -45,10 +43,4 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("enemy body spotted")
-	pass # Replace with function body.
-
-
-func _on_area_entered(area):
-	print("enemy area spotted")
 	pass # Replace with function body.
