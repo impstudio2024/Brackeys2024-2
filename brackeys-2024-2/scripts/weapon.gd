@@ -8,8 +8,6 @@ enum Weapons { NONE, BROADSWORD, SPEAR, BOW }
 @export var durability: int
 @export var picked_up : bool
 
-@onready var hitboxes : TileMapLayer = $Hitboxes
-
 var direction : Vector2i = Vector2i.UP
 var old_direction : Vector2i = direction
 var original_tiles: Array[Vector2i]
@@ -18,7 +16,6 @@ var original_tiles: Array[Vector2i]
 func _ready():
 	picked_up = false
 	add_to_group("weapons")
-	pass # Replace with function body.
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not picked_up:

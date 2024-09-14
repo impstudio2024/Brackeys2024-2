@@ -3,7 +3,7 @@ class_name Player
 
 var turn_active: bool = true
 
-@onready var current_weapon : Weapon = $Fists
+@onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
@@ -33,11 +33,21 @@ func _process(_delta: float) -> void:
 	if movement != Vector2i.ZERO:
 		turn_active = false
 
+		var should_move: bool = true
 		$Weapon.get_child(0).move(movement)
-		var obstacle = await move(movement)
-		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
-		if obstacle and obstacle.is_in_group("enemies"):
-			Global.attack.emit(obstacle, damage)
+		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
+		for child in tile_map_layer.get_children():
+			if not child.currentOpponent: continue
+			child.currentOpponent.damage_by(100)
+			should_move = false
+		
+		if should_move: await move(movement)
+		
+		#var obstacle = await move(movement)
+		#Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
+		#if obstacle and obstacle.is_in_group("enemies"):
+			#Global.attack.emit(obstacle, damage)
+		Global.player_moved.emit(self)
 
 
 	match Global.specials.get_cell_source_id(map_position):
