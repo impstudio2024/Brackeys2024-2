@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_crgv5"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_vglg2"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_2rios"]
-[ext_resource type="PackedScene" uid="uid://dbs6v87fb0vd7" path="res://Scenes/gameplayBow.tscn" id="3_topok"]
+[ext_resource type="PackedScene" path="res://Scenes/gameplayBow.tscn" id="3_topok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdwrh"]
 atlas = ExtResource("3_2rios")
