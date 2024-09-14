@@ -10,6 +10,7 @@ var permanently_angry: bool = false
 
 
 func _ready() -> void:
+	add_to_group("enemies")
 	initial_pos = position
 	Global.enemy_added.emit(self)
 	super()
@@ -19,6 +20,7 @@ func _ready() -> void:
 func on_enemy_turn(player: Player):
 	if statemachine.state.name != "DeadState":
 		await statemachine.state.move(player, self)
+
 
 func dead():
 	if statemachine.state.name != "DeadState":

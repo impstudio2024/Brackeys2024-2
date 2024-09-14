@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3d8eggut23xb"]
+[gd_scene load_steps=7 format=3 uid="uid://b3d8eggut23xb"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_6iakq"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_tqs6y"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_8qf74"]
-[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="4_i4sy3"]
+[ext_resource type="PackedScene" path="res://Scenes/gameplaySpear.tscn" id="3_074wi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3pe5"]
 atlas = ExtResource("3_8qf74")
@@ -20,23 +20,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k0m4i"]
-scenes/1/scene = ExtResource("4_i4sy3")
-
-[sub_resource type="TileSet" id="TileSet_85ts3"]
-sources/0 = SubResource("TileSetScenesCollectionSource_k0m4i")
-
 [node name="Spear" instance=ExtResource("1_6iakq")]
 script = ExtResource("2_tqs6y")
-type = 2
+type = 0
+gameplayWeaponScene = ExtResource("3_074wi")
 damage = 0
 durability = 0
 picked_up = false
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_wboks")
-
-[node name="Hitboxes" type="TileMapLayer" parent="." index="3"]
-position = Vector2(-8, -8)
-tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
-tile_set = SubResource("TileSet_85ts3")

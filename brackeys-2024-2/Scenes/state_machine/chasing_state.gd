@@ -78,11 +78,12 @@ func move(player: Player, enemy: Enemy):
 		new_position = a_star()
 		new_position.reverse()
 	if (new_position.size() > 0):
+
 		var direction: Vector2i = Global.entities.local_to_map(new_position.pop_front().point) - Global.entities.local_to_map(enemy.position)
 		var attacked_character: Character = await enemy.move(direction)
 		if attacked_character is Player:
 			enemy.attack(attacked_character, direction)
-			
+
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass

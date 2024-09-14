@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://bahoue4nlvn4h"]
+[gd_scene load_steps=3 format=4 uid="uid://bahoue4nlvn4h"]
 
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_1dfhi"]
-[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="2_bp2m7"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bp44v"]
-scenes/1/scene = ExtResource("2_bp2m7")
-
-[sub_resource type="TileSet" id="TileSet_44b5u"]
-sources/0 = SubResource("TileSetScenesCollectionSource_bp44v")
+[ext_resource type="TileSet" uid="uid://glmjg2k3ov0g" path="res://Scenes/weapon.tres" id="2_q0c06"]
 
 [node name="Fists" type="Node2D"]
 script = ExtResource("1_1dfhi")
@@ -15,4 +9,4 @@ script = ExtResource("1_1dfhi")
 [node name="Hitboxes" type="TileMapLayer" parent="."]
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAAAAQACAAAAAAAAAAAAAQADAP//AAAAAAAAAQADAAAAAAAAAAAAAQAFAP//AAAAAAAAAQAGAP//AAAAAAAAAQAHAP//AAAAAAAAAQAGAAAAAAAAAAAAAQAGAAEAAAAAAAAAAQAFAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQABAAAAAAAAAAAAAQADAAEAAAAAAAAAAQABAAEAAAAAAAAAAQA=")
-tile_set = SubResource("TileSet_44b5u")
+tile_set = ExtResource("2_q0c06")
