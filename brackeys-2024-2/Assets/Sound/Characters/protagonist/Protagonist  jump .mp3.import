@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4nicgp3f2245"
+path="res://.godot/imported/Protagonist  jump .mp3-497c5c32045215ffbdd4fc640841761e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Characters/protagonist/Protagonist  jump .mp3"
+dest_files=["res://.godot/imported/Protagonist  jump .mp3-497c5c32045215ffbdd4fc640841761e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
