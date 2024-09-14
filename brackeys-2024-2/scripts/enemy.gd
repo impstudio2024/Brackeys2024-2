@@ -2,6 +2,8 @@ extends Character
 class_name Enemy
 
 var initial_pos: Vector2;
+@export var dmg = 1
+
 
 func _ready() -> void:
 	initial_pos = position
@@ -23,3 +25,6 @@ func dead():
 func respawn():
 	if $StateMachine.state.name == "DeadState":
 		$StateMachine._transition_to_next_state("WanderState")
+
+func attack(player: Player, move_direction: Vector2i):
+	player.health -= dmg

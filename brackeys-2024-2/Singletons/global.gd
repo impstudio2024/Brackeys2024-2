@@ -5,6 +5,7 @@ signal enemy_moved
 signal enemy_added(enemy: Enemy)
 signal character_moved(player: Player)
 signal weapon_picked_up(weapon: Weapon)
+signal game_over
 
 var map: TileMapLayer
 var entities: TileMapLayer
