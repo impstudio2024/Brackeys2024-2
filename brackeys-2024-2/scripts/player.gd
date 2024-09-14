@@ -6,8 +6,8 @@ var turn_active: bool = true
 @onready var current_weapon : Weapon = $Fists
 
 func _ready() -> void:	
-	Global.enemy_moved.connect(func(): turn_active = true)
 	Global.connect("weapon_picked_up", change_weapon)
+	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
 
@@ -33,22 +33,22 @@ func _process(_delta: float) -> void:
 		print(await move(movement))
 		print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
 		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
-	
+		match Global.specials.get_cell_source_id(map_position):
+			Global.SpecialTileTypes.EXIT:
+#				# Global.advance_level()
+				print('An exit tile was reached by the player, but the levels are not yet created. If they are done by now add their paths to the level_paths variable of Global and uncomment the line above. Feel free to delete this line. If there are any questions message Malario.')
+		
 func change_weapon(weapon: Weapon):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
-	debug_weapon_displayed.set_frame_and_progress(weapon, 0.0)
 	
 	#Remove weapons before 
 	for node : Node in get_children():
 		if get_node(node.get_path()).is_in_group("weapons"):
 			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground
-		
+	
 	print(weapon.name + " picked up!")
 	weapon.transform = transform
 	weapon.reparent(self)
-	
-	
-	
-func turnActive():
 
+func turnActive():
 	turn_active = true

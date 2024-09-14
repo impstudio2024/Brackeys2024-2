@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjlfm8xxwxkdm"
+path="res://.godot/imported/select option.mp3-f1e8370aa465ae715bc7ea7e2ae20f68.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Menu/select option.mp3"
+dest_files=["res://.godot/imported/select option.mp3-f1e8370aa465ae715bc7ea7e2ae20f68.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

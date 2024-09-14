@@ -6,3 +6,5 @@ func _ready() -> void:
 	Global.entities = $Entities
 	Global.map = $Floor
 	Global.walls = $Walls
+	Global.holes = $Holes
+	Global.specials = $"Special Tiles"

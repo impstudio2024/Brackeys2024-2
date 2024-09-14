@@ -1480,8 +1480,8 @@ offset_bottom = 273.0
 text = "TEST MAP v2"
 
 [connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@65630" to="Entities/@Area2D@65630" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@65631" to="Entities/@Area2D@65631" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@41374" to="Entities/@Area2D@41374" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@41375" to="Entities/@Area2D@41375" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
