@@ -23,10 +23,3 @@ func dead():
 func respawn():
 	if $StateMachine.state.name == "DeadState":
 		$StateMachine._transition_to_next_state("WanderState")
-
-
-func _process(delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		dead()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		respawn()
