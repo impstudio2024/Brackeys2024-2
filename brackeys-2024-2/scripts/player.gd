@@ -41,13 +41,11 @@ func change_weapon(weapon: Weapon):
 	for node : Node in get_children():
 		if get_node(node.get_path()).is_in_group("weapons"):
 			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground
-		
+	
 	print(weapon.name + " picked up!")
 	weapon.transform = transform
 	weapon.reparent(self)
-	
-	
-	
+
 func turnActive():
 
 	turn_active = true

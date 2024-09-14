@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdn6ejq61c68t"]
+[gd_scene load_steps=5 format=3 uid="uid://bdn6ejq61c68t"]
 
 [ext_resource type="Script" path="res://scripts/characters.gd" id="1_en3pv"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_xap80"]
+[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="3_44q5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
 size = Vector2(16, 16)
@@ -15,3 +16,5 @@ texture = ExtResource("1_xap80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_acf0o")
+
+[node name="sfx_player" parent="." instance=ExtResource("3_44q5w")]
