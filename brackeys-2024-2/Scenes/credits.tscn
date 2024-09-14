@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://uuw47ulvosj"]
+[gd_scene load_steps=4 format=3 uid="uid://cjicke08vrdeh"]
 
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="1_ubsgt"]
 [ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
@@ -12,16 +12,17 @@ scroll_speed = 100
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Background" type="TextureRect" parent="ParallaxBackground"]
+[node name="ParallaxBGLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1080)
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxBGLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = -704.0
-offset_bottom = -396.0
+offset_right = 256.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(7.55, 7.55)
@@ -29,10 +30,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_41i4p")
 
-[node name="ParallaxBGLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 1080)
-
 [node name="ParallaxTextLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(83, 0)
 
 [node name="Game Design" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
 anchors_preset = 8
