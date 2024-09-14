@@ -2,57 +2,226 @@
 
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="1_ubsgt"]
 [ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
-[ext_resource type="Texture2D" uid="uid://urbt2gl62geu" path="res://Assets/Screens/transitionscreen.png" id="3_ogoxd"]
+[ext_resource type="Texture2D" uid="uid://dhb0ld33unntr" path="res://Assets/Screens/credit_screen.png" id="2_41i4p"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
 script = ExtResource("1_ut7pi")
+scroll_speed = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -139.5
-offset_right = 200.0
-offset_bottom = 139.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -704.0
+offset_bottom = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.55, 7.55)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_41i4p")
+
+[node name="ParallaxBGLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1080)
+
+[node name="ParallaxTextLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Game Design" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 637.5
+offset_top = 176.0
+offset_right = 1120.5
+offset_bottom = 459.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Game Design"]
 custom_minimum_size = Vector2(400, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ubsgt")
-theme_override_font_sizes/font_size = 72
-text = "Title"
+theme_override_font_sizes/font_size = 84
+text = "Game Design"
 horizontal_alignment = 1
 
-[node name="Name" type="Label" parent="VBoxContainer"]
+[node name="Names" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Game Design"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_ubsgt")
 theme_override_font_sizes/font_size = 58
-text = "Name1"
+text = "naxiv"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Art" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 679.0
+offset_top = 594.0
+offset_right = 1079.0
+offset_bottom = 1022.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Art"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 84
+text = "Art
+"
+horizontal_alignment = 1
+
+[node name="Names" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Art"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 58
+text = "
+tukierownik
+
+JackleBox
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound Design" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 632.0
+offset_top = 1234.0
+offset_right = 1126.0
+offset_bottom = 1604.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Sound Design"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 84
+text = "Music & SFX"
+horizontal_alignment = 1
+
+[node name="Names" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Sound Design"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 58
+text = "
+Gavin Watkins
+
+Kyoresu570
+
+"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Programming" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 616.0
+offset_top = 1754.0
+offset_right = 1141.0
+offset_bottom = 2611.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 1080)
+[node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Programming"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 84
+text = "Programming"
+horizontal_alignment = 1
 
-[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(3.55, 3.55)
-texture = ExtResource("3_ogoxd")
+[node name="Names" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Programming"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 58
+text = "
+naxiv
+
+Dex
+
+Dávid Groniewsky
+
+Ikkiren
+
+Gabriel Pando
+
+careware
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outro" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
+offset_left = 616.0
+offset_top = 3026.0
+offset_right = 1141.0
+offset_bottom = 3309.0
+alignment = 1
+
+[node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Outro"]
+custom_minimum_size = Vector2(400, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 84
+text = "A Game by"
+horizontal_alignment = 1
+
+[node name="Studio" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Outro"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_ubsgt")
+theme_override_font_sizes/font_size = 82
+text = "ImpStudio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 35.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
