@@ -18,5 +18,5 @@ func _process(delta: float) -> void:
 	parallax_bg_layer.motion_offset.y -= bg_scroll_speed * delta
 	parallax_text_layer.motion_offset.y -= txt_scroll_speed * delta
 	
-func _on_timer_timeout() -> void:
+func _on_crawl_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
