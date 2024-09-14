@@ -58,6 +58,7 @@ scale = Vector2(4.6, 4.6)
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.917647, 0.572549, 0.266667, 1)
 theme_override_fonts/font = ExtResource("2_ori3n")
 text = "Play"
 script = ExtResource("2_m2yeo")
