@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7gvvk2uhsecq"
+path="res://.godot/imported/rope tightening.mp3-b7301f1755ede51d992224d2e4b6ed9f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Characters/Weapons/Bow/rope tightening.mp3"
+dest_files=["res://.godot/imported/rope tightening.mp3-b7301f1755ede51d992224d2e4b6ed9f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

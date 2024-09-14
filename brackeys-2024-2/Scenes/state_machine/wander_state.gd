@@ -10,13 +10,14 @@ func move(player: Player, enemy: Enemy):
 	var arr = [Vector2.UP , Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT, Vector2.ZERO]
 	var chosen_dir = arr[randi_range(0, arr.size() - 1)] 
 	await state_machine_owner.move(chosen_dir)
-	if manh(Global.entities.local_to_map(enemy.position), Global.entities.local_to_map(player.position)) < size * detection_range:
+	if manh(Global.entities.local_to_map(enemy.position), Global.entities.local_to_map(player.position)) < detection_range:
 		finished.emit("ChasingState")
 
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass
 	
+
 func exit():
 	pass
 

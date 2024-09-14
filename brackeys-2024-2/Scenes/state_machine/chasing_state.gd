@@ -17,7 +17,7 @@ func get_enemies():
 
 func check_enemies_pos(pos: Vector2):
 	for i in range(enemies.size()):
-		if (enemies[i].position == pos):
+		if (Global.entities.local_to_map(enemies[i].position) == Global.entities.local_to_map(pos)):
 			return true
 	return false
 
@@ -35,7 +35,7 @@ func a_star() -> Array:
 	var close_array = []
 	
 	while open_array.size() > 0:
-		if open_array.size() > 60:
+		if open_array.size() > 30:
 			finished.emit("WanderState")
 			break
 		var current_point: Point = open_array[0]
@@ -69,7 +69,6 @@ func a_star() -> Array:
 					
 	return []
 
-
 func move(player: Player, enemy: Enemy):
 	enemies = get_enemies()
 	start_point = Point.new(enemy.position.x, enemy.position.y,size)
@@ -78,11 +77,15 @@ func move(player: Player, enemy: Enemy):
 			|| check_enemies_pos(new_position[0].point)): 
 		new_position = a_star()
 		new_position.reverse()
-	if (new_position.size() > 0 && new_position[0].point != player.position):
-		enemy.position = new_position.pop_front().point
+	if (new_position.size() > 0):
+		var direction: Vector2i = Global.entities.local_to_map(new_position.pop_front().point) - Global.entities.local_to_map(enemy.position)
+		var attacked_character: Character = await enemy.move(direction)
+		if attacked_character is Player:
+			enemy.attack(attacked_character, direction)
+			
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass
 
 func exit() -> void:
-	pass
+	new_position.clear()
