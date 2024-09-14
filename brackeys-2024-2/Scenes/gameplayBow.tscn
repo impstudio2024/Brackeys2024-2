@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbs6v87fb0vd7"]
+
+[ext_resource type="PackedScene" uid="uid://bqgevatjhyfpg" path="res://Scenes/gameplayWeapon.tscn" id="1_xxm3c"]
+
+[node name="Weapon" instance=ExtResource("1_xxm3c")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)

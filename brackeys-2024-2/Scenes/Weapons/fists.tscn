@@ -28,6 +28,7 @@ monitoring = false
 monitorable = false
 script = ExtResource("2_7vw3k")
 type = 3
+gameplayWeaponScene = null
 damage = 0
 durability = 0
 picked_up = false

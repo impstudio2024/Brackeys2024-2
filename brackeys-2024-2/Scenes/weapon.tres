@@ -1,0 +1,9 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://glmjg2k3ov0g"]
+
+[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="1_ssoav"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bp44v"]
+scenes/1/scene = ExtResource("1_ssoav")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_bp44v")

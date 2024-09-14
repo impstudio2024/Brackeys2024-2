@@ -8,7 +8,7 @@ var map: TileMapLayer
 var entities: TileMapLayer
 var walls: TileMapLayer
 signal character_moved(player: Player)
-signal weapon_picked_up(weapon: Weapon)
+signal weapon_picked_up(weapon: GameplayWeapon,pickup: Pickup)
 
 func get_all_enemies() -> Array[Enemy]:
 	var all_enemies : Array[Enemy] = []
