@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dle1l2hhnin6w"
+path="res://.godot/imported/Dark knight noises.mp3-7fa3e70e364a0fedc7863dfee6f244b2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Characters/enemies/dark knight/Dark knight noises.mp3"
+dest_files=["res://.godot/imported/Dark knight noises.mp3-7fa3e70e364a0fedc7863dfee6f244b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

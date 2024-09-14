@@ -49,5 +49,4 @@ func change_weapon(weapon: Weapon):
 	
 	
 func turnActive():
-
 	turn_active = true
