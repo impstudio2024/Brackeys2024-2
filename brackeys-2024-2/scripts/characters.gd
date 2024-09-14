@@ -1,8 +1,12 @@
 extends CharacterBody2D
-
 class_name Character
 
-@onready var health : int = 15
+signal health_changed
+
+@onready var health : int = 15:
+	set(value):
+		health = value
+		health_changed.emit()
 @onready var damage : int = 5
 @onready var animation_player = $AnimationPlayer
 

@@ -7,4 +7,4 @@
 script = ExtResource("2_2pu6u")
 
 [node name="WhiteSquare" parent="." index="0"]
-modulate = Color(0.887284, 0.805529, 1, 1)
+modulate = Color(0.608642, 0.741723, 1, 1)

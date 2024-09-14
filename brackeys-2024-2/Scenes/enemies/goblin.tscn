@@ -7,4 +7,4 @@
 script = ExtResource("2_lxdmq")
 
 [node name="WhiteSquare" parent="." index="0"]
-modulate = Color(0.214665, 0.551126, 0.168649, 1)
+modulate = Color(0.134852, 0.380295, 0.309065, 1)
