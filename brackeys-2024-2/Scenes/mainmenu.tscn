@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://jxhjerg0d1l3"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_bb7bm"]
+[ext_resource type="Texture2D" uid="uid://dsq06ibnjcl0" path="res://Assets/Screens/main_menu_with_title.png" id="2_3nt5v"]
 [ext_resource type="Script" path="res://scripts/play_button.gd" id="2_m2yeo"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="2_ori3n"]
 [ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
-[ext_resource type="Texture2D" uid="uid://bxoy1o4pp7dbv" path="res://Assets/Screens/titlescreen.png" id="5_6rdi7"]
 [ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_te2bi"]
 
 [node name="Mainmenu" type="Control"]
@@ -37,7 +37,7 @@ grow_vertical = 2
 scale = Vector2(3.25, 3.25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_6rdi7")
+texture = ExtResource("2_3nt5v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 50)
