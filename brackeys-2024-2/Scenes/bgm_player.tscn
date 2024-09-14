@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvieiv7b1jeb1"]
+[gd_scene load_steps=5 format=3 uid="uid://did2u2vj1m5ho"]
 
 [ext_resource type="AudioStream" uid="uid://6msvqljh7ikw" path="res://Assets/Sound/calm_gm_bgm.wav" id="1_ews03"]
 [ext_resource type="AudioStream" uid="uid://b8rs0mh4dolcg" path="res://Assets/Sound/angry_gm_bgm.wav" id="2_ya60k"]
