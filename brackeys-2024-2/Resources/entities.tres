@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" load_steps=11 format=3 uid="uid://dnorlhe26qs1g"]
 
-[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_0tak3"]
-[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="2_btp56"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="1_0tak3"]
+[ext_resource type="PackedScene" path="res://Scenes/character.tscn" id="2_btp56"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="3_hbpf4"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="4_si30w"]
 [ext_resource type="PackedScene" uid="uid://oyas1loulgv4" path="res://Scenes/Weapons/broadsword.tscn" id="5_vms6f"]
-[ext_resource type="PackedScene" uid="uid://b5dxt0fo0xvnp" path="res://Scenes/test_coin.tscn" id="6_0yh8r"]
-[ext_resource type="PackedScene" uid="uid://bgm800calowgn" path="res://Scenes/player.tscn" id="7_m53vo"]
+[ext_resource type="PackedScene" path="res://Scenes/test_coin.tscn" id="6_0yh8r"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="7_m53vo"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hhl07"]
 resource_name = "Enemies"
