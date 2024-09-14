@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://xtwriu8wrlc3"]
+[gd_scene load_steps=3 format=3 uid="uid://xtwriu8wrlc3"]
+
+[ext_resource type="Texture2D" uid="uid://ygfv30gb0b31" path="res://Assets/Screens/gameoverscreen.png" id="1_stns0"]
+[ext_resource type="Theme" uid="uid://cdueugm8magx" path="res://Themes/text.tres" id="2_8dfme"]
 
 [node name="Gameover" type="Control"]
 layout_mode = 3
@@ -8,8 +11,38 @@ anchors_preset = 0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("1_stns0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 299.0
+offset_top = 258.0
+offset_right = 1638.0
+offset_bottom = 412.0
+theme = ExtResource("2_8dfme")
+theme_override_colors/font_color = Color(0.447059, 0.294118, 0.172549, 1)
+theme_override_colors/font_shadow_color = Color(0.270588, 0.164706, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0.917647, 0.572549, 0.266667, 1)
+theme_override_constants/shadow_offset_x = 15
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 196
+text = "You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 837.0
+offset_top = 614.0
+offset_right = 1037.0
+offset_bottom = 664.0
+
+[node name="RetryButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
