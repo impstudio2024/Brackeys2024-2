@@ -32,7 +32,6 @@ func _process(_delta: float) -> void:
 		$Weapon.get_child(0).move(movement)
 		var obstacle = await move(movement)
 		if obstacle and obstacle.is_in_group("enemies"):
-			print("Attack launched on: ", obstacle.name, " for ", damage, " damage")
 			Global.attack.emit(obstacle, damage)
 		#print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
 		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies

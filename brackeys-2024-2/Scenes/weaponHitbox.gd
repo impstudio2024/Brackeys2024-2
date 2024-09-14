@@ -12,8 +12,8 @@ func _on_body_entered(body: Node2D) -> void:
 			currentOpponent = body
 
 func damage_opponent(target: Character, damage: int):
-	print("ATTEMPTING ATTACK ON: ", target )
 	if overlaps_body(target):
+		print("Attack launched on: ", target.name, " for ", damage, " damage")
 		target.damage_by(damage)
 
 func _on_body_exited(body: Node2D) -> void:
