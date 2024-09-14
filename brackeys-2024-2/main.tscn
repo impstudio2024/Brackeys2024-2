@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://caqi53o3330ga"]
+[gd_scene load_steps=4 format=3 uid="uid://d2nr5080thv0m"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_70qg7"]
+[ext_resource type="PackedScene" uid="uid://chbernlxltbl4" path="res://Intro.tscn" id="1_fre8k"]
+[ext_resource type="Script" path="res://main.gd" id="1_qabbo"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_qabbo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("1_70qg7")
+
+[node name="SceneContainer" type="Node" parent="."]
+
+[node name="Intro" parent="SceneContainer" instance=ExtResource("1_fre8k")]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4382fsxp6v3i"]
+[gd_scene load_steps=13 format=3 uid="uid://bgm800calowgn"]
 
-[ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="1_5bvnf"]
+[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_pest1"]
 [ext_resource type="Texture2D" uid="uid://cjq5qks3ia41d" path="res://Assets/Sprites/Knight_Sheet.png" id="3_yn6va"]

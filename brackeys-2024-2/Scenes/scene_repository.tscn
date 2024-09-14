@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://f2wunww8pw3"]
+
+[ext_resource type="Script" path="res://scene_repository.gd" id="1_rx5x4"]
+[ext_resource type="PackedScene" uid="uid://chbernlxltbl4" path="res://Intro.tscn" id="2_vm6ux"]
+
+[node name="SceneRepository" type="Node"]
+script = ExtResource("1_rx5x4")
+introScene = ExtResource("2_vm6ux")

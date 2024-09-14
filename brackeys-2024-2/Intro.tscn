@@ -1,11 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://chbernlxltbl4"]
+[gd_scene load_steps=12 format=3 uid="uid://chbernlxltbl4"]
 
-[ext_resource type="Texture2D" uid="uid://cko3f30axgl1r" path="res://Assets/Sprites/intro/ImpStudio_transparent.png" id="1_lvbo4"]
-[ext_resource type="Texture2D" uid="uid://bpnxorpllwe5j" path="res://Assets/Sprites/intro/logo_large_monochrome_dark.png" id="2_acn0a"]
-[ext_resource type="Texture2D" uid="uid://iufkdt845v4n" path="res://Assets/Sprites/intro/brackeys_trans.png" id="3_t2lh4"]
+[ext_resource type="Script" path="res://intro.gd" id="1_a6a4j"]
+[ext_resource type="Texture2D" uid="uid://cko3f30axgl1r" path="res://Assets/Sprites/intro/ImpStudio_transparent.png" id="1_uimp4"]
+[ext_resource type="Texture2D" uid="uid://bpnxorpllwe5j" path="res://Assets/Sprites/intro/logo_large_monochrome_dark.png" id="2_7xf4k"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_el65g"]
+[ext_resource type="Texture2D" uid="uid://iufkdt845v4n" path="res://Assets/Sprites/intro/brackeys_trans.png" id="3_pstat"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_siysj"]
+
+[sub_resource type="Resource" id="Resource_mlfmr"]
+script = ExtResource("3_siysj")
+duration = 1.0
+transition = 0
+ease = 2
 
 [sub_resource type="Animation" id="Animation_j6h8p"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -94,7 +104,6 @@ tracks/6/keys = {
 [sub_resource type="Animation" id="Animation_uhf0g"]
 resource_name = "intro_showoff"
 length = 5.0
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -191,6 +200,7 @@ _data = {
 font_size = 46
 
 [node name="Intro" type="Node"]
+script = ExtResource("1_a6a4j")
 
 [node name="Logo screen" type="Control" parent="."]
 layout_mode = 3
@@ -213,6 +223,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.160629, 0.160629, 0.160629, 1)
 
+[node name="PhantomCamera2D" type="Node2D" parent="Logo screen"]
+script = ExtResource("2_el65g")
+tween_resource = SubResource("Resource_mlfmr")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_v8hs8")
@@ -222,7 +236,7 @@ autoplay = "intro_showoff"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(957, 443)
-texture = ExtResource("1_lvbo4")
+texture = ExtResource("1_uimp4")
 
 [node name="impstudio presents" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -259,10 +273,12 @@ horizontal_alignment = 1
 modulate = Color(1, 1, 1, 0)
 position = Vector2(981, 885)
 scale = Vector2(0.280967, 0.280967)
-texture = ExtResource("2_acn0a")
+texture = ExtResource("2_7xf4k")
 
 [node name="BrackeysTrans" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(988, 235.5)
 scale = Vector2(0.698653, 0.698653)
-texture = ExtResource("3_t2lh4")
+texture = ExtResource("3_pstat")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

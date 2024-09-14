@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjicke08vrdeh"]
+[gd_scene load_steps=5 format=3 uid="uid://dkhkchva5s53r"]
 
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="1_ubsgt"]
 [ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
