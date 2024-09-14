@@ -47,5 +47,4 @@ func change_weapon(weapon: Weapon):
 	weapon.reparent(self)
 
 func turnActive():
-
 	turn_active = true
