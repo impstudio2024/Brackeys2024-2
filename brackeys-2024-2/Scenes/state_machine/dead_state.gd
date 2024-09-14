@@ -6,6 +6,7 @@ func enter(_previous_state_path: String, data := {}) -> void:
 	enemy = data["enemy"]
 	enemy.get_node("CollisionShape2D").disabled = true
 	enemy.visible = false
+	enemy.map_position = Global.entities.local_to_map(enemy.initial_pos)
 	enemy.position = enemy.initial_pos
 
 
