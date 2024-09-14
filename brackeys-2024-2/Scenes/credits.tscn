@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjicke08vrdeh"]
+[gd_scene load_steps=5 format=3 uid="uid://cjicke08vrdeh"]
 
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="1_ubsgt"]
 [ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
 [ext_resource type="Texture2D" uid="uid://dhb0ld33unntr" path="res://Assets/Screens/credit_screen.png" id="2_41i4p"]
+[ext_resource type="Texture2D" uid="uid://bqaal0c6hiot7" path="res://Assets/Sprites/titlesprite.png" id="4_usssk"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
