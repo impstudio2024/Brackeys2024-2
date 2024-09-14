@@ -33,7 +33,7 @@ func _on_idle_signal():
 	crossfade_streams(1, 0, crossfade_time)
 
 func crossfade_streams(fade_out_index: int, fade_in_index: int, duration: float) -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_LINEAR)
+	var tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
 	tween.tween_method(
 		func(vol): stream.set_sync_stream_volume(fade_out_index, vol),
 		stream.get_sync_stream_volume(fade_out_index),
@@ -41,7 +41,7 @@ func crossfade_streams(fade_out_index: int, fade_in_index: int, duration: float)
 		duration
 	)
 	
-	tween.parallel().tween_method(
+	tween.parallel().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT).tween_method(
 		func(vol): stream.set_sync_stream_volume(fade_in_index, vol),
 		min_vol_value,
 		max_vol_value,

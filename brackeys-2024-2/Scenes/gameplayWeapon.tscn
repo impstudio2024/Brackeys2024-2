@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://gu1o3ttor3ch"]
+
+[ext_resource type="Script" path="res://Scenes/gameplay_weapon.gd" id="1_jh0w7"]
+[ext_resource type="TileSet" path="res://Scenes/weapon.tres" id="2_6lmop"]
+[ext_resource type="Script" path="res://scripts/hitbox.gd" id="2_r7lq2"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_jh0w7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = ExtResource("2_6lmop")
+script = ExtResource("2_r7lq2")
