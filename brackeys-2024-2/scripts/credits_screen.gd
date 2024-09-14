@@ -8,11 +8,15 @@ extends Control
 @export var txt_scroll_speed: int = 0
 
 func _ready():
-	timer.start()
-# First attempt at scrolling parallax layer
+	splash_timer.start()
+
+func _on_splash_timer_timeout() -> void:
+	bg_scroll_speed = 40
+	txt_scroll_speed = 100
+	
 func _process(delta: float) -> void:
-	parallax_bg_layer.motion_offset.y -= 40 * delta
-	parallax_text_layer.motion_offset.y -= scroll_speed * delta
+	parallax_bg_layer.motion_offset.y -= bg_scroll_speed * delta
+	parallax_text_layer.motion_offset.y -= txt_scroll_speed * delta
 	
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
