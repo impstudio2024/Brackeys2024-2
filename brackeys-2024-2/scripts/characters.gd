@@ -4,6 +4,7 @@ class_name Character
 
 @onready var health : int = 15
 @onready var damage : int = 5
+@onready var animation_player = $AnimationPlayer
 
 var map_position: Vector2i
 
@@ -36,6 +37,7 @@ func move(relative_movement: Vector2i) -> Character:
 	return null
 	
 func damage_by(damage: int):
+	animation_player.play("hurt")
 	health -= damage
 	#TODO: play animation, maybe a simple red color modulation for a few frames
 	if health <= 0:
