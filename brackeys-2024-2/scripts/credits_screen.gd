@@ -2,6 +2,7 @@ extends Control
 
 @onready var parallax_bg_layer: ParallaxLayer = $ParallaxBackground/ParallaxBGLayer
 @onready var parallax_text_layer: ParallaxLayer = $ParallaxBackground/ParallaxTextLayer
+@onready var timer: Timer = $Timer
 
 @export var scroll_speed: int = 50
 
