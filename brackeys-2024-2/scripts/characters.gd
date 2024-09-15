@@ -30,7 +30,7 @@ func move(relative_movement: Vector2i) -> Character:
 
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "position", Global.entities.map_to_local(map_position + relative_movement), .1)
+	tween.tween_property(self, "position", Global.entities.map_to_local(map_position + relative_movement), .025)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
@@ -61,6 +61,8 @@ func find_character_in_cell(cell: Vector2i) -> Character:
 func damage_by(damage: int):
 	animation_player.play("hurt")
 	health -= damage
+	
+	
 	#TODO: play animation, maybe a simple red color modulation for a few frames
 	if health <= 0:
 		send_to_the_backrooms()

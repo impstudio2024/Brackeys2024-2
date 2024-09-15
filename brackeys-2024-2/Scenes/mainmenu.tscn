@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="2_ori3n"]
 [ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
 [ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_te2bi"]
-[ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://Scenes/bgm_player.tscn" id="7_rxoud"]
+[ext_resource type="PackedScene" path="res://Scenes/bgm_player.tscn" id="7_rxoud"]
 [ext_resource type="AudioStream" uid="uid://d3gsgwryw1p6j" path="res://Scenes/Title Screen Music.wav" id="8_cll4n"]
 
 [node name="Mainmenu" type="Control"]

@@ -55,11 +55,8 @@ func _process(_delta: float) -> void:
 		previous_direction = movement
 		
 		if should_move:
-			$Weapon.get_child(0).move(previous_direction) 
 			await move(movement)
-			
-		
-		
+			$Weapon.get_child(0).move(previous_direction)
 		
 		Global.player_moved.emit(self)
 
@@ -73,12 +70,11 @@ func _process(_delta: float) -> void:
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	var oldWeapon = $Weapon.get_child(0)
-	
-	#weapon.position = oldWeapon.position
 	$Weapon.remove_child(oldWeapon)
+	weapon.position = oldWeapon.position
 	oldWeapon.queue_free()
 	$Weapon.add_child(weapon)
-	#weapon.move(previous_direction)
+	weapon.move(previous_direction)
 	
 	pickup.queue_free()
 	damage = weapon.damage
