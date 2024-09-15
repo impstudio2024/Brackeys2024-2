@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyb36wg5v8d5y"]
+[gd_scene load_steps=16 format=3 uid="uid://cyb36wg5v8d5y"]
 
 [ext_resource type="Script" path="res://scene_repository.gd" id="1_rx5x4"]
 [ext_resource type="PackedScene" uid="uid://bnx6uhsqwg5eb" path="res://Intro.tscn" id="2_vm6ux"]
 [ext_resource type="PackedScene" uid="uid://bl0beqqyoxqws" path="res://Scenes/mainmenu.tscn" id="3_7cdgf"]
 [ext_resource type="PackedScene" uid="uid://dkhkchva5s53r" path="res://Scenes/credits.tscn" id="4_f26gp"]
-[ext_resource type="PackedScene" uid="uid://ceaie047t61kr" path="res://Scenes/gameover.tscn" id="5_mvfs2"]
-[ext_resource type="PackedScene" uid="uid://chr01rq6ki8i0" path="res://Scenes/map.tscn" id="6_ltfdu"]
+[ext_resource type="PackedScene" uid="uid://ctgbusobhn8pr" path="res://Scenes/gameover.tscn" id="5_mvfs2"]
+[ext_resource type="PackedScene" uid="uid://dgw1o2t11r2qd" path="res://Scenes/levels/level0.tscn" id="6_cxsd7"]
+[ext_resource type="PackedScene" uid="uid://c2f86tduyqptf" path="res://Scenes/levels/level1.tscn" id="7_ktllk"]
+[ext_resource type="PackedScene" uid="uid://dv1d6rpv1bb3p" path="res://Scenes/levels/level2.tscn" id="8_08bjc"]
+[ext_resource type="PackedScene" uid="uid://e4uxmnwsogg5" path="res://Scenes/levels/level3.tscn" id="9_5gl0c"]
+[ext_resource type="PackedScene" uid="uid://c53ciawt3obvn" path="res://Scenes/levels/level4.tscn" id="10_mw455"]
+[ext_resource type="PackedScene" uid="uid://bh33xirtgmnfj" path="res://Scenes/levels/level5.tscn" id="11_i3svd"]
+[ext_resource type="PackedScene" uid="uid://btpacx20breev" path="res://Scenes/levels/level6.tscn" id="12_mcrpp"]
+[ext_resource type="PackedScene" uid="uid://dfibtxpvlfqw6" path="res://Scenes/levels/level7.tscn" id="13_mthbt"]
+[ext_resource type="PackedScene" uid="uid://bv3o7ixn64lrh" path="res://Scenes/levels/level8.tscn" id="14_or6aj"]
+[ext_resource type="PackedScene" uid="uid://cq5mgo6v5pi15" path="res://Scenes/levels/level9.tscn" id="15_f4r26"]
 
 [node name="SceneRepository" type="Node"]
 script = ExtResource("1_rx5x4")
@@ -13,7 +22,13 @@ introScene = ExtResource("2_vm6ux")
 mainMenuScene = ExtResource("3_7cdgf")
 creditsScene = ExtResource("4_f26gp")
 gameOverScene = ExtResource("5_mvfs2")
-level1Scene = ExtResource("6_ltfdu")
-level2Scene = ExtResource("6_ltfdu")
-level3Scene = ExtResource("6_ltfdu")
-level4Scene = ExtResource("6_ltfdu")
+level1Scene = ExtResource("6_cxsd7")
+level2Scene = ExtResource("7_ktllk")
+level3Scene = ExtResource("8_08bjc")
+level4Scene = ExtResource("9_5gl0c")
+level5Scene = ExtResource("10_mw455")
+level6Scene = ExtResource("11_i3svd")
+level7Scene = ExtResource("12_mcrpp")
+level8Scene = ExtResource("13_mthbt")
+level9Scene = ExtResource("14_or6aj")
+level10Scene = ExtResource("15_f4r26")
