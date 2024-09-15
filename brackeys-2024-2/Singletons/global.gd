@@ -17,7 +17,7 @@ signal angryGM()
 signal idleGM()
 signal startBGM()
 signal levelClear()
-
+signal retry()
 
 var map: TileMapLayer
 var entities: TileMapLayer

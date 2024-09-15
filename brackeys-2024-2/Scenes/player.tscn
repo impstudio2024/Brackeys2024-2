@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgm800calowgn"]
+[gd_scene load_steps=20 format=3 uid="uid://bgm800calowgn"]
 
 [ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
@@ -8,12 +8,70 @@
 [ext_resource type="Script" path="res://Scenes/player_health_ui.gd" id="6_mfo2q"]
 [ext_resource type="Texture2D" uid="uid://ceygfmlhfqvu3" path="res://Assets/emptyheart.png" id="7_kxxoa"]
 [ext_resource type="Texture2D" uid="uid://bqrntxogj0edf" path="res://Assets/fullheart.png" id="8_8ronc"]
+[ext_resource type="Texture2D" uid="uid://3ni1ayrdmbjn" path="res://Assets/Sprites/gm_portrait_idle-Sheet.png" id="9_7br4r"]
+[ext_resource type="Texture2D" uid="uid://dhr53qcwqn5y1" path="res://Assets/Sprites/gm_portrait_angry-Sheet.png" id="10_xtkdu"]
+[ext_resource type="Script" path="res://Scenes/sprite_2d.gd" id="11_wghaw"]
 
 [sub_resource type="Resource" id="Resource_w445y"]
 script = ExtResource("5_vd02h")
 duration = 1.0
 transition = 0
 ease = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4s1s"]
+atlas = ExtResource("10_xtkdu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvihg"]
+atlas = ExtResource("10_xtkdu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iry8"]
+atlas = ExtResource("10_xtkdu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u48oo"]
+atlas = ExtResource("9_7br4r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgsa2"]
+atlas = ExtResource("9_7br4r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if7g1"]
+atlas = ExtResource("9_7br4r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yd1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4s1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvihg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iry8")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u48oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgsa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if7g1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
 
 [node name="Player" instance=ExtResource("1_5bvnf")]
 collision_layer = 2
@@ -53,7 +111,12 @@ texture = ExtResource("8_8ronc")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
-[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="PlayerHealthUI" index="2"]
+position = Vector2(1823, 984)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8yd1f")
+animation = &"angry"
+autoplay = "idle"
+script = ExtResource("11_wghaw")
 
 [editable path="Weapon/Fists"]

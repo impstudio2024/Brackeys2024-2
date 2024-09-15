@@ -14,8 +14,13 @@ script = ExtResource("2_2pu6u")
 
 [node name="WhiteSquare" parent="." index="0"]
 position = Vector2(-5, -16)
+scale = Vector2(1, 1)
 texture = ExtResource("3_27vef")
 hframes = 2
 
 [node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_acf0o")
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+modulate = Color(1, 1, 1, 1)

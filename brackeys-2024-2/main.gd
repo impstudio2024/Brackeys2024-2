@@ -13,7 +13,11 @@ func _ready() -> void:
 	Global.startBGM.connect(startBGM)
 	Global.game_over.connect(game_over)
 	Global.levelClear.connect(levelClear)
+	Global.retry.connect(retry)
 
+func retry():
+	gameplay = true
+	transition(SceneRepository.levels[currentLevel],"Dots")
 func game_over():
 	transition(SceneRepository.gameOverScene,"Dots")
 	gameplay = false
