@@ -30,8 +30,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_released("move_down"): movement.y = 1
 	elif Input.is_action_just_released('move_up'): movement.y = -1
 
-	if Input.is_action_just_released("move_left"): movement.x = -1
-	elif Input.is_action_just_released('move_right'): movement.x = 1
+	if Input.is_action_just_released("move_left"): 
+		movement.x = -1
+		$WhiteSquare.flip_h = true
+	elif Input.is_action_just_released('move_right'): 
+		movement.x = 1
+		$WhiteSquare.flip_h = false
 
 	if Input.is_action_just_released('move_down') and Input.is_action_just_released('move_up'): movement.y = 0
 	if Input.is_action_just_released('move_left') and Input.is_action_just_released('move_right'): movement.x = 0
