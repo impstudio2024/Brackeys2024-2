@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=4 uid="uid://c53ciawt3obvn"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_74382"]
-[ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_odkyp"]
+[ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_odkyp"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="3_4v5u7"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_65h5l"]
-[ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_ibrf7"]
+[ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ibrf7"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_ufeen"]
-[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_150yj"]
+[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_150yj"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_4n2px"]
-[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="10_iv2cj"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_iv2cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_4v5u7")
@@ -144,3 +144,21 @@ zoom = Vector2(3, 3)
 angry_after_turns = 50
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("10_iv2cj")]
+
+[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97050" to="Entities/@Area2D@97050" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97051" to="Entities/@Area2D@97051" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97052" to="Entities/@Area2D@97052" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97053" to="Entities/@Area2D@97053" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97054" to="Entities/@Area2D@97054" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97055" to="Entities/@Area2D@97055" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97056" to="Entities/@Area2D@97056" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97057" to="Entities/@Area2D@97057" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97058" to="Entities/@Area2D@97058" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97059" to="Entities/@Area2D@97059" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97060" to="Entities/@Area2D@97060" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97061" to="Entities/@Area2D@97061" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97062" to="Entities/@Area2D@97062" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@97063" to="Entities/@Area2D@97063" method="_on_body_entered"]

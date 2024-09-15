@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bvxs0hyarq2dg"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://chhpi2ehgwdcl"]
 
 [ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="1_ssoav"]
 
