@@ -13,6 +13,7 @@ func _ready() -> void:
 	add_to_group("enemies")
 	initial_pos = position
 	Global.enemy_added.emit(self)
+	health_changed.connect(isdead)
 	super()
 	
 
@@ -21,12 +22,11 @@ func on_enemy_turn(player: Player):
 	if statemachine.state.name != "DeadState":
 		await statemachine.state.move(player, self)
 
-
-func dead():
-	if statemachine.state.name != "DeadState":
-		Global.enemy_killed.emit()
-		var dict: Dictionary = { "enemy": self }
-		statemachine._transition_to_next_state("DeadState", dict)
+func isdead(health: int):
+	if not health <= 0: return
+	if not statemachine.state.name != "DeadState": return
+	var dict: Dictionary = { "enemy": self }
+	statemachine._transition_to_next_state("DeadState", dict)
 
 
 func respawn():
