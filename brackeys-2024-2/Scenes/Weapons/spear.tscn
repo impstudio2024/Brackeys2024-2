@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3d8eggut23xb"]
 
-[ext_resource type="PackedScene" path="res://Scenes/pickup.tscn" id="1_6iakq"]
+[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_6iakq"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_tqs6y"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_8qf74"]
 [ext_resource type="PackedScene" uid="uid://nw87kepdtns2" path="res://Scenes/gameplaySpear.tscn" id="3_074wi"]
@@ -24,8 +24,6 @@ animations = [{
 script = ExtResource("2_tqs6y")
 type = 0
 gameplayWeaponScene = ExtResource("3_074wi")
-damage = 0
-durability = 0
 picked_up = false
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]

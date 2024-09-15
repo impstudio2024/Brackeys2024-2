@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-
+@export var syncMode:bool = false
 var stream_idle: AudioStream = null
 var stream_angry: AudioStream = null
 var min_vol_value: int = -80
@@ -7,23 +7,20 @@ var max_vol_value: int = 0
 @export var crossfade_time: float 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.angryGM.connect(_on_angry_signal)
+	Global.idleGM.connect(_on_idle_signal)
+	
 	call_deferred("starting_bgm")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# This is just for testing purposes. Signals must be connected
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Received order to angry")
-		_on_angry_signal()
-	if Input.is_action_just_pressed("down"):
-		print("Received order to idle")
-		_on_idle_signal()
+
 
 func starting_bgm():
-	stream_idle = stream.get_sync_stream(0)
-	stream_angry = stream.get_sync_stream(1)
-	stream.set_sync_stream_volume(0, max_vol_value)
-	stream.set_sync_stream_volume(1, min_vol_value)
+	if syncMode:
+		stream_idle = stream.get_sync_stream(0)
+		stream_angry = stream.get_sync_stream(1)
+		stream.set_sync_stream_volume(0, max_vol_value)
+		stream.set_sync_stream_volume(1, min_vol_value)
 
 
 # Func that will be called when receiving the angry signal
@@ -47,3 +44,6 @@ func crossfade_streams(fade_out_index: int, fade_in_index: int, duration: float)
 		max_vol_value,
 		duration
 	)
+
+func fadeout():
+	pass
