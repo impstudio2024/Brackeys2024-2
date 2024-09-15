@@ -152,7 +152,7 @@ zoom = Vector2(3, 3)
 script = ExtResource("8_hrc7u")
 
 [node name="GM" parent="." instance=ExtResource("9_t0ato")]
-angry_after_turns = 50
+angry_after_turns = 4
 
 [node name="Tutorials" type="Node" parent="."]
 
@@ -195,7 +195,3 @@ offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("10_g3lt5")
 text = "Bow hits far.
 "
-
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
