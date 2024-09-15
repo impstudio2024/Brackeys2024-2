@@ -5,6 +5,7 @@ var original_tiles  = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	call_deferred("connect_children")
+	
 func connect_children():
 	createOriginalTiles()
 	for child in get_children():

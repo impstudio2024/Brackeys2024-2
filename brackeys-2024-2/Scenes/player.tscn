@@ -17,20 +17,17 @@ ease = 2
 collision_layer = 2
 script = ExtResource("2_6kguh")
 
-[node name="WhiteSquare" parent="." index="0"]
-modulate = Color(1, 1, 1, 1)
-position = Vector2(2, -12)
-texture = ExtResource("3_yn6va")
-hframes = 3
+[node name="PhantomCamera2D" type="Node2D" parent="." index="0"]
+script = ExtResource("4_o5f32")
+zoom = Vector2(3, 3)
+tween_resource = SubResource("Resource_w445y")
+draw_limits = true
+
+[node name="WhiteSquare" parent="." index="1"]
+modulate = Color(1, 0, 0.984314, 1)
 
 [node name="Weapon" type="Node2D" parent="." index="2"]
 
 [node name="Fists" parent="Weapon" index="0" instance=ExtResource("6_6vigu")]
-
-[node name="PhantomCamera2D" type="Node2D" parent="." index="3"]
-script = ExtResource("4_o5f32")
-priority = 3
-zoom = Vector2(3, 3)
-tween_resource = SubResource("Resource_w445y")
 
 [editable path="Weapon/Fists"]
