@@ -24,6 +24,7 @@ func on_enemy_turn(player: Player):
 
 func dead():
 	if statemachine.state.name != "DeadState":
+		Global.enemy_killed.emit()
 		var dict: Dictionary = { "enemy": self }
 		statemachine._transition_to_next_state("DeadState", dict)
 

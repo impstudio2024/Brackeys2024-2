@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=12 format=3 uid="uid://dnorlhe26qs1g"]
 
-[ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="2_btp56"]
+[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="2_btp56"]
 [ext_resource type="PackedScene" uid="uid://bv35mdft3kmc1" path="res://Scenes/enemies/skeleton.tscn" id="2_ngugj"]
 [ext_resource type="PackedScene" uid="uid://ctghkdgafr4i1" path="res://Scenes/enemies/dark_knight.tscn" id="3_2j7a0"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="3_hbpf4"]
