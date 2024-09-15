@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgm800calowgn"]
+[gd_scene load_steps=10 format=3 uid="uid://bgm800calowgn"]
 
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_o5f32"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vd02h"]
 [ext_resource type="PackedScene" uid="uid://bqgevatjhyfpg" path="res://Scenes/gameplayWeapon.tscn" id="6_6vigu"]
+[ext_resource type="Script" path="res://Scenes/health_ui.gd" id="6_tvv2e"]
+[ext_resource type="Texture2D" uid="uid://ceygfmlhfqvu3" path="res://Assets/emptyheart.png" id="7_wvok1"]
+[ext_resource type="Texture2D" uid="uid://bqrntxogj0edf" path="res://Assets/fullheart.png" id="8_qndrq"]
 
 [sub_resource type="Resource" id="Resource_w445y"]
 script = ExtResource("5_vd02h")
@@ -29,9 +32,27 @@ modulate = Color(1, 0, 0.984314, 1)
 
 [node name="Fists" parent="Weapon" index="0" instance=ExtResource("6_6vigu")]
 
-[node name="UI" type="CanvasLayer" parent="." index="5"]
+[node name="HealthUI" type="CanvasLayer" parent="." index="5"]
+script = ExtResource("6_tvv2e")
 
-[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
-[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
+[node name="Life" type="Control" parent="HealthUI" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EmptyHearts" type="TextureRect" parent="HealthUI/Life" index="0"]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("7_wvok1")
+stretch_mode = 1
+
+[node name="FullHearts" type="TextureRect" parent="HealthUI/Life" index="1"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 18.0
+texture = ExtResource("8_qndrq")
+stretch_mode = 1
 
 [editable path="Weapon/Fists"]
