@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=4 uid="uid://e4uxmnwsogg5"]
+[gd_scene load_steps=14 format=4 uid="uid://e4uxmnwsogg5"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_j54as"]
-[ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_lgdwa"]
+[ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_lgdwa"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="3_8yd0e"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_21ybc"]
-[ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_f10d6"]
+[ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_f10d6"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_majjp"]
-[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_qgoim"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_hrc7u"]
+[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_qgoim"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t0ato"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_g3lt5"]
 
@@ -141,9 +140,6 @@ tile_set = ExtResource("7_qgoim")
 physics_interpolation_mode = 2
 position = Vector2(408, -24)
 zoom = Vector2(3, 3)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_hrc7u")
 
 [node name="GM" parent="." instance=ExtResource("9_t0ato")]
 angry_after_turns = 4

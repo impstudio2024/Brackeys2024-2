@@ -1,13 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://bv3o7ixn64lrh"]
+[gd_scene load_steps=13 format=4 uid="uid://bv3o7ixn64lrh"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_lj4ul"]
-[ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_y5k3p"]
+[ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_y5k3p"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="3_mpf6m"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_0ul30"]
-[ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ouvgj"]
+[ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_ouvgj"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_syifm"]
-[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_bdn85"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_fpcaf"]
+[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_bdn85"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_08nkl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
@@ -141,29 +140,5 @@ physics_interpolation_mode = 2
 position = Vector2(680, -88)
 zoom = Vector2(3, 3)
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_fpcaf")
-
 [node name="GM" parent="." instance=ExtResource("9_08nkl")]
 angry_after_turns = 30
-
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20032" to="Entities/@Area2D@20032" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20033" to="Entities/@Area2D@20033" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20034" to="Entities/@Area2D@20034" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20035" to="Entities/@Area2D@20035" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20036" to="Entities/@Area2D@20036" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20037" to="Entities/@Area2D@20037" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20038" to="Entities/@Area2D@20038" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20039" to="Entities/@Area2D@20039" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@20040" to="Entities/@Area2D@20040" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@27327" to="Entities/@Area2D@27327" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@27329" to="Entities/@Area2D@27329" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@27330" to="Entities/@Area2D@27330" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@30236" to="Entities/@Area2D@30236" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@32313" to="Entities/@Area2D@32313" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@32314" to="Entities/@Area2D@32314" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@32315" to="Entities/@Area2D@32315" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@32316" to="Entities/@Area2D@32316" method="_on_body_entered"]

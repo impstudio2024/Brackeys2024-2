@@ -12,8 +12,6 @@ extends Node
 @export var level7Scene : PackedScene
 @export var level8Scene : PackedScene
 @export var level9Scene : PackedScene
-@export var level10Scene : PackedScene
-
 
 var levels = {}
 
@@ -30,7 +28,5 @@ func packLevels():
 		6: level6Scene,
 		7: level7Scene,
 		8: level8Scene,
-		9: level8Scene,
-		10: level8Scene,
-		
+		9: level8Scene		
 	}

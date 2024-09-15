@@ -5,13 +5,14 @@ class_name Player
 
 var turn_active: bool = true
 var previous_move: Vector2i = Vector2i.ZERO
-
+var cleared = false
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
 @onready var previous_direction : Vector2i = Vector2i.UP
 
 func _ready() -> void:
+	cleared = false
 	health_changed.connect(_on_health_changed.bind())
 	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
@@ -59,7 +60,9 @@ func _process(_delta: float) -> void:
 
 	match Global.specials.get_cell_source_id(map_position):
 		Global.SpecialTileTypes.EXIT:
-			Global.levelClear.emit()
+			if not cleared:
+				Global.levelClear.emit()
+				cleared = true
 
 	
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
