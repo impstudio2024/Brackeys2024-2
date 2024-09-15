@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=4 uid="uid://chr01rq6ki8i0"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_klgcc"]
-[ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_7lttm"]
+[ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_7lttm"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="3_dp0ja"]
-[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="4_dqu8a"]
+[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="4_dqu8a"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_rmfvj"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="4_xoxwr"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_6rbto"]
@@ -141,7 +141,7 @@ tile_map_data = PackedByteArray("AAAXACEAAAAAAAAAAQAGACYAAAAAAAAAAgA=")
 tile_set = SubResource("TileSet_0vx8l")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwATABwAAQAAAAAAAgATAB8AAQAAAAAAAwAYABsAAQAAAAAABAAYABUAAAAAAAAAAQAVABUAAAAAAAAAAQAbABUAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAXAB0AAgAAAAAAAwAYABUAAAAAAAAAAQAVABUAAAAAAAAAAQAbABUAAAAAAAAAAQAZABwAAQAAAAAABAAXABsAAQAAAAAAAgAVABwAAQAAAAAAAwA=")
 tile_set = ExtResource("3_dp0ja")
 
 [node name="Walls" type="TileMapLayer" parent="."]

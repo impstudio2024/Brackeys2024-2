@@ -4,8 +4,6 @@ extends Pickup
 enum Weapons { NONE, BROADSWORD, SPEAR, BOW }
 @export var type: Weapons
 @export var gameplayWeaponScene :PackedScene
-@export var damage: int
-@export var durability: int
 @export var picked_up : bool
 
 var direction : Vector2i = Vector2i.UP

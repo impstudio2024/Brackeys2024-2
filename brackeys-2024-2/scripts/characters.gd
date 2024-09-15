@@ -3,7 +3,7 @@ class_name Character
 
 signal health_changed
 
-@onready var health : int = 15:
+@onready var health : int = 3:
 	set(value):
 		health = value
 		health_changed.emit()
@@ -34,6 +34,7 @@ func move(relative_movement: Vector2i) -> Character:
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
 	await tween.finished
+	
 	# when moving the map position will also need to be updated
 	map_position = Global.entities.local_to_map(position)
 	
@@ -63,11 +64,13 @@ func damage_by(damage: int):
 	if health <= 0:
 		send_to_the_backrooms()
 	
+func dead()	:
+	pass
+	
 func send_to_the_backrooms():
 	if self.is_in_group("enemies"):
 		print("enemy killed")
-		#self.state
-		Global.enemy_killed.emit() #
+		self.dead()
 	if self.is_in_group("player"):
 		Global.game_over.emit()
 	
