@@ -9,7 +9,8 @@ tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 
 
 [connection signal="body_entered" from="TileMapLayer/Hitbox" to="TileMapLayer/Hitbox" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMapLayer/Hitbox" to="TileMapLayer/Hitbox" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@116277" to="TileMapLayer/@Area2D@116277" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/@Area2D@116277" to="TileMapLayer/@Area2D@116277" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@116278" to="TileMapLayer/@Area2D@116278" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/@Area2D@116278" to="TileMapLayer/@Area2D@116278" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@303911" to="TileMapLayer/@Area2D@303911" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/@Area2D@303911" to="TileMapLayer/@Area2D@303911" method="_on_body_exited"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@303912" to="TileMapLayer/@Area2D@303912" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/@Area2D@303912" to="TileMapLayer/@Area2D@303912" method="_on_body_exited"]
+

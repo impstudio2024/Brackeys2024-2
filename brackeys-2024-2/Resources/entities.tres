@@ -30,6 +30,6 @@ scenes/1/scene = ExtResource("2_btp56")
 scenes/3/scene = ExtResource("7_m53vo")
 
 [resource]
-sources/0 = SubResource("TileSetScenesCollectionSource_hhl07")
 sources/1 = SubResource("TileSetScenesCollectionSource_m4jpx")
+sources/0 = SubResource("TileSetScenesCollectionSource_hhl07")
 sources/2 = SubResource("TileSetScenesCollectionSource_6xl1f")

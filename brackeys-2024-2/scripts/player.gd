@@ -5,15 +5,16 @@ class_name Player
 
 var turn_active: bool = true
 
-
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
 @onready var previous_direction : Vector2i = Vector2i.UP
 
 func _ready() -> void:
+	cleared = false
 	health_changed.connect(_on_health_changed.bind())
 	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
+	Global.player_health_changed.connect(_on_health_changed)
 	add_to_group("player")
 	return super._ready()
 
@@ -27,8 +28,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_released("move_down"): movement.y = 1
 	elif Input.is_action_just_released('move_up'): movement.y = -1
 
-	if Input.is_action_just_released("move_left"): movement.x = -1
-	elif Input.is_action_just_released('move_right'): movement.x = 1
+	if Input.is_action_just_released("move_left"): 
+		movement.x = -1
+		$WhiteSquare.flip_h = true
+	elif Input.is_action_just_released('move_right'): 
+		movement.x = 1
+		$WhiteSquare.flip_h = false
 
 	if Input.is_action_just_released('move_down') and Input.is_action_just_released('move_up'): movement.y = 0
 	if Input.is_action_just_released('move_left') and Input.is_action_just_released('move_right'): movement.x = 0
@@ -65,22 +70,24 @@ func _process(_delta: float) -> void:
 
 	match Global.specials.get_cell_source_id(map_position):
 		Global.SpecialTileTypes.EXIT:
-			print('An exit tile was reached by the player, but the levels are not yet created. If they are done by now add their paths to the level_paths variable of Global and uncomment the line above. Feel free to delete this line. If there are any questions message Malario.')
-		
+			if not cleared:
+				Global.levelClear.emit()
+				cleared = true
 
 	
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	var oldWeapon = $Weapon.get_child(0)
-	
 	#weapon.position = oldWeapon.position
 	$Weapon.remove_child(oldWeapon)
+	weapon.position = oldWeapon.position
 	oldWeapon.queue_free()
 	$Weapon.add_child(weapon)
-	#weapon.move(previous_direction)
+	weapon.move(previous_direction)
 	
 	pickup.queue_free()
 	damage = weapon.damage
+	#print(weapon.name + " picked up!")
 	
 	weapon.position = oldWeapon.position
 	weapon.call_deferred('move', previous_direction)
@@ -88,9 +95,9 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 
 func _on_health_changed():
 	$sfx_player.play_sound('res://Assets/Sound/Characters/protagonist/Protagonist hurt.mp3')
+	
 	if health <= 0:
-		print('The player died. The death animation needs to be played. Do this in player.gd:9 ')
 		Global.game_over.emit()
-
+		print('gameover')
 func turnActive():
 	turn_active = true

@@ -11,3 +11,11 @@ tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 
 [connection signal="body_exited" from="TileMapLayer/Hitbox" to="TileMapLayer/Hitbox" method="_on_body_exited"]
 [connection signal="body_entered" from="TileMapLayer/@Area2D@117182" to="TileMapLayer/@Area2D@117182" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMapLayer/@Area2D@117182" to="TileMapLayer/@Area2D@117182" method="_on_body_exited"]
+
+[ext_resource type="PackedScene" uid="uid://bqgevatjhyfpg" path="res://Scenes/gameplayWeapon.tscn" id="1_nbby4"]
+
+[node name="Weapon" instance=ExtResource("1_nbby4")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cindcebl22iby"]
+
+[ext_resource type="PackedScene" uid="uid://u2004ra3jdwx" path="res://Scenes/entity_position_holder.tscn" id="1_1c5g6"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8hmwj"]
+scenes/1/scene = ExtResource("1_1c5g6")
+
+[sub_resource type="TileSet" id="TileSet_jogsc"]
+sources/0 = SubResource("TileSetScenesCollectionSource_8hmwj")
+
+[node name="Entity Position Holder" type="TileMapLayer"]
+z_index = 1000
+tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_jogsc")
