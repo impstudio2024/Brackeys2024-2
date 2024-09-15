@@ -3,7 +3,7 @@ extends Node2D
 var gameplay = false
 var nextScene :PackedScene
 var currentTransitionType:String
-
+var currentLevel = 1
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -12,6 +12,8 @@ func _ready() -> void:
 	Global.backMenu.connect(backMenu)
 	Global.startBGM.connect(startBGM)
 	Global.game_over.connect(game_over)
+	Global.levelClear.connect(levelClear)
+
 func game_over():
 	transition(SceneRepository.gameOverScene,"Dots")
 	gameplay = false
@@ -19,9 +21,11 @@ func startBGM():
 	$BgmPlayer.play()
 func playGame():
 	$BgmPlayer.starting_bgm()
-	transition(SceneRepository.level1Scene,"Dots")
+	transition(SceneRepository.levels[currentLevel],"Dots")
 	gameplay = true
-
+func levelClear():
+	currentLevel+=1
+	transition(SceneRepository.levels[currentLevel],"Dots")
 func backMenu():
 	transition(SceneRepository.mainMenuScene,"Dots")
 	gameplay = false
@@ -48,15 +52,20 @@ func _on_color_rect_transition_in() -> void:
 	else:
 		$Camera2D.anchor_mode = $Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
 	if gameplay:
-		$BgmPlayer.play()
+		if $BgmPlayer.playing:
+			$BgmPlayer._on_idle_signal()
+		else:
+			$BgmPlayer.play()
 	else:
 		$BgmPlayer.stop()
+	if nextScene in SceneRepository.levels.values():
+		Global.reset_spawners()
 	var sceneInstance = nextScene.instantiate()
 	var currentScene = $CanvasGroup/SceneContainer.get_child(0)
-	print(currentScene)
-	
+
 	$CanvasGroup/SceneContainer.remove_child(currentScene)
 	currentScene.queue_free()
 	$CanvasGroup/SceneContainer.add_child(sceneInstance)
 	await get_tree().create_timer(2).timeout 
+	
 	$CanvasGroup2/ColorRect/AnimationPlayer.play(currentTransitionType+"_out")

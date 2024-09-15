@@ -149,7 +149,3 @@ tile_set = ExtResource("4_dqu8a")
 
 [node name="GM" parent="." instance=ExtResource("7_3v2kk")]
 angry_after_turns = 20
-
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
