@@ -145,21 +145,3 @@ script = ExtResource("8_s6ghp")
 
 [node name="GM" parent="." instance=ExtResource("9_4n2px")]
 angry_after_turns = 50
-
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277890" to="Entities/@Area2D@277890" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277891" to="Entities/@Area2D@277891" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277892" to="Entities/@Area2D@277892" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277893" to="Entities/@Area2D@277893" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277894" to="Entities/@Area2D@277894" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277895" to="Entities/@Area2D@277895" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277896" to="Entities/@Area2D@277896" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277897" to="Entities/@Area2D@277897" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277898" to="Entities/@Area2D@277898" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277899" to="Entities/@Area2D@277899" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277900" to="Entities/@Area2D@277900" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277901" to="Entities/@Area2D@277901" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277902" to="Entities/@Area2D@277902" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@277903" to="Entities/@Area2D@277903" method="_on_body_entered"]
