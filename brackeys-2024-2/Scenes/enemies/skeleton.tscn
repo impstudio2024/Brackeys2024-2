@@ -9,7 +9,7 @@ size = Vector2(16, 16)
 
 [node name="Enemy" groups=["enemies"] instance=ExtResource("1_peago")]
 script = ExtResource("2_2pu6u")
-health = 1
+health = 2
 
 [node name="WhiteSquare" parent="." index="0"]
 position = Vector2(-5, -16)
@@ -19,14 +19,19 @@ hframes = 2
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_acf0o")
 
+[node name="EnemyHealthUI" parent="." index="4"]
+scale = Vector2(0.25, 0.25)
+
 [node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
-offset_left = -2.25
-offset_top = -36.0
-offset_right = 15.75
-offset_bottom = -18.0
+offset_left = -18.0
+offset_top = -146.0
+offset_right = 0.0
+offset_bottom = -128.0
+scale = Vector2(1, 1)
 
 [node name="FullHearts" parent="EnemyHealthUI" index="1"]
-offset_left = -2.25
-offset_top = -36.0
-offset_right = 15.75
-offset_bottom = -18.0
+offset_left = -18.0
+offset_top = -146.0
+offset_right = 0.0
+offset_bottom = -128.0
+scale = Vector2(1, 1)

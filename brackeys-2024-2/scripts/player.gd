@@ -44,15 +44,15 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 	if movement != Vector2i.ZERO:
 		turn_active = false
-		previous_move = movement
-
 		var should_move: bool = true
-		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
-		for child in tile_map_layer.get_children():
-			print('currentopponent' + str(child.currentOpponent))
-			if not child.currentOpponent: continue
-			child.currentOpponent.damage_by(dmg)
-			should_move = false
+		
+		if movement == previous_direction:
+			var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
+			for child in tile_map_layer.get_children():
+				print('currentopponent' + str(child.currentOpponent))
+				if not child.currentOpponent: continue
+				child.currentOpponent.damage_by(dmg)
+				should_move = false
 		
 		previous_direction = movement
 		
@@ -92,6 +92,6 @@ func _on_health_changed(health):
 	
 	if health <= 0:
 		Global.game_over.emit()
-
+		print('gameover')
 func turnActive():
 	turn_active = true

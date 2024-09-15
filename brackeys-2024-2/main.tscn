@@ -15,7 +15,6 @@ physics_interpolation_mode = 2
 position = Vector2(0.000915527, -0.00109863)
 scale = Vector2(1, 1)
 anchor_mode = 0
-zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("1_70qg7")
@@ -34,6 +33,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BgmPlayer" parent="." instance=ExtResource("5_ybyqh")]
+volume_db = -24.0
 autoplay = false
 syncMode = true
 

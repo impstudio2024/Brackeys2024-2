@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_md7l4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_bypfp"]
 [ext_resource type="Texture2D" uid="uid://i5tf0juhdlpt" path="res://Assets/you_died_text.png" id="11_2nsa1"]
-[ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://Scenes/bgm_player.tscn" id="11_hmim2"]
+[ext_resource type="PackedScene" path="res://Scenes/bgm_player.tscn" id="11_hmim2"]
 [ext_resource type="AudioStream" uid="uid://ckgsmar2wkat3" path="res://Assets/Sound/BGM/GameOver Stinger D&D.wav" id="12_s8uws"]
 
 [sub_resource type="Resource" id="Resource_pym5a"]

@@ -19,6 +19,7 @@ func retry():
 	gameplay = true
 	transition(SceneRepository.levels[currentLevel],"Dots")
 func game_over():
+	print('main says game over')
 	transition(SceneRepository.gameOverScene,"Dots")
 	gameplay = false
 func startBGM():
