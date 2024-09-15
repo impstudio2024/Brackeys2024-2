@@ -8,7 +8,8 @@ signal weapon_picked_up(weapon: GameplayWeapon,pickup: Pickup)
 signal game_over
 signal enemy_killed
 signal attack(target: Character, damage: int)
-
+signal player_health_changed(value: int)
+signal enemy_health_changed(value: int)
 
 var map: TileMapLayer
 var entities: TileMapLayer
