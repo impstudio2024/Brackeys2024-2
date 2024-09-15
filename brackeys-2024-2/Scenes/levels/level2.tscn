@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dv1d6rpv1bb3p"]
+[gd_scene load_steps=17 format=4 uid="uid://dv1d6rpv1bb3p"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_yasgi"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_xjsx7"]
@@ -10,8 +10,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_12r0m"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t7prn"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_3yex6"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xpe02"]
 tile_data = PackedInt32Array(0, 720896, 4, 65536, 720896, 5, 1, 786432, 4, 65537, 786432, 5)
@@ -114,9 +112,8 @@ texture = ExtResource("3_a6jd4")
 
 [sub_resource type="TileSet" id="TileSet_i71by"]
 sources/0 = SubResource("TileSetAtlasSource_vrtxs")
-pattern_0 = SubResource("TileMapPattern_4c12e")
-pattern_1 = SubResource("TileMapPattern_xpe02")
-pattern_2 = SubResource("TileMapPattern_3do0y")
+pattern_0 = SubResource("TileMapPattern_xpe02")
+pattern_1 = SubResource("TileMapPattern_3do0y")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_au1jd"]
 scenes/1/scene = ExtResource("4_1boph")

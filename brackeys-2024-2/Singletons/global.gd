@@ -22,7 +22,16 @@ enum SpecialTileTypes{
 	EXIT = 0
 }
 
-var level_paths: Array[String] = []
+var level_paths: Array[String] = ["res://Scenes/levels/level1.tscn",
+								"res://Scenes/levels/level2.tscn",
+								"res://Scenes/levels/level3.tscn",
+								"res://Scenes/levels/level4.tscn",
+								"res://Scenes/levels/level5.tscn",
+								"res://Scenes/levels/level6.tscn",
+								"res://Scenes/levels/level7.tscn",
+								"res://Scenes/levels/level8.tscn",
+								"res://Scenes/levels/level9.tscn"
+]
 var current_level: int = 0
 
 # call this when entering the game.
