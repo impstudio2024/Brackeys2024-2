@@ -37,23 +37,26 @@ modulate = Color(1, 0, 0.984314, 1)
 script = ExtResource("6_mfo2q")
 
 [node name="EmptyHearts" type="TextureRect" parent="PlayerHealthUI" index="0"]
-offset_left = 4.00002
-offset_top = 151.0
+offset_left = 4.0
+offset_top = 4.0
 offset_right = 22.0
-offset_bottom = 169.0
+offset_bottom = 22.0
 scale = Vector2(5, 5)
 texture = ExtResource("7_kxxoa")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="FullHearts" type="TextureRect" parent="PlayerHealthUI" index="1"]
-offset_left = 4.00002
-offset_top = 151.0
+offset_left = 4.0
+offset_top = 4.0
 offset_right = 22.0
-offset_bottom = 169.0
+offset_bottom = 22.0
 scale = Vector2(5, 5)
 texture = ExtResource("8_8ronc")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
+[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
 
 [editable path="Weapon/Fists"]
