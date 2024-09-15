@@ -49,6 +49,7 @@ func _process(_delta: float) -> void:
 		var should_move: bool = true
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 		for child in tile_map_layer.get_children():
+			print('currentopponent' + str(child.currentOpponent))
 			if not child.currentOpponent: continue
 			child.currentOpponent.damage_by(dmg)
 			should_move = false

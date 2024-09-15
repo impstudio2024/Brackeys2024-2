@@ -24,7 +24,7 @@ func _ready() -> void:
 func init():
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
-	Global.entity_positions.set_cell(position, 0)
+	Global.entity_positions.set_cell(map_position, 0, Vector2i(0, 0), 1)
 
 func move(relative_movement: Vector2i) -> Character:
 	# we are basically not using the tilemmaplayers functionality becasuse it breaks everything. for explanation message @Malario
@@ -36,11 +36,11 @@ func move(relative_movement: Vector2i) -> Character:
 
 	Global.entity_positions.erase_cell(map_position)
 	map_position = map_position + relative_movement
-	Global.entity_positions.set_cell(map_position, 0)
+	Global.entity_positions.set_cell(map_position, 0, Vector2i(0, 0), 1)
 	
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "position", Global.entities.map_to_local(map_position), 0.5)
+	tween.tween_property(self, "position", Global.entities.map_to_local(map_position), 0.25)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
@@ -62,7 +62,8 @@ func move_and_jump_over(direction: Vector2i):
 	move(direction)
 
 func find_character_in_cell(cell: Vector2i) -> Character:
-	if Global.entity_positions.get_cell_source_id(cell) == -1: return
+	print(name + ' source id: ' + str(Global.entity_positions.get_cell_source_id(cell)))
+	if Global.entity_positions.get_cell_source_id(cell) == -1: return null
 	for character in get_tree().get_nodes_in_group('character'):
 		if not character.map_position == cell: continue
 		return character as Character

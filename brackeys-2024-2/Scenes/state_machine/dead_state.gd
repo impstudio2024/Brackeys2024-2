@@ -8,11 +8,12 @@ func enter(_previous_state_path: String, data := {}) -> void:
 	enemy.visible = false
 	enemy.map_position = Global.entities.local_to_map(enemy.initial_pos)
 	enemy.position = enemy.initial_pos
-
+	Global.entity_positions.erase_cell(enemy.map_position)
 
 func exit():
 	enemy.get_node("CollisionShape2D").disabled = false
 	enemy.visible = true
+	
 
 
 func update(_delta: float) -> void:

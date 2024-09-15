@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="brackeys-2024-2"
-run/main_scene="res://main.tscn"
+config/name="Dungeons and Deceit"
+run/main_scene="res://Scenes/levels/level3.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/gm_portrait_angry_bigger.png"
 
 [autoload]
 
@@ -25,6 +25,7 @@ SceneRepository="*res://Scenes/scene_repository.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

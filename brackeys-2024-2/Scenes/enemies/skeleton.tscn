@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv35mdft3kmc1"]
 
-[ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_peago"]
+[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_peago"]
 [ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
 [ext_resource type="Texture2D" uid="uid://bw2m1enqpxewb" path="res://Assets/Sprites/Enemies/skeleton_sprite-Sheet.png" id="3_27vef"]
 
@@ -11,6 +11,7 @@ size = Vector2(16, 16)
 collision_layer = 1
 collision_mask = 1
 script = ExtResource("2_2pu6u")
+health = 1
 
 [node name="WhiteSquare" parent="." index="0"]
 position = Vector2(-5, -16)
@@ -19,3 +20,15 @@ hframes = 2
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_acf0o")
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+offset_left = -2.25
+offset_top = -36.0
+offset_right = 15.75
+offset_bottom = -18.0
+
+[node name="FullHearts" parent="EnemyHealthUI" index="1"]
+offset_left = -2.25
+offset_top = -36.0
+offset_right = 15.75
+offset_bottom = -18.0

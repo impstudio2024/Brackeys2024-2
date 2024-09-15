@@ -120,7 +120,4 @@ animation = &"angry"
 autoplay = "idle"
 script = ExtResource("11_wghaw")
 
-[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
-[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
-
 [editable path="Weapon/Fists"]
