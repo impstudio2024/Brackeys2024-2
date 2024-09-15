@@ -157,7 +157,7 @@ zoom = Vector2(3, 3)
 script = ExtResource("8_ho8tg")
 
 [node name="GM" parent="." instance=ExtResource("9_bexka")]
-angry_after_turns = 30
+angry_after_turns = 120
 
 [node name="Tutorials" type="Node" parent="."]
 
@@ -196,31 +196,3 @@ offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("10_vs6xf")
 text = "Bow hits far.
 "
-
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138539" to="Entities/@Area2D@138539" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138540" to="Entities/@Area2D@138540" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138541" to="Entities/@Area2D@138541" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138542" to="Entities/@Area2D@138542" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138543" to="Entities/@Area2D@138543" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138544" to="Entities/@Area2D@138544" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138545" to="Entities/@Area2D@138545" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138546" to="Entities/@Area2D@138546" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138552" to="Entities/@Area2D@138552" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138553" to="Entities/@Area2D@138553" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138554" to="Entities/@Area2D@138554" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138555" to="Entities/@Area2D@138555" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138556" to="Entities/@Area2D@138556" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138557" to="Entities/@Area2D@138557" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138558" to="Entities/@Area2D@138558" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138559" to="Entities/@Area2D@138559" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138560" to="Entities/@Area2D@138560" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138561" to="Entities/@Area2D@138561" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@138562" to="Entities/@Area2D@138562" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@155608" to="Entities/@Area2D@155608" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@155609" to="Entities/@Area2D@155609" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@155610" to="Entities/@Area2D@155610" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@155611" to="Entities/@Area2D@155611" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@155612" to="Entities/@Area2D@155612" method="_on_body_entered"]
