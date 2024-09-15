@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="4_dqu8a"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_rmfvj"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="4_xoxwr"]
-[ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_6rbto"]
+[ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_6rbto"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="7_3v2kk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
