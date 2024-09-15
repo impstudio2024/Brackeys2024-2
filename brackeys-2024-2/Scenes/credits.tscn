@@ -206,9 +206,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 638.0
-offset_top = 3624.0
+offset_top = 3738.0
 offset_right = 1121.0
-offset_bottom = 3907.0
+offset_bottom = 4021.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -235,9 +235,9 @@ vertical_alignment = 1
 
 [node name="Outro" type="VBoxContainer" parent="ParallaxBackground/ParallaxTextLayer"]
 offset_left = 616.0
-offset_top = 4034.0
+offset_top = 4340.0
 offset_right = 1141.0
-offset_bottom = 4317.0
+offset_bottom = 4623.0
 alignment = 1
 
 [node name="Title" type="Label" parent="ParallaxBackground/ParallaxTextLayer/Outro"]
