@@ -144,21 +144,3 @@ zoom = Vector2(3, 3)
 angry_after_turns = 50
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("10_iv2cj")]
-
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97050" to="Entities/@Area2D@97050" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97051" to="Entities/@Area2D@97051" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97052" to="Entities/@Area2D@97052" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97053" to="Entities/@Area2D@97053" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97054" to="Entities/@Area2D@97054" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97055" to="Entities/@Area2D@97055" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97056" to="Entities/@Area2D@97056" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97057" to="Entities/@Area2D@97057" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97058" to="Entities/@Area2D@97058" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97059" to="Entities/@Area2D@97059" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97060" to="Entities/@Area2D@97060" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97061" to="Entities/@Area2D@97061" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97062" to="Entities/@Area2D@97062" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@97063" to="Entities/@Area2D@97063" method="_on_body_entered"]
