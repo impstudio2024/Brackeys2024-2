@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_k85di"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_3odxf"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_jne41"]
-[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_j7ykl"]
+[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_j7ykl"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_le86v"]
-[ext_resource type="PackedScene" uid="uid://c2utdcco417rh" path="res://Scenes/entity_positions_tml.tscn" id="10_fpo5p"]
+[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="10_fpo5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_3blkm")

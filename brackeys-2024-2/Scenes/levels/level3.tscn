@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_21ybc"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_f10d6"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_majjp"]
-[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_qgoim"]
+[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_qgoim"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t0ato"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_g3lt5"]
-[ext_resource type="PackedScene" uid="uid://c2utdcco417rh" path="res://Scenes/entity_positions_tml.tscn" id="11_c50vb"]
+[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="11_c50vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_8yd0e")
@@ -114,7 +114,7 @@ scenes/2/scene = ExtResource("5_f10d6")
 [sub_resource type="TileSet" id="TileSet_0vx8l"]
 sources/0 = SubResource("TileSetScenesCollectionSource_au1jd")
 
-[node name="Map2" type="Node2D"]
+[node name="Map3" type="Node2D"]
 script = ExtResource("1_j54as")
 
 [node name="Floor" type="TileMapLayer" parent="."]
@@ -188,3 +188,7 @@ text = "Bow hits far.
 "
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("11_c50vb")]
+
+[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]

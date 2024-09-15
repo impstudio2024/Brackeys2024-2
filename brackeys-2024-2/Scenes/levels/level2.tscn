@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_1boph"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ful01"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_di3e1"]
-[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_dtb3n"]
+[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_dtb3n"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t7prn"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_3yex6"]
-[ext_resource type="PackedScene" uid="uid://c2utdcco417rh" path="res://Scenes/entity_positions_tml.tscn" id="11_078wl"]
+[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="11_078wl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xpe02"]
 tile_data = PackedInt32Array(0, 720896, 4, 65536, 720896, 5, 1, 786432, 4, 65537, 786432, 5)
@@ -122,7 +122,7 @@ scenes/2/scene = ExtResource("5_ful01")
 [sub_resource type="TileSet" id="TileSet_0vx8l"]
 sources/0 = SubResource("TileSetScenesCollectionSource_au1jd")
 
-[node name="Map2" type="Node2D"]
+[node name="Map3" type="Node2D"]
 script = ExtResource("1_yasgi")
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("11_078wl")]
