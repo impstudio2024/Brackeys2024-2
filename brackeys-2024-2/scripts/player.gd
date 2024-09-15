@@ -4,6 +4,8 @@ class_name Player
 @export var dmg: int = 1
 
 var turn_active: bool = true
+var cleared: bool
+
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 

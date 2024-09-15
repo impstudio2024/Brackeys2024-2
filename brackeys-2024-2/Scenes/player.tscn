@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4382fsxp6v3i"]
+[gd_scene load_steps=21 format=3 uid="uid://b4382fsxp6v3i"]
 
 [ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
@@ -8,10 +8,10 @@
 [ext_resource type="Script" path="res://Scenes/player_health_ui.gd" id="6_mfo2q"]
 [ext_resource type="Texture2D" uid="uid://ceygfmlhfqvu3" path="res://Assets/emptyheart.png" id="7_kxxoa"]
 [ext_resource type="Texture2D" uid="uid://bqrntxogj0edf" path="res://Assets/fullheart.png" id="8_8ronc"]
-[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="9_52amk"]
 [ext_resource type="Texture2D" uid="uid://3ni1ayrdmbjn" path="res://Assets/Sprites/gm_portrait_idle-Sheet.png" id="9_7br4r"]
 [ext_resource type="Texture2D" uid="uid://dhr53qcwqn5y1" path="res://Assets/Sprites/gm_portrait_angry-Sheet.png" id="10_xtkdu"]
 [ext_resource type="Script" path="res://Scenes/sprite_2d.gd" id="11_wghaw"]
+[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="12_d5nix"]
 
 [sub_resource type="Resource" id="Resource_w445y"]
 script = ExtResource("5_vd02h")
@@ -113,10 +113,6 @@ texture = ExtResource("8_8ronc")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="sfx_player" parent="." index="6" instance=ExtResource("9_52amk")]
-
-[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
-[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
 [node name="Sprite2D" type="AnimatedSprite2D" parent="PlayerHealthUI" index="2"]
 position = Vector2(1823, 984)
 scale = Vector2(2, 2)
@@ -124,5 +120,7 @@ sprite_frames = SubResource("SpriteFrames_8yd1f")
 animation = &"angry"
 autoplay = "idle"
 script = ExtResource("11_wghaw")
+
+[node name="sfx_player" parent="." index="6" instance=ExtResource("12_d5nix")]
 
 [editable path="Weapon/Fists"]
