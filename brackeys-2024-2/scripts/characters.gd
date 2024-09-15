@@ -40,7 +40,7 @@ func move(relative_movement: Vector2i) -> Character:
 	
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "position", Global.entities.map_to_local(map_position), .025)
+	tween.tween_property(self, "position", Global.entities.map_to_local(map_position), 0.5)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()

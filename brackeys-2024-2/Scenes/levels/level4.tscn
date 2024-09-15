@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c53ciawt3obvn"]
+[gd_scene load_steps=15 format=4 uid="uid://c53ciawt3obvn"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_74382"]
 [ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_odkyp"]
@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_150yj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_s6ghp"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_4n2px"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_iv2cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_4v5u7")
@@ -145,3 +146,5 @@ script = ExtResource("8_s6ghp")
 
 [node name="GM" parent="." instance=ExtResource("9_4n2px")]
 angry_after_turns = 50
+
+[node name="Entity Position Holder" parent="." instance=ExtResource("10_iv2cj")]

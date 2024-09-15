@@ -9,5 +9,6 @@ scenes/1/scene = ExtResource("1_1c5g6")
 sources/0 = SubResource("TileSetScenesCollectionSource_8hmwj")
 
 [node name="Entity Position Holder" type="TileMapLayer"]
+visible = false
 z_index = 1000
 tile_set = SubResource("TileSet_jogsc")
