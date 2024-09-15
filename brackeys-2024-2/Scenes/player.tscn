@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4382fsxp6v3i"]
+[gd_scene load_steps=13 format=3 uid="uid://b4382fsxp6v3i"]
 
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_o5f32"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vd02h"]
 [ext_resource type="PackedScene" uid="uid://ds0bt5ldghwv" path="res://Scenes/Weapons/fists.tscn" id="6_hnltd"]
+[ext_resource type="Texture2D" uid="uid://bqrntxogj0edf" path="res://Assets/fullheart.png" id="7_sflty"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7ajh"]
 atlas = ExtResource("3_pest1")
@@ -73,5 +74,7 @@ offset_bottom = 40.0
 
 [node name="Hearts" type="TextureRect" parent="UI/Life" index="0"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 55.0
+offset_bottom = 18.0
+texture = ExtResource("7_sflty")
+stretch_mode = 1
