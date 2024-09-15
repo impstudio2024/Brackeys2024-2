@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqb2lhib4yoaj"]
+[gd_scene load_steps=7 format=3 uid="uid://bdn6ejq61c68t"]
 
 [ext_resource type="Script" path="res://scripts/characters.gd" id="1_en3pv"]
 [ext_resource type="Texture2D" uid="uid://cjq5qks3ia41d" path="res://Assets/Sprites/Knight_Sheet.png" id="2_whfgu"]

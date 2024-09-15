@@ -58,7 +58,7 @@ func _process(_delta: float) -> void:
 		
 		if should_move:
 			await move(movement)
-			$Weapon.get_child(0).move(previous_direction)
+			$Weapon.get_child(0).move(movement)
 		
 		Global.player_moved.emit(self)
 
