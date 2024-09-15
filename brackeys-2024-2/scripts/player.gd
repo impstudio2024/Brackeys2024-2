@@ -1,7 +1,11 @@
 extends Character
 class_name Player
 
+@export var dmg: int = 1
+
 var turn_active: bool = true
+var previous_move: Vector2i = Vector2i.ZERO
+
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
@@ -9,8 +13,9 @@ var turn_active: bool = true
 
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
-	Global.connect("weapon_picked_up", change_weapon)
+	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
+	Global.player_health_changed.connect(_on_health_changed)
 	add_to_group("player")
 	return super._ready()
 
@@ -32,44 +37,39 @@ func _process(_delta: float) -> void:
 
 	if movement.length_squared() > 1:
 		movement = Vector2i.ZERO
-
 	if movement != Vector2i.ZERO:
-		
-		if movement.x == -1 and !$WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if $WhiteSquare.flip_h and sign($WhiteSquare.position.x) != -1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
-		elif movement.x == 1 and $WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
+		previous_move = movement
 
 		var should_move: bool = true
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 		for child in tile_map_layer.get_children():
 			if not child.currentOpponent: continue
-			child.currentOpponent.damage_by(damage)
+			child.currentOpponent.damage_by(dmg)
 			should_move = false
 		
 		previous_direction = movement
 		
 		if should_move:
 			await move(movement)
+<<<<<<< HEAD
 			$Weapon.get_child(0).move(previous_direction)
 		
+=======
+			
+>>>>>>> b4b2e63afd3e7d7e31f09ee0bf99916137adad5d
 		Global.player_moved.emit(self)
 
 
 	match Global.specials.get_cell_source_id(map_position):
 		Global.SpecialTileTypes.EXIT:
-			print('An exit tile was reached by the player, but the levels are not yet created. If they are done by now add their paths to the level_paths variable of Global and uncomment the line above. Feel free to delete this line. If there are any questions message Malario.')
-		
+			Global.levelClear.emit()
 
 	
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	var oldWeapon = $Weapon.get_child(0)
+	#weapon.position = oldWeapon.position
 	$Weapon.remove_child(oldWeapon)
 	weapon.position = oldWeapon.position
 	oldWeapon.queue_free()
@@ -78,14 +78,15 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	
 	pickup.queue_free()
 	damage = weapon.damage
-	
 	#print(weapon.name + " picked up!")
 	
+	weapon.position = oldWeapon.position
+	weapon.call_deferred('move', previous_move)
 	
 
-func _on_health_changed():
+func _on_health_changed(health):
+	
 	if health <= 0:
-		print('The player died. The death animation needs to be played. Do this in player.gd:9 ')
 		Global.game_over.emit()
 
 func turnActive():

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cklpot7guc455"]
+[gd_scene load_steps=4 format=3 uid="uid://cklpot7guc455"]
 
 [ext_resource type="Script" path="res://Scenes/weaponHitbox.gd" id="1_1aemj"]
+[ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="2_f0dvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv4oi"]
 size = Vector2(10, 10)
@@ -11,6 +12,11 @@ script = ExtResource("1_1aemj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xv4oi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.653367, 0, 0.0149347, 0.54902)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_f0dvh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

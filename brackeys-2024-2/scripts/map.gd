@@ -8,3 +8,4 @@ func _ready() -> void:
 	Global.walls = $Walls
 	Global.holes = $Holes
 	Global.specials = $"Special Tiles"
+	Global.startBGM.emit()

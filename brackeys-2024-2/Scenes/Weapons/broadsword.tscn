@@ -24,8 +24,6 @@ animations = [{
 script = ExtResource("2_5m0ci")
 type = 0
 gameplayWeaponScene = ExtResource("3_3ws3f")
-damage = 0
-durability = 0
 picked_up = false
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]

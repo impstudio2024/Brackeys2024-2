@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctc716fcrxadd"]
+[gd_scene load_steps=6 format=3 uid="uid://cqphrw1ra7hde"]
 
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_2inkf"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="1_28mqk"]
@@ -11,5 +11,4 @@ script = ExtResource("1_28mqk")
 enemies = Array[PackedScene]([ExtResource("2_y5uto"), ExtResource("3_wtltl"), ExtResource("4_als35")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 1, 1)
 texture = ExtResource("1_2inkf")

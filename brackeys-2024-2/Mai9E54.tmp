@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2nr5080thv0m"]
+
+[ext_resource type="PackedScene" uid="uid://bnx6uhsqwg5eb" path="res://Intro.tscn" id="1_fre8k"]
+[ext_resource type="Script" path="res://main.gd" id="1_qabbo"]
+[ext_resource type="PackedScene" uid="uid://b5qksrgp85atl" path="res://Scenes/transition_manager.tscn" id="4_rmgk2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qabbo")
+transitionScene = ExtResource("4_rmgk2")
+
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="SceneContainer" type="Node" parent="CanvasGroup"]
+
+[node name="Intro" parent="CanvasGroup/SceneContainer" instance=ExtResource("1_fre8k")]
+
+[node name="Camera2D" type="Camera2D" parent="CanvasGroup"]
+physics_interpolation_mode = 2
+position = Vector2(0.00012207, 6.10352e-05)
+anchor_mode = 0
+
+[node name="CanvasGroup2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" parent="CanvasGroup2" instance=ExtResource("4_rmgk2")]
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="finished" from="CanvasGroup/SceneContainer/Intro" to="." method="_on_intro_finished"]
+[connection signal="transition_in" from="CanvasGroup2/ColorRect" to="." method="_on_color_rect_transition_in"]
+[connection signal="animation_finished" from="CanvasGroup2/ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="CanvasGroup2/ColorRect"]

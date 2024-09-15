@@ -1,12 +1,17 @@
 extends CharacterBody2D
 class_name Character
 
-signal health_changed
+signal health_changed(current_health:int)
 
-@onready var health : int = 3:
+@export var health : int = 6:
 	set(value):
 		health = value
-		health_changed.emit()
+		print('health ' + str(health) + ' set on ' + name)
+		if self is Player:
+			Global.player_health_changed.emit(health)
+		health_changed.emit(health)
+		#if self is Enemy:
+			#Global.enemy_health_changed.emit(self.health)
 @onready var damage : int = 5
 @onready var animation_player = $AnimationPlayer
 
@@ -15,6 +20,7 @@ var map_position: Vector2i
 
 func _ready() -> void:
 	call_deferred("init")
+	
 func init():
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
@@ -28,6 +34,8 @@ func move(relative_movement: Vector2i) -> Character:
 
 	if Global.walls.get_cell_tile_data(map_position + relative_movement): return null
 
+	map_position = map_position + relative_movement
+	
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
 	tween.tween_property(self, "position", Global.entities.map_to_local(map_position + relative_movement), .025)
@@ -37,7 +45,6 @@ func move(relative_movement: Vector2i) -> Character:
 	await tween.finished
 	
 	# when moving the map position will also need to be updated
-	map_position = Global.entities.local_to_map(position)
 	
 	if Global.holes.get_cell_tile_data(map_position) and not is_in_group('player'):
 		queue_free()
@@ -73,7 +80,10 @@ func dead()	:
 func send_to_the_backrooms():
 	if self.is_in_group("enemies"):
 		print("enemy killed")
-		self.dead()
+		#self.state
+		Global.enemy_killed.emit()
+		var enemy = self as Enemy
+		enemy.statemachine.changeState.emit('DeadState')
 	if self.is_in_group("player"):
 		Global.game_over.emit()
 	
