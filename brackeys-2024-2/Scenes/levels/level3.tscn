@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_qgoim"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t0ato"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_g3lt5"]
-[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="11_c50vb"]
+[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="11_c50vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_8yd0e")

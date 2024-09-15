@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://58ro2gwwppv0"
-path="res://.godot/imported/Protagonist walk.mp3-78d91737406326124943257875decd36.mp3str"
+path="res://.godot/imported/protagonist walk.mp3-87d85330488cf8171f17813191e48f91.mp3str"
 
 [deps]
 
-source_file="res://Assets/Sound/Characters/protagonist/Protagonist walk.mp3"
-dest_files=["res://.godot/imported/Protagonist walk.mp3-78d91737406326124943257875decd36.mp3str"]
+source_file="res://Assets/Sound/Characters/protagonist/protagonist walk.mp3"
+dest_files=["res://.godot/imported/protagonist walk.mp3-87d85330488cf8171f17813191e48f91.mp3str"]
 
 [params]
 

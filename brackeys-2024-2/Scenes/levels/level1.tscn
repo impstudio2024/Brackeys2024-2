@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_yf44g"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_bexka"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_vs6xf"]
-[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="11_xt4r7"]
+[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="11_xt4r7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4c12e"]
 tile_data = PackedInt32Array(0, 131072, 3, 1, 196608, 3, 2, 262144, 3)

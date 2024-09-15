@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4382fsxp6v3i"]
+[gd_scene load_steps=21 format=3 uid="uid://bgm800calowgn"]
 
 [ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_6kguh"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://3ni1ayrdmbjn" path="res://Assets/Sprites/gm_portrait_idle-Sheet.png" id="9_7br4r"]
 [ext_resource type="Texture2D" uid="uid://dhr53qcwqn5y1" path="res://Assets/Sprites/gm_portrait_angry-Sheet.png" id="10_xtkdu"]
 [ext_resource type="Script" path="res://Scenes/sprite_2d.gd" id="11_wghaw"]
-[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="12_d5nix"]
+[ext_resource type="PackedScene" uid="uid://dk4gcxu1eki3c" path="res://Scenes/sfx_player.tscn" id="12_d5nix"]
 
 [sub_resource type="Resource" id="Resource_w445y"]
 script = ExtResource("5_vd02h")
