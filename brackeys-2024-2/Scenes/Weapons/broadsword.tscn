@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://oyas1loulgv4"]
+[gd_scene load_steps=7 format=3 uid="uid://oyas1loulgv4"]
 
 [ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://Scenes/pickup.tscn" id="1_kmekm"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_5m0ci"]
+[ext_resource type="PackedScene" uid="uid://bas2jvegukquk" path="res://Scenes/gameplayBroadsword.tscn" id="3_3ws3f"]
 [ext_resource type="Texture2D" uid="uid://65wqc3a53vyw" path="res://Assets/Sprites/item_pickups.png" id="3_hcl71"]
-[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="4_3i0yu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjbt4"]
 atlas = ExtResource("3_hcl71")
@@ -20,23 +20,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_e0ckn"]
-scenes/1/scene = ExtResource("4_3i0yu")
-
-[sub_resource type="TileSet" id="TileSet_veuy3"]
-sources/0 = SubResource("TileSetScenesCollectionSource_e0ckn")
-
 [node name="Broadsword" instance=ExtResource("1_kmekm")]
 script = ExtResource("2_5m0ci")
-type = 1
+type = 0
+gameplayWeaponScene = ExtResource("3_3ws3f")
 damage = 0
 durability = 0
 picked_up = false
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_wboks")
-
-[node name="Hitboxes" type="TileMapLayer" parent="." index="3"]
-position = Vector2(-8, -8)
-tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0)
-tile_set = SubResource("TileSet_veuy3")

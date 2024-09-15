@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcqwj2net3f6a"]
+[gd_scene load_steps=2 format=3 uid="uid://bas2jvegukquk"]
 
-[ext_resource type="PackedScene" uid="uid://3vsu7dnp7rsj" path="res://Scenes/gameplayWeapon.tscn" id="1_gt08v"]
+[ext_resource type="PackedScene" uid="uid://3vsu7dnp7rsj" path="res://scenes/gameplayWeapon.tscn" id="1_gt08v"]
 
-[node name="Weapon2" instance=ExtResource("1_gt08v")]
+[node name="Weapon" instance=ExtResource("1_gt08v")]
+
 
 [node name="TileMapLayer" parent="." index="0"]
 tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0)
