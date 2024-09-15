@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv35mdft3kmc1"]
+[gd_scene load_steps=4 format=3 uid="uid://bv35mdft3kmc1"]
 
 [ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_peago"]
 [ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
+[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="3_iuy8t"]
 
 [node name="Enemy2" instance=ExtResource("1_peago")]
 script = ExtResource("2_2pu6u")
@@ -26,3 +27,5 @@ offset_top = -53.0
 offset_right = 9.0
 offset_bottom = -35.0
 scale = Vector2(1, 1)
+
+[node name="sfx_player" parent="." index="5" instance=ExtResource("3_iuy8t")]

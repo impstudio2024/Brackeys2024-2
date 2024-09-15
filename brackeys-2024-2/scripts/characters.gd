@@ -49,6 +49,7 @@ func move(relative_movement: Vector2i) -> Character:
 	if Global.holes.get_cell_tile_data(map_position) and not is_in_group('player'):
 		queue_free()
 	elif Global.holes.get_cell_tile_data(map_position) and is_in_group('player'):
+		$sfx_player.play_sound('res://Assets/Sound/Characters/protagonist/Protagonist jump.mp3')
 		move(relative_movement)
 	
 	return null
@@ -85,3 +86,5 @@ func send_to_the_backrooms():
 	if self.is_in_group("player"):
 		Global.game_over.emit()
 	
+func play_move_sound():
+	pass
