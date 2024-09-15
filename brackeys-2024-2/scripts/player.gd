@@ -2,21 +2,16 @@ extends Character
 class_name Player
 
 var turn_active: bool = true
-var health: int = 1: 
-	set(value):
-		health = value
-		if health <= 0:
-			print('The player died. The death animation needs to be played. Do this in player.gd:9 ')
-			Global.game_over.emit()
 
 @onready var current_weapon : Weapon = $Fists
 
-
 func _ready() -> void:
+	health_changed.connect(_on_health_changed.bind())
 	Global.connect("weapon_picked_up", change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
+
 
 func _process(_delta: float) -> void:
 	if not turn_active: return
@@ -46,25 +41,35 @@ func _process(_delta: float) -> void:
 			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
 				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
-		await move(movement)
-		#print("Character moved!")  # Print a string to confirm that the character moved (FOR DEBUGGING)
+
+		$Weapon.get_child(0).move(movement)
+		var obstacle = await move(movement)
 		Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
-		match Global.specials.get_cell_source_id(map_position):
-			Global.SpecialTileTypes.EXIT:
-#				# Global.advance_level()
-				print('An exit tile was reached by the player, but the levels are not yet created. If they are done by now add their paths to the level_paths variable of Global and uncomment the line above. Feel free to delete this line. If there are any questions message Malario.')
+		if obstacle and obstacle.is_in_group("enemies"):
+			Global.attack.emit(obstacle, damage)
+
+
+	match Global.specials.get_cell_source_id(map_position):
+		Global.SpecialTileTypes.EXIT:
+			print('An exit tile was reached by the player, but the levels are not yet created. If they are done by now add their paths to the level_paths variable of Global and uncomment the line above. Feel free to delete this line. If there are any questions message Malario.')
 		
-func change_weapon(weapon: Weapon):
+
+	
+func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
+	var oldWeapon = $Weapon.get_child(0)
+	print(oldWeapon)
+	$Weapon.remove_child(oldWeapon)
+	oldWeapon.queue_free()
+	$Weapon.add_child(weapon)
+	#print(weapon.name + " picked up!")
+	weapon.position = oldWeapon.position
 	
-	#Remove weapons before 
-	for node : Node in get_children():
-		if get_node(node.get_path()).is_in_group("weapons"):
-			node.queue_free() #we could reparent it to the Entities TileMap, leaving the previous weapon on the ground
-	
-	print(weapon.name + " picked up!")
-	weapon.transform = transform
-	weapon.reparent(self)
+
+func _on_health_changed():
+	if health <= 0:
+		print('The player died. The death animation needs to be played. Do this in player.gd:9 ')
+		Global.game_over.emit()
 
 func turnActive():
 	turn_active = true
