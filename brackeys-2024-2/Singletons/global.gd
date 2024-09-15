@@ -8,8 +8,13 @@ signal weapon_picked_up(weapon: GameplayWeapon,pickup: Pickup)
 signal game_over
 signal enemy_killed
 signal attack(target: Character, damage: int)
-signal player_health_changed(value: int)
-signal enemy_health_changed(value: int)
+
+signal playGame()
+signal seeCredits()
+signal backMenu()
+signal angryGM()
+signal idleGM()
+signal startBGM()
 
 var map: TileMapLayer
 var entities: TileMapLayer
@@ -30,3 +35,8 @@ var current_level: int = 0
 func advance_level():
 	get_tree().change_scene_to_file(level_paths[current_level])
 	current_level += 1
+	var to_remove: Array[int] = []
+	for i in range(len(spawners)):
+		if spawners[i] == null:
+			to_remove.append(i)
+	for index in to_remove: spawners.remove_at(index)

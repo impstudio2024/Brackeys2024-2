@@ -41,6 +41,7 @@ func move(relative_movement: Vector2i) -> Character:
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
 	await tween.finished
+	
 	# when moving the map position will also need to be updated
 	map_position = Global.entities.local_to_map(position)
 	
@@ -69,6 +70,9 @@ func damage_by(damage: int):
 	#TODO: play animation, maybe a simple red color modulation for a few frames
 	if health <= 0:
 		send_to_the_backrooms()
+	
+func dead()	:
+	pass
 	
 func send_to_the_backrooms():
 	if self.is_in_group("enemies"):

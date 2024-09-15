@@ -7,17 +7,13 @@ var max_vol_value: int = 0
 @export var crossfade_time: float 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.angryGM.connect(_on_angry_signal)
+	Global.idleGM.connect(_on_idle_signal)
+	
 	call_deferred("starting_bgm")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# This is just for testing purposes. Signals must be connected
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Received order to angry")
-		_on_angry_signal()
-	if Input.is_action_just_pressed("down"):
-		print("Received order to idle")
-		_on_idle_signal()
+
 
 func starting_bgm():
 	if syncMode:
@@ -48,3 +44,6 @@ func crossfade_streams(fade_out_index: int, fade_in_index: int, duration: float)
 		max_vol_value,
 		duration
 	)
+
+func fadeout():
+	pass

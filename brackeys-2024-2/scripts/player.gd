@@ -9,6 +9,8 @@ var previous_move: Vector2i = Vector2i.ZERO
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
+@onready var previous_direction : Vector2i = Vector2i.UP
+
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
 	Global.weapon_picked_up.connect(change_weapon)
@@ -19,7 +21,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not turn_active: return
-
+	
+	
 	var movement: Vector2i = Vector2i.ZERO
 	
 	if Input.is_action_just_released("move_down"): movement.y = 1
@@ -38,14 +41,20 @@ func _process(_delta: float) -> void:
 		previous_move = movement
 
 		var should_move: bool = true
-		$Weapon.get_child(0).move(movement)
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 		for child in tile_map_layer.get_children():
 			if not child.currentOpponent: continue
 			child.currentOpponent.damage_by(dmg)
 			should_move = false
 		
-		if should_move: await move(movement)
+		previous_direction = movement
+		
+		if should_move:
+			$Weapon.get_child(0).move(previous_direction) 
+			await move(movement)
+			
+		
+		
 		
 		Global.player_moved.emit(self)
 
@@ -59,11 +68,16 @@ func _process(_delta: float) -> void:
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	var oldWeapon = $Weapon.get_child(0)
-	print(oldWeapon)
+	
+	#weapon.position = oldWeapon.position
 	$Weapon.remove_child(oldWeapon)
 	oldWeapon.queue_free()
 	$Weapon.add_child(weapon)
-	#print(weapon.name + " picked up!")
+	#weapon.move(previous_direction)
+	
+	pickup.queue_free()
+	damage = weapon.damage
+	
 	weapon.position = oldWeapon.position
 	weapon.call_deferred('move', previous_move)
 	

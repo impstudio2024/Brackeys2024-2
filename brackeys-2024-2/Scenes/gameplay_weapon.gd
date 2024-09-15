@@ -1,7 +1,9 @@
 extends Node2D
 class_name GameplayWeapon
 
+@export var damage: int = 1
 @onready var hitbox_grid = $TileMapLayer
+
 func move(relative_direction):
 	var newTiles = hitbox_grid.find_new_tiles_position(relative_direction)
 	for child in newTiles:

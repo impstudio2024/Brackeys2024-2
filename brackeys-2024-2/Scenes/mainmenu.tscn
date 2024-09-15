@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/credits_button.gd" id="4_kfpsp"]
 [ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_te2bi"]
 [ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://Scenes/bgm_player.tscn" id="7_rxoud"]
-[ext_resource type="AudioStream" uid="uid://d3gsgwryw1p6j" path="res://Scenes/Title Screen Music.wav" id="8_cll4n"]
+[ext_resource type="AudioStream" uid="uid://d3gsgwryw1p6j" path="res://Assets/Sound/BGM/Title Screen Music.wav" id="8_cll4n"]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3

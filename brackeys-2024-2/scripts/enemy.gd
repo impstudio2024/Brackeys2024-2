@@ -22,7 +22,6 @@ func on_enemy_turn(player: Player):
 	if statemachine.state.name != "DeadState":
 		await statemachine.state.move(player, self)
 
-
 func isdead(health: int):
 	if not health <= 0: return
 	if not statemachine.state.name != "DeadState": return
