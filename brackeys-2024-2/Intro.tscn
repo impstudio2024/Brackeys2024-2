@@ -276,6 +276,7 @@ position = Vector2(-3491.51, -3149.84)
 scale = Vector2(3.55914, 3.55914)
 script = ExtResource("2_el65g")
 tween_resource = SubResource("Resource_mlfmr")
+draw_limits = true
 
 [node name="BrackeysTrans" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
