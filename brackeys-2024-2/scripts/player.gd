@@ -1,15 +1,17 @@
 extends Character
 class_name Player
 
+@export var dmg: int = 1
+
 var turn_active: bool = true
+var previous_move: Vector2i = Vector2i.ZERO
+
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
-signal player_health_changed(value)
-
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
-	Global.connect("weapon_picked_up", change_weapon)
+	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
@@ -31,33 +33,20 @@ func _process(_delta: float) -> void:
 
 	if movement.length_squared() > 1:
 		movement = Vector2i.ZERO
-
 	if movement != Vector2i.ZERO:
-		
-		if movement.x == -1 and !$WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if $WhiteSquare.flip_h and sign($WhiteSquare.position.x) != -1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
-		elif movement.x == 1 and $WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
+		previous_move = movement
 
 		var should_move: bool = true
 		$Weapon.get_child(0).move(movement)
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 		for child in tile_map_layer.get_children():
 			if not child.currentOpponent: continue
-			child.currentOpponent.damage_by(100)
+			child.currentOpponent.damage_by(dmg)
 			should_move = false
 		
 		if should_move: await move(movement)
 		
-		#var obstacle = await move(movement)
-		#Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
-		#if obstacle and obstacle.is_in_group("enemies"):
-			#Global.attack.emit(obstacle, damage)
 		Global.player_moved.emit(self)
 
 
@@ -76,6 +65,7 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	$Weapon.add_child(weapon)
 	#print(weapon.name + " picked up!")
 	weapon.position = oldWeapon.position
+	weapon.call_deferred('move', previous_move)
 	
 
 func _on_health_changed():
