@@ -129,7 +129,7 @@ tile_map_data = PackedByteArray("AAA4ABAAAAAAAAAAAgBGAA4AAAAAAAAAAQArABMAAAAAAAA
 tile_set = SubResource("TileSet_0vx8l")
 
 [node name="Entities" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAqAAoAAQAAAAAAAgBEAP3/AQAAAAAAAgBDAP3/AQAAAAAAAwA3AAIAAQAAAAAAAwAwAAkAAQAAAAAAAgA3AAgAAQAAAAAAAgA8AAgAAQAAAAAAAwAyAA0AAQAAAAAAAwA9AAsAAQAAAAAAAgArABEAAQAAAAAAAgBEAAYAAQAAAAAAAgBGAAYAAAAAAAAAAwAqAPr/AgAAAAAAAwA1APv/AQAAAAAAAgA6APr/AQAAAAAAAwBAAA0AAQAAAAAAAwAuAAQAAQAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAAqAAoAAQAAAAAAAgBEAP3/AQAAAAAAAgBDAP3/AQAAAAAAAwA3AAIAAQAAAAAAAwAwAAkAAQAAAAAAAgA3AAgAAQAAAAAAAgA8AAgAAQAAAAAAAwAyAA0AAQAAAAAAAwA9AAsAAQAAAAAAAgArABEAAQAAAAAAAgBEAAYAAQAAAAAAAgBGAAYAAAAAAAAAAwAqAPr/AgAAAAAAAwA1APv/AQAAAAAAAgA6APr/AQAAAAAAAwBAAA0AAQAAAAAAAwAuAAQAAQAAAAAAAwAtAPz/AQAAAAAABQA6AAAAAQAAAAAABQA4AAcAAQAAAAAABQAzAA4AAQAAAAAABQBGAAsAAQAAAAAABQA=")
 tile_set = ExtResource("6_syifm")
 
 [node name="Walls" type="TileMapLayer" parent="."]
@@ -162,3 +162,8 @@ angry_after_turns = 30
 [connection signal="body_entered" from="Entities/@Area2D@27329" to="Entities/@Area2D@27329" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/@Area2D@27330" to="Entities/@Area2D@27330" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/@Area2D@30236" to="Entities/@Area2D@30236" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@32313" to="Entities/@Area2D@32313" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@32314" to="Entities/@Area2D@32314" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@32315" to="Entities/@Area2D@32315" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@32316" to="Entities/@Area2D@32316" method="_on_body_entered"]
