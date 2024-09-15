@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bv3o7ixn64lrh"]
+[gd_scene load_steps=14 format=4 uid="uid://bv3o7ixn64lrh"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_lj4ul"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_y5k3p"]
@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ouvgj"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_syifm"]
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_bdn85"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_fpcaf"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_08nkl"]
-[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_gbwpe"]
+[ext_resource type="PackedScene" uid="uid://c2utdcco417rh" path="res://Scenes/entity_positions_tml.tscn" id="10_gbwpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_mpf6m")
@@ -114,7 +113,7 @@ scenes/2/scene = ExtResource("5_ouvgj")
 [sub_resource type="TileSet" id="TileSet_0vx8l"]
 sources/0 = SubResource("TileSetScenesCollectionSource_au1jd")
 
-[node name="Map2" type="Node2D"]
+[node name="Map3" type="Node2D"]
 script = ExtResource("1_lj4ul")
 
 [node name="Floor" type="TileMapLayer" parent="."]
