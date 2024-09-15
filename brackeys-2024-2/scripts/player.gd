@@ -5,6 +5,8 @@ var turn_active: bool = true
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
+signal player_health_changed(value)
+
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
 	Global.connect("weapon_picked_up", change_weapon)
