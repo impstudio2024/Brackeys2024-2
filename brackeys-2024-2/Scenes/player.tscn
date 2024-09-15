@@ -80,6 +80,7 @@ dmg = 1
 
 [node name="PhantomCamera2D" type="Node2D" parent="." index="0"]
 script = ExtResource("4_o5f32")
+priority = 4
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_w445y")
 draw_limits = true
@@ -118,5 +119,8 @@ sprite_frames = SubResource("SpriteFrames_8yd1f")
 animation = &"angry"
 autoplay = "idle"
 script = ExtResource("11_wghaw")
+
+[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
+[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
 
 [editable path="Weapon/Fists"]

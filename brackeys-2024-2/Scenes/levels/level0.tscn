@@ -141,8 +141,5 @@ physics_interpolation_mode = 2
 position = Vector2(472, 152)
 zoom = Vector2(3, 3)
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_5er5i")
-
 [node name="GM" parent="." instance=ExtResource("9_txoos")]
 angry_after_turns = 50
