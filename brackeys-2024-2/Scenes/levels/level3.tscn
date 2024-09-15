@@ -188,7 +188,3 @@ text = "Bow hits far.
 "
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("11_c50vb")]
-
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
