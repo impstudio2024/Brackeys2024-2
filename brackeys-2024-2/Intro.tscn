@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chbernlxltbl4"]
+[gd_scene load_steps=12 format=3 uid="uid://bnx6uhsqwg5eb"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_a6a4j"]
 [ext_resource type="Texture2D" uid="uid://cko3f30axgl1r" path="res://Assets/Sprites/intro/ImpStudio_transparent.png" id="1_uimp4"]
@@ -6,12 +6,6 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_el65g"]
 [ext_resource type="Texture2D" uid="uid://iufkdt845v4n" path="res://Assets/Sprites/intro/brackeys_trans.png" id="3_pstat"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_siysj"]
-
-[sub_resource type="Resource" id="Resource_mlfmr"]
-script = ExtResource("3_siysj")
-duration = 1.0
-transition = 0
-ease = 2
 
 [sub_resource type="Animation" id="Animation_j6h8p"]
 length = 0.001
@@ -199,6 +193,12 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_uxhyq"]
 font_size = 46
 
+[sub_resource type="Resource" id="Resource_mlfmr"]
+script = ExtResource("3_siysj")
+duration = 1.0
+transition = 0
+ease = 2
+
 [node name="Intro" type="Node"]
 script = ExtResource("1_a6a4j")
 
@@ -222,10 +222,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.160629, 0.160629, 0.160629, 1)
-
-[node name="PhantomCamera2D" type="Node2D" parent="Logo screen"]
-script = ExtResource("2_el65g")
-tween_resource = SubResource("Resource_mlfmr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -274,6 +270,12 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(981, 885)
 scale = Vector2(0.280967, 0.280967)
 texture = ExtResource("2_7xf4k")
+
+[node name="PhantomCamera2D" type="Node2D" parent="Godot engine"]
+position = Vector2(-3491.51, -3149.84)
+scale = Vector2(3.55914, 3.55914)
+script = ExtResource("2_el65g")
+tween_resource = SubResource("Resource_mlfmr")
 
 [node name="BrackeysTrans" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

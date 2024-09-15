@@ -1,5 +1,6 @@
 extends Node
 
+signal finished()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print("switch")
+	finished.emit()
