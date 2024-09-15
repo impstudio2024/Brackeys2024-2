@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 
 	if movement.length_squared() > 1:
 		movement = Vector2i.ZERO
-
 	if movement != Vector2i.ZERO:
 		turn_active = false
 

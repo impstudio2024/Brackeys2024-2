@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_peago"]
 [ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
 
-[node name="Enemy" instance=ExtResource("1_peago")]
+[node name="Enemy2" instance=ExtResource("1_peago")]
 script = ExtResource("2_2pu6u")
 
 [node name="WhiteSquare" parent="." index="0"]
