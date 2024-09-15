@@ -141,8 +141,6 @@ zoom = Vector2(3, 3)
 
 [node name="GM" parent="." instance=ExtResource("9_4n2px")]
 angry_after_turns = 50
-<<<<<<< Updated upstream
-=======
 
 [node name="Entity Position Holder" parent="." instance=ExtResource("10_iv2cj")]
 
@@ -163,4 +161,3 @@ angry_after_turns = 50
 [connection signal="body_entered" from="Entities/@Area2D@46357" to="Entities/@Area2D@46357" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/@Area2D@46358" to="Entities/@Area2D@46358" method="_on_body_entered"]
 [connection signal="body_entered" from="Entities/@Area2D@46359" to="Entities/@Area2D@46359" method="_on_body_entered"]
->>>>>>> Stashed changes
