@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b8dftu8tapow1" path="res://Assets/Sprites/slime_boarder_c3.png" id="3_udtjj"]
 [ext_resource type="Texture2D" uid="uid://dfidk8hdu33h" path="res://Assets/Sprites/wall_guestionmark.png" id="4_xxd48"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="5_geb7r"]
-[ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://Scenes/character.tscn" id="5_igujo"]
+[ext_resource type="PackedScene" uid="uid://cqb2lhib4yoaj" path="res://Scenes/character.tscn" id="5_igujo"]
 [ext_resource type="PackedScene" uid="uid://b3d8eggut23xb" path="res://Scenes/Weapons/spear.tscn" id="6_lbjbg"]
 [ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://Scenes/collision_shape_grid.tscn" id="6_wakw2"]
 [ext_resource type="PackedScene" uid="uid://cot7ydcvqvfdi" path="res://Scenes/Weapons/bow.tscn" id="7_sbisk"]

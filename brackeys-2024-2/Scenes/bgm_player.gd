@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-
+@export var syncMode:bool = false
 var stream_idle: AudioStream = null
 var stream_angry: AudioStream = null
 var min_vol_value: int = -80
@@ -20,10 +20,11 @@ func _process(delta: float) -> void:
 		_on_idle_signal()
 
 func starting_bgm():
-	stream_idle = stream.get_sync_stream(0)
-	stream_angry = stream.get_sync_stream(1)
-	stream.set_sync_stream_volume(0, max_vol_value)
-	stream.set_sync_stream_volume(1, min_vol_value)
+	if syncMode:
+		stream_idle = stream.get_sync_stream(0)
+		stream_angry = stream.get_sync_stream(1)
+		stream.set_sync_stream_volume(0, max_vol_value)
+		stream.set_sync_stream_volume(1, min_vol_value)
 
 
 # Func that will be called when receiving the angry signal

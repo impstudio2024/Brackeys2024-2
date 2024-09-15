@@ -34,6 +34,15 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 
 	if movement != Vector2i.ZERO:
+		
+		if movement.x == -1 and !$WhiteSquare.flip_h:
+			$WhiteSquare.flip_h = movement.x == -1
+			if $WhiteSquare.flip_h and sign($WhiteSquare.position.x) != -1:
+				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
+		elif movement.x == 1 and $WhiteSquare.flip_h:
+			$WhiteSquare.flip_h = movement.x == -1
+			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
+				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
 
 		var should_move: bool = true

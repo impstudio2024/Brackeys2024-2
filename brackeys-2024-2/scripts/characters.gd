@@ -14,10 +14,11 @@ var map_position: Vector2i
 
 
 func _ready() -> void:
+	call_deferred("init")
+func init():
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
 	#print(name + ", position " + str(map_position))
-
 
 func move(relative_movement: Vector2i) -> Character:
 	# we are basically not using the tilemmaplayers functionality becasuse it breaks everything. for explanation message @Malario
