@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv35mdft3kmc1"]
 
-[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_peago"]
+[ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_peago"]
 [ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
 [ext_resource type="Texture2D" uid="uid://bw2m1enqpxewb" path="res://Assets/Sprites/Enemies/skeleton_sprite-Sheet.png" id="3_27vef"]
 

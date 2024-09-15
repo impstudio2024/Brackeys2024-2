@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cq5mgo6v5pi15"]
+[gd_scene load_steps=15 format=4 uid="uid://cq5mgo6v5pi15"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_npysy"]
 [ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_oi6oi"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_6mrr2"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_cgnqo"]
 [ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_h6jty"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_51ntt"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_vx3gi"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_3tti1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_l30nn")
@@ -138,3 +140,5 @@ zoom = Vector2(3, 3)
 
 [node name="GM" parent="." instance=ExtResource("9_vx3gi")]
 angry_after_turns = 50
+
+[node name="Entity Position Holder" parent="." instance=ExtResource("10_3tti1")]
