@@ -12,9 +12,9 @@ transitionScene = ExtResource("4_rmgk2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 2
-position = Vector2(0.000915527, -0.00109863)
-scale = Vector2(1, 1)
+position = Vector2(376, 472)
 anchor_mode = 0
+zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("1_70qg7")

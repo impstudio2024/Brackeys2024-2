@@ -15,6 +15,7 @@ func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
 	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
+	Global.player_health_changed.connect(_on_health_changed)
 	add_to_group("player")
 	return super._ready()
 
@@ -77,9 +78,9 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	weapon.call_deferred('move', previous_move)
 	
 
-func _on_health_changed():
+func _on_health_changed(health):
+	
 	if health <= 0:
-		print('The player died. The death animation needs to be played. Do this in player.gd:9 ')
 		Global.game_over.emit()
 
 func turnActive():
