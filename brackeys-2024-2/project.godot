@@ -30,6 +30,7 @@ window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="res://Assets/Sprites/cursor1.png"
 
 [editor_plugins]
 
