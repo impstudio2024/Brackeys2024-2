@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cq5mgo6v5pi15"]
+[gd_scene load_steps=15 format=4 uid="uid://cq5mgo6v5pi15"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_npysy"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_oi6oi"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_dhffo"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_6mrr2"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_cgnqo"]
-[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_h6jty"]
+[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_h6jty"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_51ntt"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_vx3gi"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_3tti1"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_hn5n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
@@ -159,3 +161,6 @@ offset_bottom = 44.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("10_hn5n7")
 text = "Thanks for playing!"
+angry_after_turns = 50
+
+[node name="Entity Position Holder" parent="." instance=ExtResource("10_3tti1")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bv3o7ixn64lrh"]
+[gd_scene load_steps=15 format=4 uid="uid://bv3o7ixn64lrh"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_lj4ul"]
 [ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_y5k3p"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_0ul30"]
 [ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ouvgj"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_syifm"]
-[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_bdn85"]
+[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_bdn85"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_fpcaf"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_08nkl"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="10_gbwpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vrtxs"]
 texture = ExtResource("3_mpf6m")
@@ -143,23 +145,4 @@ zoom = Vector2(3, 3)
 [node name="GM" parent="." instance=ExtResource("9_08nkl")]
 angry_after_turns = 30
 
-[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62949" to="Entities/@Area2D@62949" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62950" to="Entities/@Area2D@62950" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62951" to="Entities/@Area2D@62951" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62952" to="Entities/@Area2D@62952" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62953" to="Entities/@Area2D@62953" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62954" to="Entities/@Area2D@62954" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62955" to="Entities/@Area2D@62955" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62956" to="Entities/@Area2D@62956" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62957" to="Entities/@Area2D@62957" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62958" to="Entities/@Area2D@62958" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62959" to="Entities/@Area2D@62959" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62960" to="Entities/@Area2D@62960" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62961" to="Entities/@Area2D@62961" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/Pickup" to="Entities/Pickup" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62962" to="Entities/@Area2D@62962" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62963" to="Entities/@Area2D@62963" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62964" to="Entities/@Area2D@62964" method="_on_body_entered"]
-[connection signal="body_entered" from="Entities/@Area2D@62965" to="Entities/@Area2D@62965" method="_on_body_entered"]
+[node name="Entity Position Holder" parent="." instance=ExtResource("10_gbwpe")]
