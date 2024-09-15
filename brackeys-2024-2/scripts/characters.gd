@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Character
 
-signal health_changed
+signal health_changed(value)
 
 @onready var health : int = 15:
 	set(value):
