@@ -33,4 +33,7 @@ zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_1jlaq")
 draw_limits = true
 
+[connection signal="body_entered" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_entered"]
+[connection signal="body_exited" from="Weapon/Fists/TileMapLayer/Hitbox" to="Weapon/Fists/TileMapLayer/Hitbox" method="_on_body_exited"]
+
 [editable path="Weapon/Fists"]

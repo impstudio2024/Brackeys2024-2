@@ -11,11 +11,14 @@ func _ready() -> void:
 	Global.seeCredits.connect(seeCredits)
 	Global.backMenu.connect(backMenu)
 	Global.startBGM.connect(startBGM)
-
-
+	Global.game_over.connect(game_over)
+func game_over():
+	transition(SceneRepository.gameOverScene,"Dots")
+	gameplay = false
 func startBGM():
 	$BgmPlayer.play()
 func playGame():
+	$BgmPlayer.starting_bgm()
 	transition(SceneRepository.level1Scene,"Dots")
 	gameplay = true
 
@@ -44,6 +47,10 @@ func _on_color_rect_transition_in() -> void:
 		$Camera2D.anchor_mode = $Camera2D.ANCHOR_MODE_DRAG_CENTER
 	else:
 		$Camera2D.anchor_mode = $Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
+	if gameplay:
+		$BgmPlayer.play()
+	else:
+		$BgmPlayer.stop()
 	var sceneInstance = nextScene.instantiate()
 	var currentScene = $CanvasGroup/SceneContainer.get_child(0)
 	print(currentScene)
