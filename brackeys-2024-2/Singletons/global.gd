@@ -8,14 +8,13 @@ signal weapon_picked_up(weapon: GameplayWeapon,pickup: Pickup)
 signal game_over
 signal enemy_killed
 signal attack(target: Character, damage: int)
+
 signal playGame()
 signal seeCredits()
 signal backMenu()
 signal angryGM()
 signal idleGM()
 signal startBGM()
-
-
 
 var map: TileMapLayer
 var entities: TileMapLayer

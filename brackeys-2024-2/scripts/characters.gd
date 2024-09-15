@@ -1,12 +1,17 @@
 extends CharacterBody2D
 class_name Character
 
-signal health_changed
+signal health_changed(current_health:int)
 
-@onready var health : int = 3:
+@export var health : int = 6:
 	set(value):
 		health = value
-		health_changed.emit()
+		print('health ' + str(health) + ' set on ' + name)
+		if self is Player:
+			Global.player_health_changed.emit(health)
+		health_changed.emit(health)
+		#if self is Enemy:
+			#Global.enemy_health_changed.emit(self.health)
 @onready var damage : int = 5
 @onready var animation_player = $AnimationPlayer
 
@@ -15,6 +20,7 @@ var map_position: Vector2i
 
 func _ready() -> void:
 	call_deferred("init")
+	
 func init():
 	add_to_group('character')
 	map_position = Global.entities.local_to_map(position)
@@ -71,7 +77,10 @@ func dead()	:
 func send_to_the_backrooms():
 	if self.is_in_group("enemies"):
 		print("enemy killed")
-		self.dead()
+		#self.state
+		Global.enemy_killed.emit()
+		var enemy = self as Enemy
+		enemy.statemachine.changeState.emit('DeadState')
 	if self.is_in_group("player"):
 		Global.game_over.emit()
 	

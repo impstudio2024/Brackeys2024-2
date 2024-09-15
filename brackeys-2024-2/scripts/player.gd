@@ -1,6 +1,8 @@
 extends Character
 class_name Player
 
+@export var dmg: int = 1
+
 var turn_active: bool = true
 var previous_move: Vector2i = Vector2i.ZERO
 
@@ -35,15 +37,6 @@ func _process(_delta: float) -> void:
 	if movement.length_squared() > 1:
 		movement = Vector2i.ZERO
 	if movement != Vector2i.ZERO:
-		
-		if movement.x == -1 and !$WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if $WhiteSquare.flip_h and sign($WhiteSquare.position.x) != -1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
-		elif movement.x == 1 and $WhiteSquare.flip_h:
-			$WhiteSquare.flip_h = movement.x == -1
-			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
-				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
 		previous_move = movement
 
@@ -51,7 +44,7 @@ func _process(_delta: float) -> void:
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 		for child in tile_map_layer.get_children():
 			if not child.currentOpponent: continue
-			child.currentOpponent.damage_by(damage)
+			child.currentOpponent.damage_by(dmg)
 			should_move = false
 		
 		previous_direction = movement
