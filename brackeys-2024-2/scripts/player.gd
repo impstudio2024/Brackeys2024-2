@@ -2,6 +2,8 @@ extends Character
 class_name Player
 
 var turn_active: bool = true
+var previous_move: Vector2i = Vector2i.ZERO
+
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
@@ -9,7 +11,7 @@ var turn_active: bool = true
 
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
-	Global.connect("weapon_picked_up", change_weapon)
+	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
@@ -32,7 +34,6 @@ func _process(_delta: float) -> void:
 
 	if movement.length_squared() > 1:
 		movement = Vector2i.ZERO
-
 	if movement != Vector2i.ZERO:
 		
 		if movement.x == -1 and !$WhiteSquare.flip_h:
@@ -44,6 +45,7 @@ func _process(_delta: float) -> void:
 			if !$WhiteSquare.flip_h and sign($WhiteSquare.position.x) != 1:
 				$WhiteSquare.position = Vector2($WhiteSquare.position.x*-1,$WhiteSquare.position.y)
 		turn_active = false
+		previous_move = movement
 
 		var should_move: bool = true
 		var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
@@ -83,8 +85,8 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	pickup.queue_free()
 	damage = weapon.damage
 	
-	#print(weapon.name + " picked up!")
-	
+	weapon.position = oldWeapon.position
+	weapon.call_deferred('move', previous_move)
 	
 
 func _on_health_changed():

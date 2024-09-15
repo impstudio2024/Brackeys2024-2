@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_qwgyx"]
 [ext_resource type="Script" path="res://scripts/enemies/dark_knight.gd" id="2_4mja1"]
 
-[node name="Enemy" instance=ExtResource("1_qwgyx")]
+[node name="Enemy2" instance=ExtResource("1_qwgyx")]
 script = ExtResource("2_4mja1")
 
 [node name="WhiteSquare" parent="." index="0"]
