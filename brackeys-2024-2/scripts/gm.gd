@@ -1,7 +1,10 @@
 extends Node2D
-@onready var state_machine = $StateMachine
 
 var enemies: Array[Enemy] = []
+
+@export var angry_after_turns: int = 20
+
+@onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	Global.enemy_added.connect(_on_enemy_added)
@@ -18,7 +21,9 @@ func _on_player_moved(player: Player):
 		if not enemy:
 			to_remove.append(i)
 			continue
-		await enemy.on_enemy_turn(player)
+		enemy.on_enemy_turn(player)
+		await get_tree().process_frame
+		
 	state_machine.state.turn_ended()
 	
 	# remove any enemies that we deleted

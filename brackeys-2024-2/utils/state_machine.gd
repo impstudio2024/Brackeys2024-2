@@ -1,4 +1,5 @@
-class_name StateMachine extends Node
+extends Node
+class_name StateMachine 
 
 ## The initial state of the state machine. If not set, the first child node is used.
 @export var initial_state: State = null

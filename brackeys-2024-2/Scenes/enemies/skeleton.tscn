@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv35mdft3kmc1"]
+
+[ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_peago"]
+[ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
+
+[node name="Enemy2" instance=ExtResource("1_peago")]
+script = ExtResource("2_2pu6u")
+health = 1
+
+[node name="WhiteSquare" parent="." index="0"]
+modulate = Color(0.608642, 0.741723, 1, 1)
+
+[node name="EnemyHealthUI" parent="." index="4"]
+scale = Vector2(0.25, 0.25)
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+offset_left = -9.0
+offset_top = -53.0
+offset_right = 9.0
+offset_bottom = -35.0
+scale = Vector2(1, 1)
+
+[node name="FullHearts" parent="EnemyHealthUI" index="1"]
+offset_left = -9.0
+offset_top = -53.0
+offset_right = 9.0
+offset_bottom = -35.0
+scale = Vector2(1, 1)

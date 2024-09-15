@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx4g86cl6dnnt"]
+
+[ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_ccehb"]
+[ext_resource type="Script" path="res://scripts/enemies/goblin.gd" id="2_lxdmq"]
+
+[node name="Enemy" instance=ExtResource("1_ccehb")]
+script = ExtResource("2_lxdmq")
+health = 2
+
+[node name="WhiteSquare" parent="." index="0"]
+modulate = Color(0.134852, 0.380295, 0.309065, 1)
+
+[node name="EnemyHealthUI" parent="." index="4"]
+scale = Vector2(0.25, 0.25)
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+offset_left = -18.0
+offset_top = -54.0
+offset_right = 0.0
+offset_bottom = -36.0
+scale = Vector2(1, 1)
+
+[node name="FullHearts" parent="EnemyHealthUI" index="1"]
+offset_left = -18.0
+offset_top = -54.0
+offset_right = 0.0
+offset_bottom = -36.0
+scale = Vector2(1, 1)
