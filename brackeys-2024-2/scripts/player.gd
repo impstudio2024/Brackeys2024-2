@@ -58,9 +58,6 @@ func _process(_delta: float) -> void:
 			$Weapon.get_child(0).move(previous_direction) 
 			await move(movement)
 			
-		
-		
-		
 		Global.player_moved.emit(self)
 
 
@@ -73,20 +70,14 @@ func _process(_delta: float) -> void:
 func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#0 -> no weapon | 1 -> broadsword | 2 -> spear | 3 -> bow
 	var oldWeapon = $Weapon.get_child(0)
-	
 	#weapon.position = oldWeapon.position
 	$Weapon.remove_child(oldWeapon)
 	oldWeapon.queue_free()
 	$Weapon.add_child(weapon)
 	#weapon.move(previous_direction)
-	
 	pickup.queue_free()
 	damage = weapon.damage
-	
 	#print(weapon.name + " picked up!")
-	
-	
-
 func _on_health_changed():
 	if health <= 0:
 		print('The player died. The death animation needs to be played. Do this in player.gd:9 ')

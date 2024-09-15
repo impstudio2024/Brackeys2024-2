@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdn6ejq61c68t"]
+[gd_scene load_steps=7 format=3 uid="uid://cqb2lhib4yoaj"]
 
 [ext_resource type="Script" path="res://scripts/characters.gd" id="1_en3pv"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://Assets/Sprites/white square.png" id="1_xap80"]
@@ -47,7 +47,6 @@ _data = {
 script = ExtResource("1_en3pv")
 
 [node name="WhiteSquare" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_xap80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

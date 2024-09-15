@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv35mdft3kmc1"]
+[gd_scene load_steps=5 format=3 uid="uid://bv35mdft3kmc1"]
 
 [ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_peago"]
 [ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="2_2pu6u"]
+[ext_resource type="Texture2D" uid="uid://bw2m1enqpxewb" path="res://Assets/Sprites/Enemies/skeleton_sprite-Sheet.png" id="3_27vef"]
 
-[node name="Enemy" instance=ExtResource("1_peago")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acf0o"]
+size = Vector2(16, 16)
+
+[node name="Enemy" groups=["enemies"] instance=ExtResource("1_peago")]
+collision_layer = 1
+collision_mask = 1
 script = ExtResource("2_2pu6u")
-dmg = 1
 
 [node name="WhiteSquare" parent="." index="0"]
-modulate = Color(0.608642, 0.741723, 1, 1)
+position = Vector2(-5, -16)
+texture = ExtResource("3_27vef")
+hframes = 2
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_acf0o")

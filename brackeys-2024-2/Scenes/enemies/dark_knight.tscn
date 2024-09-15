@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctghkdgafr4i1"]
+[gd_scene load_steps=4 format=3 uid="uid://ctghkdgafr4i1"]
 
-[ext_resource type="PackedScene" uid="uid://byato3jc056py" path="res://Scenes/enemy.tscn" id="1_qwgyx"]
+[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_qwgyx"]
 [ext_resource type="Script" path="res://scripts/enemies/dark_knight.gd" id="2_4mja1"]
+[ext_resource type="Texture2D" uid="uid://vyofhpr8b88k" path="res://Assets/Sprites/Enemies/dark_knight-Sheet.png" id="3_anqc0"]
 
 [node name="Enemy" instance=ExtResource("1_qwgyx")]
 script = ExtResource("2_4mja1")
 
 [node name="WhiteSquare" parent="." index="0"]
-modulate = Color(0.266433, 0.0598804, 0.331164, 1)
+position = Vector2(-4, -16)
+texture = ExtResource("3_anqc0")
+hframes = 2
