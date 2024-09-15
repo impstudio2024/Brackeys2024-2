@@ -141,3 +141,26 @@ zoom = Vector2(3, 3)
 
 [node name="GM" parent="." instance=ExtResource("9_4n2px")]
 angry_after_turns = 50
+<<<<<<< Updated upstream
+=======
+
+[node name="Entity Position Holder" parent="." instance=ExtResource("10_iv2cj")]
+
+[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46346" to="Entities/@Area2D@46346" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46347" to="Entities/@Area2D@46347" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46348" to="Entities/@Area2D@46348" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46349" to="Entities/@Area2D@46349" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46350" to="Entities/@Area2D@46350" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46351" to="Entities/@Area2D@46351" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46352" to="Entities/@Area2D@46352" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46353" to="Entities/@Area2D@46353" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46354" to="Entities/@Area2D@46354" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46355" to="Entities/@Area2D@46355" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46356" to="Entities/@Area2D@46356" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46357" to="Entities/@Area2D@46357" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46358" to="Entities/@Area2D@46358" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@46359" to="Entities/@Area2D@46359" method="_on_body_entered"]
+>>>>>>> Stashed changes
