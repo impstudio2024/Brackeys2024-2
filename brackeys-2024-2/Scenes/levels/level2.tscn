@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=4 uid="uid://dv1d6rpv1bb3p"]
 
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_yasgi"]
-[ext_resource type="TileSet" uid="uid://pfemgchlxi6d" path="res://Resources/floor.tres" id="2_xjsx7"]
+[ext_resource type="TileSet" uid="uid://d2otc2jtvwc2e" path="res://Resources/floor.tres" id="2_xjsx7"]
 [ext_resource type="Texture2D" uid="uid://c5r3ybpq7nkjv" path="res://Assets/Sprites/floors_n_walls_tiles.png" id="3_a6jd4"]
 [ext_resource type="PackedScene" uid="uid://d3qebrh5mnoxi" path="res://Scenes/exit.tscn" id="4_1boph"]
-[ext_resource type="PackedScene" uid="uid://ctc716fcrxadd" path="res://Scenes/spawner.tscn" id="5_ful01"]
+[ext_resource type="PackedScene" uid="uid://cqphrw1ra7hde" path="res://Scenes/spawner.tscn" id="5_ful01"]
 [ext_resource type="TileSet" uid="uid://dnorlhe26qs1g" path="res://Resources/entities.tres" id="6_di3e1"]
-[ext_resource type="TileSet" uid="uid://cyyviu0psua4d" path="res://Resources/walls.tres" id="7_dtb3n"]
+[ext_resource type="TileSet" uid="uid://c4vpaul7ygocv" path="res://Resources/walls.tres" id="7_dtb3n"]
 [ext_resource type="PackedScene" uid="uid://b8bfeaeajeakk" path="res://Scenes/gm.tscn" id="9_t7prn"]
 [ext_resource type="FontFile" uid="uid://sgb65cfq3338" path="res://Assets/Fonts/alagard.ttf" id="10_3yex6"]
-[ext_resource type="PackedScene" path="res://Scenes/entity_positions_tml.tscn" id="11_078wl"]
+[ext_resource type="PackedScene" uid="uid://cindcebl22iby" path="res://Scenes/entity_positions_tml.tscn" id="11_078wl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xpe02"]
 tile_data = PackedInt32Array(0, 720896, 4, 65536, 720896, 5, 1, 786432, 4, 65537, 786432, 5)
