@@ -29,3 +29,8 @@ var current_level: int = 0
 func advance_level():
 	get_tree().change_scene_to_file(level_paths[current_level])
 	current_level += 1
+	var to_remove: Array[int] = []
+	for i in range(len(spawners)):
+		if spawners[i] == null:
+			to_remove.append(i)
+	for index in to_remove: spawners.remove_at(index)

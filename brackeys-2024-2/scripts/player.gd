@@ -2,12 +2,14 @@ extends Character
 class_name Player
 
 var turn_active: bool = true
+var previous_move: Vector2i = Vector2i.ZERO
+
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
 func _ready() -> void:
 	health_changed.connect(_on_health_changed.bind())
-	Global.connect("weapon_picked_up", change_weapon)
+	Global.weapon_picked_up.connect(change_weapon)
 	Global.enemy_moved.connect(func(): turn_active = true)
 	add_to_group("player")
 	return super._ready()
@@ -31,6 +33,7 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 	if movement != Vector2i.ZERO:
 		turn_active = false
+		previous_move = movement
 
 		var should_move: bool = true
 		$Weapon.get_child(0).move(movement)
@@ -42,10 +45,6 @@ func _process(_delta: float) -> void:
 		
 		if should_move: await move(movement)
 		
-		#var obstacle = await move(movement)
-		#Global.player_moved.emit(self) # Signal Global after character moves so the signal can be connected to enemies
-		#if obstacle and obstacle.is_in_group("enemies"):
-			#Global.attack.emit(obstacle, damage)
 		Global.player_moved.emit(self)
 
 
@@ -64,6 +63,7 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	$Weapon.add_child(weapon)
 	#print(weapon.name + " picked up!")
 	weapon.position = oldWeapon.position
+	weapon.call_deferred('move', previous_move)
 	
 
 func _on_health_changed():
