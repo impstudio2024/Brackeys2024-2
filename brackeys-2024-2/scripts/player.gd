@@ -4,8 +4,6 @@ class_name Player
 @export var dmg: int = 1
 
 var turn_active: bool = true
-var previous_move: Vector2i = Vector2i.ZERO
-var cleared = false
 
 @onready var current_weapon : GameplayWeapon = $Weapon/Fists
 
@@ -44,20 +42,27 @@ func _process(_delta: float) -> void:
 		movement = Vector2i.ZERO
 	if movement != Vector2i.ZERO:
 		turn_active = false
+
 		var should_move: bool = true
 		
 		if movement == previous_direction:
 			var tile_map_layer: TileMapLayer = $Weapon.get_child(0).get_child(0)
 			for child in tile_map_layer.get_children():
-				print('currentopponent' + str(child.currentOpponent))
 				if not child.currentOpponent: continue
 				child.currentOpponent.damage_by(dmg)
 				should_move = false
-		
+			match $Weapon.get_child(0).name:
+				'Broadsword': 
+					$sfx_player.play_sound('res://Assets/Sound/Characters/Weapons/Boardsword/Boardsword hit.mp3')
+				'Bow': 
+					$sfx_player.play_sound('res://Assets/Sound/Characters/Weapons/Bow/rope tightening.mp3')
+				'Spear':
+					$sfx_player.play_sound('res://Assets/Sound/Characters/Weapons/Spear/Spear hit.mp3')
 		previous_direction = movement
 		
 		if should_move:
-			$Weapon.get_child(0).move(movement)
+			$Weapon.get_child(0).move(previous_direction) 
+			$sfx_player.play_sound('res://Assets/Sound/Characters/protagonist/Protagonist walk.mp3')
 			await move(movement)
 		
 		Global.player_moved.emit(self)
@@ -85,10 +90,11 @@ func change_weapon(weapon: GameplayWeapon, pickup: Pickup):
 	#print(weapon.name + " picked up!")
 	
 	weapon.position = oldWeapon.position
-	weapon.call_deferred('move', previous_move)
+	weapon.call_deferred('move', previous_direction)
 	
 
-func _on_health_changed(health):
+func _on_health_changed():
+	$sfx_player.play_sound('res://Assets/Sound/Characters/protagonist/Protagonist hurt.mp3')
 	
 	if health <= 0:
 		Global.game_over.emit()

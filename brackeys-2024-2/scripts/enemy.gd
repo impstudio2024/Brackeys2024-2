@@ -3,7 +3,7 @@ class_name Enemy
 
 var initial_pos: Vector2;
 var permanently_angry: bool = false
-
+ 
 @export var dmg = 1
 
 @onready var statemachine: StateMachine = $StateMachine
@@ -17,7 +17,7 @@ func _ready() -> void:
 	super()
 	
 
-# Move the enemy character up 1 unit when the player has moved
+# Move the enemy character up 1 unit when the `er has moved
 func on_enemy_turn(player: Player):
 	if statemachine.state.name != "DeadState":
 		await statemachine.state.move(player, self)

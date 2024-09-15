@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_ccehb"]
 [ext_resource type="Script" path="res://scripts/enemies/goblin.gd" id="2_lxdmq"]
+[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="3_nyj36"]
 [ext_resource type="Texture2D" uid="uid://ookjqap5crqs" path="res://Assets/Sprites/Enemies/goblin1_sprite-Sheet.png" id="3_sdd7d"]
 
 [node name="Enemy" instance=ExtResource("1_ccehb")]
@@ -29,3 +30,5 @@ offset_top = -118.0
 offset_right = 0.0
 offset_bottom = -100.0
 scale = Vector2(1, 1)
+
+[node name="sfx_player" parent="." index="5" instance=ExtResource("3_nyj36")]

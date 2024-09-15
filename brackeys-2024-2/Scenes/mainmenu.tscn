@@ -1,5 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bl0beqqyoxqws"]
 
+
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_bb7bm"]
 [ext_resource type="Texture2D" uid="uid://dsq06ibnjcl0" path="res://Assets/Screens/main_menu_with_title.png" id="2_3nt5v"]
 [ext_resource type="Script" path="res://scripts/play_button.gd" id="2_m2yeo"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cohgwpqbc733c" path="res://Assets/Sprites/creditsbutton_normal.png" id="5_cwxec"]
 [ext_resource type="Script" path="res://scripts/quit_button.gd" id="6_te2bi"]
 [ext_resource type="Texture2D" uid="uid://c2csmtqpknikw" path="res://Assets/Sprites/quitbutton_normal.png" id="7_gtfgq"]
+
 [ext_resource type="PackedScene" path="res://Scenes/bgm_player.tscn" id="7_rxoud"]
 [ext_resource type="AudioStream" uid="uid://d3gsgwryw1p6j" path="res://Assets/Sound/BGM/Title Screen Music.wav" id="8_cll4n"]
 [ext_resource type="Texture2D" uid="uid://citgaqrff5y7r" path="res://Assets/Sprites/creditsbutton_hover.png" id="8_iv2nk"]
@@ -94,6 +96,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BgmPlayer" parent="." instance=ExtResource("7_rxoud")]
 stream = ExtResource("8_cll4n")
+volume_db = -24.0
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="VBoxContainer/CreditsButton" method="_on_pressed"]

@@ -16,14 +16,19 @@ func _on_enemy_added(enemy: Enemy):
 	 
 func _on_player_moved(player: Player):
 	var to_remove: Array[int]
+	var enemy_types_on_board: Array[String] = []
 	for i  in range(len(enemies)):
 		var enemy = enemies[i]
 		if not enemy:
 			to_remove.append(i)
 			continue
+		if not enemy.type in enemy_types_on_board: 
+			enemy_types_on_board.append(enemy.type)
+			enemy.play_move_sound()
 		enemy.on_enemy_turn(player)
 		await get_tree().process_frame
-		
+	
+	print(enemy_types_on_board)
 	state_machine.state.turn_ended()
 	
 	# remove any enemies that we deleted
