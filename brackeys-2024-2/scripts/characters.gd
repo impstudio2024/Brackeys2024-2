@@ -34,16 +34,17 @@ func move(relative_movement: Vector2i) -> Character:
 
 	if Global.walls.get_cell_tile_data(map_position + relative_movement): return null
 
+	map_position = map_position + relative_movement
+	
 	# move the character
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "position", Global.entities.map_to_local(map_position + relative_movement), .1)
+	tween.tween_property(self, "position", Global.entities.map_to_local(map_position), .1)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.play()
 	await tween.finished
 	
 	# when moving the map position will also need to be updated
-	map_position = Global.entities.local_to_map(position)
 	
 	if Global.holes.get_cell_tile_data(map_position) and not is_in_group('player'):
 		queue_free()
