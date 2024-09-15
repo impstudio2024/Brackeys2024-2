@@ -1,12 +1,17 @@
 extends CharacterBody2D
 class_name Character
 
-signal health_changed(value)
+signal health_changed()
 
-@onready var health : int = 15:
+@export var health : int = 6:
 	set(value):
 		health = value
+		print("Health: " + str(health) + " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+		if self is Player:
+			Global.player_health_changed.emit(health)
 		health_changed.emit()
+		#if self is Enemy:
+			#Global.enemy_health_changed.emit(self.health)
 @onready var damage : int = 5
 @onready var animation_player = $AnimationPlayer
 
