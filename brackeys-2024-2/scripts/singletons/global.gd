@@ -33,7 +33,7 @@ enum SpecialTileTypes{
 }
 
 var level_paths: Array[String] = [
-    "res://Scenes/levels/level1new.tscn",
+	"res://Scenes/levels/level1new.tscn",
 	"res://Scenes/levels/level2.tscn",
 	"res://Scenes/levels/level3.tscn",
 	"res://Scenes/levels/level4.tscn",

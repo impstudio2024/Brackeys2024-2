@@ -69,9 +69,9 @@ func find_character_in_cell(cell: Vector2i) -> Character:
 		return character as Character
 	return null
 
-func damage_by(damage: int):
+func damage_by(_damage: int):
 	animation_player.play("hurt")
-	health -= damage
+	health -= _damage
 
 
 	#TODO: play animation, maybe a simple red color modulation for a few frames

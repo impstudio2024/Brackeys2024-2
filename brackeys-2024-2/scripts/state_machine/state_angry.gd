@@ -2,7 +2,7 @@ extends State
 
 var turn_number: int = 0
 
-func enter(previous_state_path: String, data := {}) -> void:
+func enter(_previous_state_path: String, data := {}) -> void:
 	if data.has("turn"):
 		turn_number = data["turn"]
 		
