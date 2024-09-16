@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqvk0uwe7wao1"
+path="res://.godot/imported/dark_knight_steps.mp3-66027ef48e4548cb8fc07ae403dffcc0.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/characters/enemies/dark knight/dark_knight_steps.mp3"
+dest_files=["res://.godot/imported/dark_knight_steps.mp3-66027ef48e4548cb8fc07ae403dffcc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

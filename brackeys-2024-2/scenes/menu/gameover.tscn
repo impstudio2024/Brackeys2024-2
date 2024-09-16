@@ -1,0 +1,78 @@
+[gd_scene load_steps=17 format=3 uid="uid://ctgbusobhn8pr"]
+
+[ext_resource type="Script" path="res://Scenes/game_over.gd" id="1_lneql"]
+[ext_resource type="Texture2D" uid="uid://ygfv30gb0b31" path="res://assets/screens/gameoverscreen.png" id="1_stns0"]
+[ext_resource type="Texture2D" uid="uid://cfcmrbk2sg3nn" path="res://assets/sprites/ui/retrybutton_normal.png" id="3_7o5oa"]
+[ext_resource type="Texture2D" uid="uid://orwurybxwvk8" path="res://assets/sprites/ui/retrybutton_hover.png" id="4_q1vot"]
+[ext_resource type="Texture2D" uid="uid://dv6hey0llbe32" path="res://assets/sprites/ui/retrybutton_pressed.png" id="4_qelvm"]
+[ext_resource type="Texture2D" uid="uid://c2csmtqpknikw" path="res://assets/sprites/ui/quitbutton_normal.png" id="5_6ylab"]
+[ext_resource type="Texture2D" uid="uid://dkahyllbu4yhd" path="res://assets/sprites/ui/quitbutton_pressed.png" id="6_mxyqm"]
+[ext_resource type="Script" path="res://Scenes/retry_button.gd" id="6_x3vi4"]
+[ext_resource type="Texture2D" uid="uid://bwl8te7hehgi5" path="res://assets/sprites/ui/quitbutton_hover.png" id="7_1xykd"]
+[ext_resource type="Script" path="res://Scenes/quit_button.gd" id="7_l54h4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_md7l4"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_bypfp"]
+[ext_resource type="Texture2D" uid="uid://i5tf0juhdlpt" path="res://assets/sprites/ui/you_died_text.png" id="11_2nsa1"]
+[ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://scenes/util/bgm_player.tscn" id="11_hmim2"]
+[ext_resource type="AudioStream" uid="uid://ckgsmar2wkat3" path="res://assets/sound/bgm/GameOver Stinger D&D.wav" id="12_s8uws"]
+
+[sub_resource type="Resource" id="Resource_pym5a"]
+script = ExtResource("10_bypfp")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lneql")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("1_stns0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 23)
+layout_mode = 0
+offset_left = 653.0
+offset_top = 627.0
+offset_right = 854.0
+offset_bottom = 735.0
+scale = Vector2(3, 3)
+
+[node name="RetryButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+texture_normal = ExtResource("3_7o5oa")
+texture_pressed = ExtResource("4_qelvm")
+texture_hover = ExtResource("4_q1vot")
+stretch_mode = 0
+script = ExtResource("6_x3vi4")
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture_normal = ExtResource("5_6ylab")
+texture_pressed = ExtResource("6_mxyqm")
+texture_hover = ExtResource("7_1xykd")
+stretch_mode = 0
+script = ExtResource("7_l54h4")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("9_md7l4")
+tween_resource = SubResource("Resource_pym5a")
+draw_limits = true
+
+[node name="BgmPlayer" parent="." instance=ExtResource("11_hmim2")]
+stream = ExtResource("12_s8uws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(967, 293.75)
+scale = Vector2(9.54688, 9.54688)
+texture = ExtResource("11_2nsa1")
+
+[connection signal="pressed" from="VBoxContainer/RetryButton" to="VBoxContainer/RetryButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer/QuitButton" method="_on_pressed"]
