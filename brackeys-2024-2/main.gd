@@ -1,8 +1,8 @@
 extends Node2D
-@export var transitionScene : PackedScene
+@export var transitionScene: PackedScene
 var gameplay = false
-var nextScene :PackedScene
-var currentTransitionType:String
+var nextScene: PackedScene
+var currentTransitionType: String
 var currentLevel = 1
 # Called when the node enters the scene tree for the first time.
 

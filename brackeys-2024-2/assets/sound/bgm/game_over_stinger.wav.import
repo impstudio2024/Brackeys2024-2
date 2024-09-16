@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ckgsmar2wkat3"
-path="res://.godot/imported/GameOver Stinger D&D.wav-4061297ad97bbc2496126520c36a26ad.sample"
+path="res://.godot/imported/game_over_stinger.wav-d5cf5d376498c32cebaa662009106c8b.sample"
 
 [deps]
 
-source_file="res://assets/sound/bgm/GameOver Stinger D&D.wav"
-dest_files=["res://.godot/imported/GameOver Stinger D&D.wav-4061297ad97bbc2496126520c36a26ad.sample"]
+source_file="res://assets/sound/bgm/game_over_stinger.wav"
+dest_files=["res://.godot/imported/game_over_stinger.wav-d5cf5d376498c32cebaa662009106c8b.sample"]
 
 [params]
 

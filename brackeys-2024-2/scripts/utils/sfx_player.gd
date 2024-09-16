@@ -3,7 +3,10 @@ extends Node
 func play_sound(file_path: String) -> void:
 	var audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
-	
+
+
+	assert(FileAccess.file_exists(file_path), 'File ' + file_path + 'does not exist.')
+
 	var audio_stream = load(file_path) as AudioStream
 	if audio_stream:
 		audio_player.stream = audio_stream

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cklpot7guc455"]
 
-[ext_resource type="Script" path="res://Scenes/weaponHitbox.gd" id="1_1aemj"]
+[ext_resource type="Script" path="res://scripts/tiles/weapon/weapon_hitbox.gd" id="1_1aemj"]
 [ext_resource type="Texture2D" uid="uid://lbfjjnxm0jnp" path="res://assets/sprites/white square.png" id="2_f0dvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv4oi"]

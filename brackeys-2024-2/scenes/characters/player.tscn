@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bgm800calowgn"]
+[gd_scene load_steps=22 format=3 uid="uid://bgm800calowgn"]
 
 [ext_resource type="PackedScene" uid="uid://bdn6ejq61c68t" path="res://scenes/characters/character.tscn" id="1_5bvnf"]
 [ext_resource type="Script" path="res://scripts/characters/player/player.gd" id="2_6kguh"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_o5f32"]
+[ext_resource type="Texture2D" uid="uid://c0727tol8nrys" path="res://assets/sprites/player_sheet.png" id="5_2lmh5"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vd02h"]
 [ext_resource type="PackedScene" uid="uid://bqgevatjhyfpg" path="res://scenes/gameplay_weapons/gameplay_weapon.tscn" id="6_6vigu"]
 [ext_resource type="Script" path="res://scripts/characters/player/player_health_ui.gd" id="6_mfo2q"]
@@ -85,6 +86,9 @@ priority = 4
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_w445y")
 draw_limits = true
+
+[node name="WhiteSquare" parent="." index="1"]
+texture = ExtResource("5_2lmh5")
 
 [node name="Weapon" type="Node2D" parent="." index="2"]
 
