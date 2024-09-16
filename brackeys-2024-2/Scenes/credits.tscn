@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/credits_screen.gd" id="1_ut7pi"]
 [ext_resource type="Texture2D" uid="uid://dhb0ld33unntr" path="res://Assets/Screens/credit_screen.png" id="2_41i4p"]
 [ext_resource type="Texture2D" uid="uid://bqaal0c6hiot7" path="res://Assets/Sprites/titlesprite.png" id="4_usssk"]
-[ext_resource type="PackedScene" path="res://Scenes/bgm_player.tscn" id="5_c74ws"]
+[ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://Scenes/bgm_player.tscn" id="5_c74ws"]
 [ext_resource type="AudioStream" uid="uid://cuqeaj5swh17d" path="res://Assets/Sound/BGM/JAM_proof_of_concept_synth_percussion (1).mp3" id="6_gfexd"]
 
 [node name="Credits" type="Control"]
@@ -270,6 +270,7 @@ one_shot = true
 
 [node name="BgmPlayer" parent="." instance=ExtResource("5_c74ws")]
 stream = ExtResource("6_gfexd")
+volume_db = -24.0
 
 [connection signal="timeout" from="SplashTimer" to="." method="_on_splash_timer_timeout"]
 [connection signal="timeout" from="CrawlTimer" to="." method="_on_crawl_timer_timeout"]

@@ -19,7 +19,6 @@ func retry():
 	gameplay = true
 	transition(SceneRepository.levels[currentLevel],"Dots")
 func game_over():
-	print('main says game over')
 	transition(SceneRepository.gameOverScene,"Dots")
 	gameplay = false
 func startBGM():
@@ -34,10 +33,10 @@ func levelClear():
 func backMenu():
 	transition(SceneRepository.mainMenuScene,"Dots")
 	gameplay = false
-	
+
 func seeCredits():
 	transition(SceneRepository.creditsScene,"Dots")
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,6 +70,6 @@ func _on_color_rect_transition_in() -> void:
 	$CanvasGroup/SceneContainer.remove_child(currentScene)
 	currentScene.queue_free()
 	$CanvasGroup/SceneContainer.add_child(sceneInstance)
-	await get_tree().create_timer(2).timeout 
-	
+	await get_tree().create_timer(2).timeout
+
 	$CanvasGroup2/ColorRect/AnimationPlayer.play(currentTransitionType+"_out")

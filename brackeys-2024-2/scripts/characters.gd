@@ -63,7 +63,6 @@ func move_and_jump_over(direction: Vector2i):
 	move(direction)
 
 func find_character_in_cell(cell: Vector2i) -> Character:
-	print(name + ' source id: ' + str(Global.entity_positions.get_cell_source_id(cell)))
 	if Global.entity_positions.get_cell_source_id(cell) == -1: return null
 	for character in get_tree().get_nodes_in_group('character'):
 		if not character.map_position == cell: continue

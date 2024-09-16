@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://Scenes/enemy.tscn" id="1_qwgyx"]
 [ext_resource type="Script" path="res://scripts/enemies/dark_knight.gd" id="2_4mja1"]
 [ext_resource type="Texture2D" uid="uid://vyofhpr8b88k" path="res://Assets/Sprites/Enemies/dark_knight-Sheet.png" id="3_anqc0"]
-[ext_resource type="PackedScene" path="res://Scenes/sfx_player.tscn" id="3_c76k1"]
+[ext_resource type="PackedScene" uid="uid://dk4gcxu1eki3c" path="res://Scenes/sfx_player.tscn" id="3_c76k1"]
 
 [node name="Enemy2" instance=ExtResource("1_qwgyx")]
 script = ExtResource("2_4mja1")

@@ -33,7 +33,7 @@ enum SpecialTileTypes{
 }
 
 var level_paths: Array[String] = [
-	"res://Scenes/levels/level1.tscn",
+    "res://Scenes/levels/level1new.tscn",
 	"res://Scenes/levels/level2.tscn",
 	"res://Scenes/levels/level3.tscn",
 	"res://Scenes/levels/level4.tscn",
@@ -53,4 +53,3 @@ func advance_level():
 	get_tree().change_scene_to_file(level_paths[current_level])
 	current_level += 1
 	reset_spawners()
-	
