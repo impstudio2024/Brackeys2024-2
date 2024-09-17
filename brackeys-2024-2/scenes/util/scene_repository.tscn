@@ -1,0 +1,32 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxm0x38qfctb8"]
+
+[ext_resource type="Script" path="res://scripts/utils/scene_repository.gd" id="1_n2ptx"]
+[ext_resource type="PackedScene" uid="uid://bnx6uhsqwg5eb" path="res://scenes/menu/intro.tscn" id="2_qp580"]
+[ext_resource type="PackedScene" uid="uid://bl0beqqyoxqws" path="res://scenes/menu/mainmenu.tscn" id="3_y0bs6"]
+[ext_resource type="PackedScene" uid="uid://dkhkchva5s53r" path="res://scenes/menu/credits.tscn" id="4_s0u8s"]
+[ext_resource type="PackedScene" uid="uid://ctgbusobhn8pr" path="res://scenes/menu/gameover.tscn" id="5_3sf5q"]
+[ext_resource type="PackedScene" uid="uid://bgs2exesesk3u" path="res://scenes/levels/level1new.tscn" id="6_s8rul"]
+[ext_resource type="PackedScene" uid="uid://cpvr13wfupdy4" path="res://scenes/levels/level2new.tscn" id="7_vxhvl"]
+[ext_resource type="PackedScene" uid="uid://bou20do1drl4d" path="res://scenes/levels/level3new.tscn" id="8_si67q"]
+[ext_resource type="PackedScene" uid="uid://u82y5fec64kt" path="res://scenes/levels/level4new.tscn" id="9_m8jxk"]
+[ext_resource type="PackedScene" uid="uid://ctkq3x4jm3ne" path="res://scenes/levels/level5new.tscn" id="10_i27ph"]
+[ext_resource type="PackedScene" uid="uid://c0t82nypame6t" path="res://scenes/levels/level6new.tscn" id="11_rk1un"]
+[ext_resource type="PackedScene" uid="uid://quf8ne35s1as" path="res://scenes/levels/level7new.tscn" id="12_o0e4n"]
+[ext_resource type="PackedScene" uid="uid://beabtnjqenptx" path="res://scenes/levels/level8new.tscn" id="13_ny465"]
+[ext_resource type="PackedScene" uid="uid://c0qlwwryglhn5" path="res://scenes/levels/level9new.tscn" id="14_b2272"]
+
+[node name="SceneRepository" type="Node"]
+script = ExtResource("1_n2ptx")
+introScene = ExtResource("2_qp580")
+mainMenuScene = ExtResource("3_y0bs6")
+creditsScene = ExtResource("4_s0u8s")
+gameOverScene = ExtResource("5_3sf5q")
+level1Scene = ExtResource("6_s8rul")
+level2Scene = ExtResource("7_vxhvl")
+level3Scene = ExtResource("8_si67q")
+level4Scene = ExtResource("9_m8jxk")
+level5Scene = ExtResource("10_i27ph")
+level6Scene = ExtResource("11_rk1un")
+level7Scene = ExtResource("12_o0e4n")
+level8Scene = ExtResource("13_ny465")
+level9Scene = ExtResource("14_b2272")

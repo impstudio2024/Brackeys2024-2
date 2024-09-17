@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8bfeaeajeakk"]
+
+[ext_resource type="Script" path="res://scripts/gm/gm.gd" id="1_soey1"]
+[ext_resource type="PackedScene" uid="uid://ctrt7d5pihskg" path="res://scenes/gm/state_machine_gm.tscn" id="1_vigh7"]
+[ext_resource type="PackedScene" uid="uid://dk4gcxu1eki3c" path="res://scenes/util/sfx_player.tscn" id="3_oml1q"]
+
+[node name="GM" type="Node2D"]
+script = ExtResource("1_soey1")
+angry_after_turns = 1
+
+[node name="StateMachine" parent="." instance=ExtResource("1_vigh7")]
+
+[node name="sfx_player" parent="." instance=ExtResource("3_oml1q")]

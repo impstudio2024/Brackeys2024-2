@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuqeaj5swh17d"
+path="res://.godot/imported/JAM_proof_of_concept_synth_percussion (1).mp3-e8b9b13dffdd4ea6bfe8b6ec6a15bd69.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/bgm/JAM_proof_of_concept_synth_percussion (1).mp3"
+dest_files=["res://.godot/imported/JAM_proof_of_concept_synth_percussion (1).mp3-e8b9b13dffdd4ea6bfe8b6ec6a15bd69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

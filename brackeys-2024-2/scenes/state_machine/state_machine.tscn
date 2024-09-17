@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwrtcf15qdddv"]
+
+[ext_resource type="Script" path="res://scripts/state_machine/state_machine.gd" id="1_i1jlf"]
+[ext_resource type="Script" path="res://scenes/state_machine/wander_state.gd" id="2_ocwki"]
+[ext_resource type="Script" path="res://scenes/state_machine/chasing_state.gd" id="3_hv74d"]
+[ext_resource type="Script" path="res://scenes/state_machine/dead_state.gd" id="4_hpegt"]
+
+[node name="StateMachine2" type="Node" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_i1jlf")
+initial_state = NodePath("WanderState")
+
+[node name="WanderState" type="Node" parent="."]
+script = ExtResource("2_ocwki")
+
+[node name="ChasingState" type="Node" parent="."]
+script = ExtResource("3_hv74d")
+
+[node name="DeadState" type="Node" parent="."]
+script = ExtResource("4_hpegt")

@@ -1,8 +1,8 @@
 extends Node2D
-@export var transitionScene : PackedScene
+@export var transitionScene: PackedScene
 var gameplay = false
-var nextScene :PackedScene
-var currentTransitionType:String
+var nextScene: PackedScene
+var currentTransitionType: String
 var currentLevel = 1
 # Called when the node enters the scene tree for the first time.
 
@@ -19,7 +19,6 @@ func retry():
 	gameplay = true
 	transition(SceneRepository.levels[currentLevel],"Dots")
 func game_over():
-	print('main says game over')
 	transition(SceneRepository.gameOverScene,"Dots")
 	gameplay = false
 func startBGM():
@@ -34,18 +33,14 @@ func levelClear():
 func backMenu():
 	transition(SceneRepository.mainMenuScene,"Dots")
 	gameplay = false
-	
+
 func seeCredits():
 	transition(SceneRepository.creditsScene,"Dots")
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func transition(scene,type):
 	currentTransitionType = type
 	nextScene = scene
+	#print(nextScene)
 	$CanvasGroup2/ColorRect/AnimationPlayer.play(currentTransitionType+"_in")
 
 func _on_intro_finished() -> void:
@@ -71,6 +66,6 @@ func _on_color_rect_transition_in() -> void:
 	$CanvasGroup/SceneContainer.remove_child(currentScene)
 	currentScene.queue_free()
 	$CanvasGroup/SceneContainer.add_child(sceneInstance)
-	await get_tree().create_timer(2).timeout 
-	
+	await get_tree().create_timer(2).timeout
+
 	$CanvasGroup2/ColorRect/AnimationPlayer.play(currentTransitionType+"_out")

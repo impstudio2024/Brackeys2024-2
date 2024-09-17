@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx4g86cl6dnnt"]
+
+[ext_resource type="PackedScene" uid="uid://bwtewboncy1ci" path="res://scenes/characters/enemies/enemy.tscn" id="1_ccehb"]
+[ext_resource type="Script" path="res://scripts/characters/enemies/goblin.gd" id="2_lxdmq"]
+[ext_resource type="PackedScene" uid="uid://dk4gcxu1eki3c" path="res://scenes/util/sfx_player.tscn" id="3_nyj36"]
+[ext_resource type="Texture2D" uid="uid://ookjqap5crqs" path="res://assets/sprites/enemies/goblin_sheet.png" id="3_sdd7d"]
+
+[node name="Enemy" instance=ExtResource("1_ccehb")]
+script = ExtResource("2_lxdmq")
+health = 2
+
+[node name="WhiteSquare" parent="." index="0"]
+position = Vector2(-5, -16)
+texture = ExtResource("3_sdd7d")
+hframes = 2
+
+[node name="sfx_player" parent="." index="4" instance=ExtResource("3_nyj36")]
+
+[node name="EnemyHealthUI" parent="." index="5"]
+scale = Vector2(0.25, 0.25)
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+offset_left = -18.0
+offset_top = -116.0
+offset_right = 0.0
+offset_bottom = -98.0
+scale = Vector2(1, 1)
+
+[node name="FullHearts" parent="EnemyHealthUI" index="1"]
+offset_left = -18.0
+offset_top = -116.0
+offset_right = 0.0
+offset_bottom = -98.0
+scale = Vector2(1, 1)

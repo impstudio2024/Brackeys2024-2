@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5dxt0fo0xvnp"]
+
+[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://scenes/tiles/pickup.tscn" id="1_c8p4w"]
+[ext_resource type="Texture2D" uid="uid://cg53x0w244dkh" path="res://assets/sprites/coin_sheet.png" id="2_xjx1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v613"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu5de"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh7vp"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iyi3"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10clv"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0fvl"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h04kl"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuxto"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb4r0"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnqnp"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npgyf"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am7rd"]
+atlas = ExtResource("2_xjx1j")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lbsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v613")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu5de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh7vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iyi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10clv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0fvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h04kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuxto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb4r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnqnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npgyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am7rd")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="Pickup" instance=ExtResource("1_c8p4w")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_0lbsq")
+animation = &"spin"
+autoplay = "spin"
