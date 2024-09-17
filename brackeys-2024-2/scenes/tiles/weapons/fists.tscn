@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://ds0bt5ldghwv"]
+
+[ext_resource type="PackedScene" uid="uid://cmxxdt26vy16l" path="res://scenes/tiles/pickup.tscn" id="1_rtvl8"]
+[ext_resource type="Script" path="res://scripts/tiles/weapon/weapon.gd" id="2_7vw3k"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pickupdev/debug_fists.png" id="3_ftfjy"]
+[ext_resource type="PackedScene" uid="uid://cklpot7guc455" path="res://scenes/tiles/collision_shape_grid.tscn" id="4_ft6jo"]
+[ext_resource type="Script" path="res://scripts/tiles/weapon/hitbox.gd" id="5_d6rct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wboks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ftfjy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2u3qp"]
+scenes/1/scene = ExtResource("4_ft6jo")
+
+[sub_resource type="TileSet" id="TileSet_4qusb"]
+sources/0 = SubResource("TileSetScenesCollectionSource_2u3qp")
+
+[node name="Fists" instance=ExtResource("1_rtvl8")]
+monitoring = false
+monitorable = false
+script = ExtResource("2_7vw3k")
+type = 3
+gameplayWeaponScene = null
+damage = 0
+durability = 0
+picked_up = false
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_wboks")
+
+[node name="Hitboxes" type="TileMapLayer" parent="." index="3"]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_4qusb")
+script = ExtResource("5_d6rct")

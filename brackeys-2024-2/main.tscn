@@ -1,34 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2nr5080thv0m"]
+[gd_scene load_steps=6 format=3 uid="uid://bjcx8jvs1mpkc"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_70qg7"]
-[ext_resource type="PackedScene" uid="uid://bnx6uhsqwg5eb" path="res://Intro.tscn" id="1_fre8k"]
+[ext_resource type="PackedScene" uid="uid://bnx6uhsqwg5eb" path="res://scenes/menu/intro.tscn" id="1_fre8k"]
 [ext_resource type="Script" path="res://main.gd" id="1_qabbo"]
-[ext_resource type="PackedScene" uid="uid://b5qksrgp85atl" path="res://Scenes/transition_manager.tscn" id="4_rmgk2"]
+[ext_resource type="PackedScene" uid="uid://b5qksrgp85atl" path="res://scenes/util/transition_manager.tscn" id="4_rmgk2"]
+[ext_resource type="PackedScene" uid="uid://did2u2vj1m5ho" path="res://scenes/util/bgm_player.tscn" id="5_ybyqh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qabbo")
 transitionScene = ExtResource("4_rmgk2")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(0.000915527, -0.00109863)
+scale = Vector2(1, 1)
+anchor_mode = 0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("1_70qg7")
+
 [node name="CanvasGroup" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="SceneContainer" type="Node" parent="CanvasGroup"]
 
 [node name="Intro" parent="CanvasGroup/SceneContainer" instance=ExtResource("1_fre8k")]
-
-[node name="Camera2D" type="Camera2D" parent="CanvasGroup"]
-physics_interpolation_mode = 2
-position = Vector2(0.00012207, 6.10352e-05)
-scale = Vector2(1, 1)
-anchor_mode = 0
-
-[node name="PhantomCameraHost" type="Node" parent="CanvasGroup/Camera2D"]
-script = ExtResource("1_70qg7")
 
 [node name="CanvasGroup2" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" parent="CanvasGroup2" instance=ExtResource("4_rmgk2")]
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="BgmPlayer" parent="." instance=ExtResource("5_ybyqh")]
+volume_db = -24.0
+autoplay = false
+syncMode = true
 
 [connection signal="finished" from="CanvasGroup/SceneContainer/Intro" to="." method="_on_intro_finished"]
 [connection signal="transition_in" from="CanvasGroup2/ColorRect" to="." method="_on_color_rect_transition_in"]
