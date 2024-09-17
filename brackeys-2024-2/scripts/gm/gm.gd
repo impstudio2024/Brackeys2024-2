@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 func _on_enemy_added(enemy: Enemy):
 	enemies.append(enemy)
-	print(enemy)
+	#print(enemy)
 	 
 func _on_player_moved(player: Player):
 	var to_remove: Array[int]
@@ -28,7 +28,7 @@ func _on_player_moved(player: Player):
 		enemy.on_enemy_turn(player)
 		await get_tree().process_frame
 	
-	print(enemy_types_on_board)
+	#print(enemy_types_on_board)
 	state_machine.state.turn_ended()
 	
 	# remove any enemies that we deleted

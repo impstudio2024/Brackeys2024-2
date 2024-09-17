@@ -40,6 +40,7 @@ func seeCredits():
 func transition(scene,type):
 	currentTransitionType = type
 	nextScene = scene
+	#print(nextScene)
 	$CanvasGroup2/ColorRect/AnimationPlayer.play(currentTransitionType+"_in")
 
 func _on_intro_finished() -> void:

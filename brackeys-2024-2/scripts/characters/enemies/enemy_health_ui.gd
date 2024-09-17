@@ -12,7 +12,7 @@ func _ready() -> void:
 	full_hearts.size.x = hearts * 18
 	
 func change_texture(value: int) -> void:
-	print('health changed to ' + str(value))
+	#print('health changed to ' + str(value))
 	hearts = value
 	if hearts > 0:
 		full_hearts.size.x = hearts * 18

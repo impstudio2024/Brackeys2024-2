@@ -10,11 +10,11 @@ func _ready() -> void:
 	Global.spawners.append(self)
 
 func spawn(chasing_on_spawn: bool) -> void:
-	print('spawning')
+	#print('spawning')
 	var direction: Vector2i = possible_directions.pick_random()
-	print(direction)
+	#print(direction)
 	if find_character_in_cell(map_position + direction): return
-	print('no enemy in the way')
+	#print('no enemy in the way')
 	var enemy: Enemy = enemies.pick_random().instantiate() as Enemy
 	enemy.position = Global.entities.map_to_local(map_position + direction)
 	Global.entities.add_child(enemy)

@@ -21,3 +21,20 @@ hframes = 2
 shape = SubResource("RectangleShape2D_acf0o")
 
 [node name="sfx_player" parent="." index="4" instance=ExtResource("3_iuy8t")]
+
+[node name="EnemyHealthUI" parent="." index="5"]
+scale = Vector2(0.25, 0.25)
+
+[node name="EmptyHearts" parent="EnemyHealthUI" index="0"]
+offset_left = -18.0
+offset_top = -148.0
+offset_right = 0.0
+offset_bottom = -130.0
+scale = Vector2(1, 1)
+
+[node name="FullHearts" parent="EnemyHealthUI" index="1"]
+offset_left = -18.0
+offset_top = -148.0
+offset_right = 0.0
+offset_bottom = -130.0
+scale = Vector2(1, 1)

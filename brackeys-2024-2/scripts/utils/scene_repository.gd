@@ -28,5 +28,5 @@ func packLevels():
 		6: level6Scene,
 		7: level7Scene,
 		8: level8Scene,
-		9: level8Scene		
+		9: level9Scene		
 	}
