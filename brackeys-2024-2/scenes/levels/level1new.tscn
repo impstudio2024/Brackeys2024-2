@@ -52,7 +52,26 @@ theme_override_fonts/font = ExtResource("2_owqlf")
 text = "Good luck on your adventure!
 "
 
-[node name="BowTut" type="Label" parent="Tutorials" index="3"]
+[node name="AttackTut" type="Label" parent="Tutorials" index="3"]
+offset_left = -149.0
+offset_top = 366.0
+offset_right = 118.0
+offset_bottom = 417.0
+theme_override_fonts/font = ExtResource("2_owqlf")
+text = "Attack enemies that are in range by trying to move in their direction
+"
+autowrap_mode = 2
+
+[node name="MoveTut" type="Label" parent="Tutorials" index="4"]
+offset_left = 94.0
+offset_top = 264.0
+offset_right = 221.0
+offset_bottom = 287.0
+theme_override_fonts/font = ExtResource("2_owqlf")
+text = "Move with WASD
+"
+
+[node name="BowTut" type="Label" parent="Tutorials" index="5"]
 offset_left = 295.0
 offset_top = 208.0
 offset_right = 422.0
@@ -61,7 +80,7 @@ theme_override_fonts/font = ExtResource("2_owqlf")
 text = "Bow hits far.
 "
 
-[node name="BowTut2" type="Label" parent="Tutorials" index="4"]
+[node name="ExitTut" type="Label" parent="Tutorials" index="6"]
 offset_left = 390.0
 offset_top = 543.0
 offset_right = 517.0
@@ -69,3 +88,31 @@ offset_bottom = 566.0
 theme_override_fonts/font = ExtResource("2_owqlf")
 text = "Get to the exit stairs on each level.
 "
+
+[connection signal="body_entered" from="Entities/Spear" to="Entities/Spear" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20582" to="Entities/@Area2D@20582" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20583" to="Entities/@Area2D@20583" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20584" to="Entities/@Area2D@20584" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20585" to="Entities/@Area2D@20585" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20586" to="Entities/@Area2D@20586" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20587" to="Entities/@Area2D@20587" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20588" to="Entities/@Area2D@20588" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20589" to="Entities/@Area2D@20589" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Broadsword" to="Entities/Broadsword" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20590" to="Entities/@Area2D@20590" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20591" to="Entities/@Area2D@20591" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20592" to="Entities/@Area2D@20592" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20593" to="Entities/@Area2D@20593" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20594" to="Entities/@Area2D@20594" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20595" to="Entities/@Area2D@20595" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20596" to="Entities/@Area2D@20596" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20597" to="Entities/@Area2D@20597" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20598" to="Entities/@Area2D@20598" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20599" to="Entities/@Area2D@20599" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/Bow" to="Entities/Bow" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20600" to="Entities/@Area2D@20600" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20601" to="Entities/@Area2D@20601" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20602" to="Entities/@Area2D@20602" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20603" to="Entities/@Area2D@20603" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20604" to="Entities/@Area2D@20604" method="_on_body_entered"]
+[connection signal="body_entered" from="Entities/@Area2D@20605" to="Entities/@Area2D@20605" method="_on_body_entered"]
