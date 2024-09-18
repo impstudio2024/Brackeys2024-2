@@ -396,6 +396,8 @@ texture = ExtResource("1_hi7xf")
 11:9/0 = 0
 5:9/0 = 0
 5:8/0 = 0
+12:1/0 = 0
+12:0/0 = 0
 
 [resource]
 terrain_set_0/mode = 0
