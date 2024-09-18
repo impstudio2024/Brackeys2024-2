@@ -5,8 +5,10 @@ var possible_directions: Array[Vector2i] = [Vector2i.LEFT, Vector2i.RIGHT, Vecto
 
 @export var enemies: Array[PackedScene]
 @onready var map_position: Vector2i = Global.specials.local_to_map(position)
+@onready var sprite_2d = $Sprite2D
 
 func _ready() -> void:
+	sprite_2d.visible = false
 	Global.spawners.append(self)
 
 func spawn(chasing_on_spawn: bool) -> void:

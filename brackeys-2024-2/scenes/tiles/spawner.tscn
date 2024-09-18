@@ -11,5 +11,4 @@ script = ExtResource("1_qrmkr")
 enemies = Array[PackedScene]([ExtResource("2_dn1d7"), ExtResource("3_lfo5t"), ExtResource("4_lqt1a")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("5_jneyw")
